@@ -1,0 +1,61 @@
+/* ==========================================================================
+   Imports
+   ========================================================================== */
+/* ==========================================================================
+   Breakpoints - Please add your own em widths
+   ========================================================================== */
+/* ==========================================================================
+   Clearfix
+   ========================================================================== */
+/* ==========================================================================
+
+ The Grid.
+
+ This grid-system is based on a 12 column grid.
+
+ The method below will take 1 required parameter, and thats the number of columns.
+ The second parameter is optional, and is by default a 5% margin to the right.
+ E.g if you have a 'main area' and a sidebar, you dont want the right margin on the sidebar.
+ In that case you just call the method like this: @include column(4, 0), where the 4 is the number of
+ columns, and 0 means zero margin to the right.
+
+   ========================================================================== */
+/* ================================
+ This is a handy method for columns that are supposed to be equal width. E.g. three same sized boxes.
+ The parameter here is the number of items that's inside the container. The method
+ will make sure to always take up 100% of the available space.
+ ================================ */
+/* ==========================================================================
+   Add your colors here
+   ========================================================================== */
+/* ==========================================================================
+   Basic styling
+   ========================================================================== */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+body {
+  width: 100%;
+  height: 100%;
+  *zoom: 1; }
+  body:before, body:after {
+    content: "";
+    display: table; }
+  body:after {
+    clear: both; }
+
+::-moz-selection {
+  background: #25c8ba;
+  color: #fff;
+  text-shadow: none; }
+
+::selection {
+  background: #25c8ba;
+  color: #fff;
+  text-shadow: none; }
+
+/* ==========================================================================
+   Main styling
+   ========================================================================== */

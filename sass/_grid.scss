@@ -1,0 +1,101 @@
+/* ==========================================================================
+
+ The Grid.
+
+ This grid-system is based on a 12 column grid.
+
+ The method below will take 1 required parameter, and thats the number of columns.
+ The second parameter is optional, and is by default a 5% margin to the right.
+ E.g if you have a 'main area' and a sidebar, you dont want the right margin on the sidebar.
+ In that case you just call the method like this: @include column(4, 0), where the 4 is the number of
+ columns, and 0 means zero margin to the right.
+
+   ========================================================================== */
+
+
+@mixin columns($columns, $margin:5%) {
+
+	float:left;
+
+	@if($columns == 12) { 
+		width: 100%; 
+		margin-right: 0; 
+	} 
+
+	@else if($columns == 11) { 
+		width: 92.25% - $margin; 
+		margin-right: $margin;
+	} 
+
+	@else if($columns == 10) { 
+		width: 84% - $margin; 
+		margin-right: $margin;
+	} 
+
+	@else if($columns == 9) { 
+		width: 75% - $margin; 
+		margin-right: $margin;
+	} 
+
+	@else if($columns == 8) { 
+		width: 66% - $margin; 
+		margin-right: $margin;
+	} 
+
+	@else if($columns == 7) { 
+		width: 58% - $margin; 
+		margin-right: $margin; 
+	} 
+
+	@else if($columns == 6) { 
+		width: 50% - $margin; 
+		margin-right: $margin; 
+	} 
+
+	@else if($columns == 5) { 
+		width: 42% - $margin; 
+		margin-right: $margin; 
+	} 
+
+	@else if($columns == 4) { 
+		width: 33% - $margin; 
+		margin-right: $margin; 
+	}
+
+	@else if($columns == 3) { 
+		width: 25% - $margin; 
+		margin-right: $margin; 
+	} 
+
+	@else if($columns == 2) {
+	 	width: 16.5% - $margin; 
+	 	margin-right: $margin; 
+	} 
+
+	@else if($columns == 1) { 
+		width: 8.25% - $margin; 
+		margin-right: $margin; 
+	} 
+}
+
+/* ================================
+ This is a handy method for columns that are supposed to be equal width. E.g. three same sized boxes.
+ The parameter here is the number of items that's inside the container. The method
+ will make sure to always take up 100% of the available space.
+ ================================ */
+
+$total-width: 100%;
+
+@mixin equalColumn($columns, $gutter: 5%) {
+	float: left;
+	width: (($total-width - $gutter) / $columns);
+	margin-right: $gutter / ($columns - 1);
+
+	&:last-child {
+		margin-right: 0; 
+	}
+
+	@if($columns == 1) {
+		width: 100%;
+	}
+}
