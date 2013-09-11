@@ -8,17 +8,17 @@ Requirements
 
 Installing
 -------------
-Step 1. Install all the npm dependencies you need for Grunt.
+Step 1. Install NodeJS by downloading it [here](http://nodejs.org/download/)
+Step 2. Install Grunt CLI
 ```shell
+npm install -g grunt-cli
+```
+Step 3. Install all the npm dependencies you need for Grunt.
+```shell
+cd to/root/folder
 npm install
 ```
-Step 2. Every directory in the `Gruntfile.js` is based on variables, so the `directories` in the `package.json` should be modified to fit your structure.
-
-Step 3. Have fun!
-
-Modification
--------------
-
+Step 4. All done! You can now run either `grunt dev` or `grunt dist` depending on your needs, and Grunt will do the rest for you.
 
 Structure
 -------------
