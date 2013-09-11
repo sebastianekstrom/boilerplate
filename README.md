@@ -9,15 +9,18 @@ Requirements
 Installing
 -------------
 Step 1. Install NodeJS by downloading it [here](http://nodejs.org/download/)
+
 Step 2. Install Grunt CLI
 ```shell
 npm install -g grunt-cli
 ```
+
 Step 3. Install all the npm dependencies you need for Grunt.
 ```shell
 cd to/root/folder
 npm install
 ```
+
 Step 4. All done! You can now run either `grunt dev` or `grunt dist` depending on your needs, and Grunt will do the rest for you.
 
 Structure
