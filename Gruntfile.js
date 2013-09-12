@@ -8,7 +8,7 @@ module.exports = function(grunt) {
     watch: {
       sass: {
         files: ['<%= pkg.directories.sass %>/**/*.sass'],
-        tasks: ['sass:dev']
+        tasks: ['sass:dev', 'autoprefixer:dev']
       },
       concat: {
         files: ['<%= pkg.directories.dev_js %>/**/*.js'],
@@ -17,7 +17,7 @@ module.exports = function(grunt) {
       imagemin: {
         files: ['<%= pkg.directories.img %>/**/*.jpg', '<%= pkg.directories.img %>/**/*.png'],
         tasks: 'imagemin'
-      }
+      }    
     },
     sass: {
       dev: {
@@ -56,6 +56,15 @@ module.exports = function(grunt) {
         }
       }
     },
+    autoprefixer: {
+      dev: {
+        options: {
+          browsers: ['last 3 versions', '> 1%', 'ie 8', 'ie 7']
+        },
+        src: '<%= pkg.directories.css %>/style__<%= pkg.version %>.css',
+        dest: '<%= pkg.directories.css %>/style__<%= pkg.version %>.css'
+      }
+    },     
     imagemin: {
       png: {
         options: {
@@ -91,10 +100,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks ('grunt-autoprefixer');
   grunt.loadNpmTasks ('grunt-contrib-sass');
   grunt.loadNpmTasks ('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-imagemin');
+  grunt.loadNpmTasks ('grunt-contrib-imagemin');
 
   // Default task(s).
-  grunt.registerTask('dev', ['sass:dev', 'concat', 'watch']);
+  grunt.registerTask('dev', ['autoprefixer:dev','sass:dev', 'concat', 'watch']);
   grunt.registerTask('dist', ['sass:dist','concat', 'uglify', 'imagemin', 'bump:minor']);
 
 };
