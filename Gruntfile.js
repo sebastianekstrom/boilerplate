@@ -40,7 +40,7 @@ module.exports = function(grunt) {
     },
     concat: {
       dev: {
-        src: ['<%= pkg.directories.dev_js %>/*.js'],
+        src: ['<%= pkg.directories.dev_js %>/**/*.js'],
         dest: '<%= pkg.directories.js %>/script__<%= pkg.version %>.js'
       }
     },
