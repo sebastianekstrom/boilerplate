@@ -22,27 +22,3 @@ npm install
 ```
 
 Step 4. All done! You can now run either `grunt dev` or `grunt dist` depending on your needs, and Grunt will do the rest for you.
-
-Structure
--------------
-```js
---img/                    //Uncompressed images
---js/                     //Your development JS-files
-----plugins/              //modernizr, jquery etc.
---node_modules/           //npm modules
---sass/
-----base/
-----partials/
-----structure/
-----style.sass
---static/
-----css/
---------style__0.1.0.css //Compressed and concatinated CSS
-----img/                 //Compressed images
-----js/                  // Compressed and concatinated JS
-.gitignore
-.Gruntfile.js
-index.html
-package.json
-README.md
-```
