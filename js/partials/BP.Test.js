@@ -1,6 +1,6 @@
 var BP = BP || {};
 
-BP.EqualizeRows = function($) {
+BP.Test = function($) {
     'use strict';
 
     var self = {},

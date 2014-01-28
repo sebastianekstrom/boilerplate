@@ -16,8 +16,8 @@
   "directories": {
     "sass": "sass",
     "css": "static/css",
-    "dev_js": "js",
     "js": "static/js",
+    "js_dev": "js",    
     "img": "img",
     "img_compressed": "static/img"
   }  

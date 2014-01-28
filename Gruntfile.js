@@ -1,6 +1,5 @@
 module.exports = function(grunt) {
 
-
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
@@ -11,13 +10,9 @@ module.exports = function(grunt) {
         tasks: ['sass:dev', 'autoprefixer:dev']
       },
       concat: {
-        files: ['<%= pkg.directories.dev_js %>/**/*.js'],
+        files: ['<%= pkg.directories.js_dev %>/**/*.js'],
         tasks: 'concat'
-      },
-      imagemin: {
-        files: ['<%= pkg.directories.img %>/**/*.jpg', '<%= pkg.directories.img %>/**/*.png'],
-        tasks: 'imagemin'
-      }    
+      }  
     },
     sass: {
       dev: {
@@ -40,7 +35,7 @@ module.exports = function(grunt) {
     },
     concat: {
       dev: {
-        src: ['<%= pkg.directories.dev_js %>/**/*.js'],
+        src: ['<%= pkg.directories.js_dev %>/**/*.js'],
         dest: '<%= pkg.directories.js %>/script__<%= pkg.version %>.js'
       }
     },
@@ -52,7 +47,7 @@ module.exports = function(grunt) {
       },
       my_target: {
         files: {
-          '<%= pkg.directories.js %>/script__<%= pkg.version %>.js': ['<%= pkg.directories.dev_js %>/main.js']
+          '<%= pkg.directories.js %>/script__<%= pkg.version %>.js': ['<%= pkg.directories.js_dev %>/main.js']
         }
       }
     },
