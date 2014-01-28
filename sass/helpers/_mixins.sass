@@ -1,0 +1,105 @@
+/* ====================================
+   Mixins and functions
+   ==================================== */
+   
+/* 
+   Media queries
+   ==================================== */
+   
+=bp_huge
+  @media only screen and (max-width: 62em)
+    @content
+=bp_large
+  @media only screen and (max-width: 57em)
+    @content
+=bp_medium
+  @media only screen and (max-width: 45.5em) //old 45.5
+    @content       
+=bp_small
+  @media only screen and (max-width: 43em)
+    @content
+
+/* 
+   Mixins and functions
+   ==================================== */
+
+=transit($args)
+  -webkit-transition: $args
+  -moz-transition: $args
+  -ms-transition: $args
+  -o-transition: $args
+  transition: $args
+
+=transform($args)
+  -webkit-transform: $args
+  -moz-transform: $args
+  -ms-transform: $args
+  -o-transform: $args
+  transform: $args
+
+=placeholderText($color)
+  input:-moz-placeholder
+    color: $color
+  input::-moz-placeholder
+    color: $color
+  input:-ms-input-placeholder
+    color: $color
+  input::-webkit-input-placeholder
+    color: $color
+
+=verticalCenter($height)
+  position: absolute
+  top: 50%
+  margin-top: -($height/2)
+
+=absoluteCenter($height, $width)
+  position: absolute
+  top: 50%
+  margin-top: -($height/2)
+  left: 50%
+  margin-left: -($width/2)
+
+=absolutCenter($height, $width)
+  position: absolute
+  left: 50%
+  top: 50%
+  margin-top: -($height/2)
+  margin-left: -($width/2)
+
+@function calculateRem($size)
+  $remSize: $size / 16px
+  @return #{$remSize}rem
+
+=font-size($size)
+  font-size: $size
+  font-size: calculateRem($size)
+  
+/* 
+   Extends
+   ==================================== */
+
+%hide-text
+  text-indent: -99999px
+  direction: ltr
+
+%justified
+  text-align: justify
+
+%visually-hidden
+  position: absolute !important
+  overflow: hidden
+  width: 1px
+  height: 1px
+  padding: 0
+  border: 0
+  clip: rect(1px, 1px, 1px, 1px)
+
+%clearfix
+  *zoom: 1
+  &:before
+    content: " "
+    display: table
+  &:after
+    content: " "
+    display: table
+    clear: both  

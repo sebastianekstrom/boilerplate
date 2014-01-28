@@ -1,0 +1,66 @@
+/* ====================================
+   The Grid.
+   Usage: @extend one-third()
+   ==================================== */
+   
+@function calculateWidth($cols, $margin)
+  @return (100% - ($cols - 1) * $margin) / $cols
+
+%grid-item
+  float: left
+
+=one-whole
+  width: 100%
+
+=one-half($margin: 4)
+  width: calculateWidth(2, $margin)
+  margin-right: $margin * 1%
+  @extend %grid-item
+  &:nth-child(2n)
+    margin-right: 0
+  &.even
+    margin-right: 0
+
+=one-third($margin: 4)
+  width: calculateWidth(3, $margin)
+  margin-right: $margin * 1%
+  @extend %grid-item
+  &:nth-child(3n)
+    margin-right: 0
+  &.third
+    margin-right: 0
+
+=one-quarter($margin: 4)
+  width: calculateWidth(4, $margin)
+  margin-right: $margin * 1%
+  @extend %grid-item
+  &:nth-child(4n)
+    margin-right: 0
+  &.fourth
+    margin-right: 0
+
+=one-fifth($margin: 4)
+  width: calculateWidth(5, $margin)
+  margin-right: $margin * 1%
+  @extend %grid-item
+  &:nth-child(5n)
+    margin-right: 0
+  &.fifth
+    margin-right: 0
+
+=two-thirds($margin: 4)
+  $widthOfOneThird: calculateWidth(3, $margin)
+  width: $widthOfOneThird * 2 + $margin
+  margin-right: $margin * 1%
+  @extend %grid-item
+
+=last
+  margin-right: 0
+
+=container
+  +clearfix()
+  max-width: $site-width
+  padding: 0 $padding
+  margin: 0 auto
+  +bp_small
+    padding: 0 $padding/2
