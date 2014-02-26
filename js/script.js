@@ -1,5 +1,5 @@
 /* ====================================
-   Init functions
+   Onload functions
    ==================================== */
 
 $(document).ready(function($) {

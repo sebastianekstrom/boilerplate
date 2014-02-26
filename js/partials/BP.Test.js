@@ -18,7 +18,7 @@ BP.Test = function($) {
     }
 
     self.FooBar = function(parent) {
-
+      console.log('Do stuff!');
     }
 
     return {

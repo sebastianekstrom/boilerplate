@@ -35,22 +35,20 @@ module.exports = function(grunt) {
     },
     concat: {
       dev: {
-        src: ['<%= pkg.directories.js_dev %>/**/*.js'],
+        src: ['<%= pkg.directories.js_dev %>/vendor/jquery-1.9.1.js','<%= pkg.directories.js_dev %>/vendor/modernizr.js','<%= pkg.directories.js_dev %>/**/*.js'],
         dest: '<%= pkg.directories.js %>/script__<%= pkg.version %>.js'
       }
     },
     uglify: {
       options: {
-        mangle: {
-          except: ['jQuery']
-        }
+        mangle: false
       },
       my_target: {
         files: {
-          '<%= pkg.directories.js %>/script__<%= pkg.version %>.js': ['<%= pkg.directories.js_dev %>/main.js']
+          '<%= pkg.directories.js %>/script__<%= pkg.version %>.js': ['<%= pkg.directories.js %>/script__<%= pkg.version %>.js']
         }
       }
-    },
+    },    
     autoprefixer: {
       dev: {
         options: {
@@ -59,34 +57,7 @@ module.exports = function(grunt) {
         src: '<%= pkg.directories.css %>/style__<%= pkg.version %>.css',
         dest: '<%= pkg.directories.css %>/style__<%= pkg.version %>.css'
       }
-    },     
-    imagemin: {
-      png: {
-        options: {
-          optimizationLevel: 7
-        },
-        files: [{
-          expand: true,
-          cwd: '<%= pkg.directories.img %>',
-          src: ['**/*.png'],
-          dest: '<%= pkg.directories.img_compressed %>',
-          ext: '.png'
-        }]
-      },
-      jpg: {
-        options: {
-          progressive: true
-        },
-        files: [{
-          expand: true,
-          cwd: '<%= pkg.directories.img %>',
-          src: ['**/*.jpg'],
-          dest: '<%= pkg.directories.img_compressed %>',
-          ext: '.jpg'
-        }]
-      }
     }
-
   });
 
   grunt.loadNpmTasks ('grunt-bump');
@@ -95,10 +66,9 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks ('grunt-autoprefixer');
   grunt.loadNpmTasks ('grunt-contrib-sass');
   grunt.loadNpmTasks ('grunt-contrib-watch');
-  grunt.loadNpmTasks ('grunt-contrib-imagemin');
 
   // Default task(s).
   grunt.registerTask('dev', ['autoprefixer:dev','sass:dev', 'concat', 'watch']);
-  grunt.registerTask('dist', ['sass:dist','concat', 'uglify', 'imagemin', 'bump:minor']);
+  grunt.registerTask('dist', ['autoprefixer:dev','sass:dist','concat', 'uglify']);
 
 };
