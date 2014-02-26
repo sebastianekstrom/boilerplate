@@ -26,21 +26,26 @@ Step 4. All done! You can now run either `grunt dev` or `grunt dist` depending o
 Folder structure
 -------------
 
-As follows::
+The coding will be done in `js/` and `sass` which then will be compiled/concatinated/minified into `static/js` and `static/css`.
 
-        js/                             Uncompressed Javascript, everything in here will be concatinated/compressed into static/js
-            partials/                   Your own Javascript files
-            vendor/                     Plugins like jQuery, Modernizr or equal
-        sass/                           All _foobar.sass files are imported into style.sass and later compiled into static/css/style_xx_.css
-            base/                       Colors, grid, typography, variables
-            helpers/                    Mixins, reset, global classes
-            objects/                    Buttons, forms, lists etc.
-            structure/                  Header, footer, navigation, sidebars
-        static/                         Where everything is compiled and eventually minifed
-            css/                        Styling and reset combined
-            img/                        All images
-            js/                         A single .js file with your scripts, jQuery and Modernizr
-        .gitignore                      Sass-files, DS_Store etc.
-        Gruntfile.js                    The Grunt setup
-        index.html                      HTML yeeeeah!
-        package.json                    Packages for Grunt
+The folder structure is as follows::
+
+        js/                     Uncompressed Javascript, everything in here will be concatinated/compressed into static/js
+            partials/           Your own Javascript files
+            vendor/             Plugins like jQuery, Modernizr or equal
+        
+        sass/                   All _foobar.sass files are imported into style.sass and later compiled into static/css/style_xx_.css
+            base/               Colors, grid, typography, variables
+            helpers/            Mixins, reset, global classes
+            objects/            Buttons, forms, lists etc.
+            structure/          Header, footer, navigation, sidebars
+        
+        static/                 Where everything is compiled and eventually minifed
+            css/                Styling and reset combined
+            img/                All images
+            js/                 A single .js file with your scripts, jQuery and Modernizr
+        
+        .gitignore              Sass-files, DS_Store etc.
+        Gruntfile.js            The Grunt setup
+        index.html              HTML yeeeeah!
+        package.json            Packages for Grunt
