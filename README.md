@@ -21,7 +21,7 @@ cd to/root/folder
 npm install
 ```
 
-Step 4. All done! You can now run either `grunt dev` or `grunt dist` depending on your needs, and Grunt will do the rest for you. 
+Step 4. All done! You can now run either `grunt` or `grunt dist` depending on your needs, and Grunt will do the rest for you. 
 
 Folder structure
 -------------
