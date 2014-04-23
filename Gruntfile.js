@@ -3,15 +3,20 @@ module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-
     watch: {
       sass: {
         files: ['<%= pkg.directories.sass %>/**/*.sass'],
-        tasks: ['sass:dev', 'autoprefixer:dev']
+        tasks: ['sass:dev', 'autoprefixer:dev'],
+        options: {
+          livereload: true,
+        }        
       },
       concat: {
         files: ['<%= pkg.directories.js_dev %>/**/*.js'],
-        tasks: 'concat'
+        tasks: 'concat',
+        options: {
+          livereload: true,
+        }        
       }  
     },
     sass: {
@@ -68,7 +73,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks ('grunt-contrib-watch');
 
   // Default task(s).
-  grunt.registerTask('dev', ['autoprefixer:dev','sass:dev', 'concat', 'watch']);
+  grunt.registerTask('default', ['autoprefixer:dev','sass:dev', 'concat', 'watch']);
   grunt.registerTask('dist', ['autoprefixer:dev','sass:dist','concat', 'uglify']);
 
 };

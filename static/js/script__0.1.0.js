@@ -23,7 +23,6 @@ BP.Test = function($) {
       trigger.click(function(){
         self.FooBar();
       });
-      
     }
 
     self.FooBar = function(parent) {
