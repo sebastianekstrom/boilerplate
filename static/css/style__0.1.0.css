@@ -2,6 +2,28 @@
  * Helpers
  * ==================================== */
 /* ====================================
+ * Global classes
+ * ==================================== */
+.disable-hover {
+  pointer-events: none;
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+.hidden {
+  display: none !important;
+  visibility: hidden;
+}
+
+/* ====================================
  * Normalize reset.
  * ==================================== */
 article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
@@ -172,6 +194,27 @@ table {
 }
 
 /* ====================================
+ * Dependencies
+ * ==================================== */
+/* ====================================
+ * Variables
+ * ==================================== */
+/* Spacing and widths
+ * ==================================== */
+/* ====================================
+ * Site colors
+ * ==================================== */
+/* Brand colors
+ * ==================================== */
+/* Base colors
+ * ==================================== */
+/* Text colors
+ * ==================================== */
+/* Button colors
+ * ==================================== */
+/* Third party brand colors
+ * ==================================== */
+/* ====================================
  * Mixins and functions
  * ==================================== */
 /* Media queries
@@ -191,62 +234,10 @@ table {
 }
 
 /* ====================================
- * Global classes
- * ==================================== */
-.disable-hover {
-  pointer-events: none;
-}
-
-.visuallyhidden.focusable:active,
-.visuallyhidden.focusable:focus {
-  clip: auto;
-  height: auto;
-  margin: 0;
-  overflow: visible;
-  position: static;
-  width: auto;
-}
-
-.hidden {
-  display: none !important;
-  visibility: hidden;
-}
-
-/* ====================================
- * Base
- * ==================================== */
-/* ====================================
- * Site colors
- * ==================================== */
-/* Brand colors
- * ==================================== */
-/* Base colors
- * ==================================== */
-/* Text colors
- * ==================================== */
-/* Button colors
- * ==================================== */
-/* Third party brand colors
- * ==================================== */
-/* ====================================
- * Variables
- * ==================================== */
-/* Spacing and widths
- * ==================================== */
-/* ====================================
- * Site typography.
- * For OOCSS reasons, added .alpha, .beta, .gamma classes
- * ==================================== */
-a {
-  text-decoration: none;
-}
-
-a[href^=tel] {
-  text-decoration: none;
-}
-
-/* ====================================
  * The Grid.
+ * ==================================== */
+/* ====================================
+ * Foundation
  * ==================================== */
 /* ====================================
  * General site styling
@@ -268,7 +259,19 @@ body {
 }
 
 /* ====================================
- * Objects
+ * Site typography.
+ * For OOCSS reasons, added .alpha, .beta, .gamma classes
+ * ==================================== */
+a {
+  text-decoration: none;
+}
+
+a[href^=tel] {
+  text-decoration: none;
+}
+
+/* ====================================
+ * Components
  * ==================================== */
 /* ====================================
  * Button styling   
@@ -279,7 +282,7 @@ body {
 }
 
 /* ====================================
- * Form styling
+ * List styling (ul, ol, li, dl, dd)
  * ==================================== */
 /* ====================================
  * Media elements
@@ -300,10 +303,10 @@ img {
 }
 
 /* ====================================
- * List styling (ul, ol, li, dl, dd)
+ * Form styling
  * ==================================== */
 /* ====================================
- * Structure
+ * Regions
  * ==================================== */
 /* ====================================
  * Header styling
