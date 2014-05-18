@@ -1,6 +1,6 @@
 var BP = BP || {};
 
-BP.Test = function($) {
+BP.Foo = function($) {
     'use strict';
 
     var self = {},
@@ -16,8 +16,8 @@ BP.Test = function($) {
       });
     }
 
-    self.FooBar = function(parent) {
-      console.log('Do stuff!');
+    self.FooBar = function() {
+      console.log('Foo!');
     }
 
     return {

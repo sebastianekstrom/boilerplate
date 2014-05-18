@@ -4,7 +4,7 @@
 
 $(document).ready(function($) {
 
-  BP.Test.init({
+  BP.Foo.init({
     trigger: $('#foo'),
     element: $('#bar')
   });
