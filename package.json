@@ -5,18 +5,17 @@
   "description": "Description",
   "devDependencies": {
     "grunt": "~0.4.1",
-    "grunt-contrib-watch": "~0.4.4",
-    "grunt-contrib-uglify": "~0.2.0",
-    "grunt-contrib-concat": "~0.3.0",
-    "grunt-contrib-sass": "~0.3.0",
-    "grunt-autoprefixer": "~0.1.20130615"
+    "grunt-contrib-watch": "~0.6.0",
+    "grunt-contrib-uglify": "~0.2.4",
+    "grunt-contrib-concat": "~0.4.0",
+    "grunt-contrib-sass": "~0.7.0",
+    "grunt-autoprefixer": "~0.4.0"
   },
   "directories": {
     "sass": "sass",
     "css": "static/css",
     "js": "static/js",
     "js_dev": "js",    
-    "img": "img",
-    "img_compressed": "static/img"
+    "img": "img"
   }  
 }
