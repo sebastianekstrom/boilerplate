@@ -26,4 +26,4 @@ Step 4. All done! You can now run either `grunt` or `grunt dist` depending on yo
 Folder structure
 -------------
 
-The development will be done in `js/` and `sass/` which then will be compiled/concatinated/minified into `static/js` and `static/css`.
+The development will be done in `source/js/` and `source/sass/` which then will be compiled/concatinated/minified into `build/js` and `build/css`.
