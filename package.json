@@ -12,10 +12,10 @@
     "grunt-autoprefixer": "~0.4.0"
   },
   "directories": {
-    "sass": "sass",
-    "css": "static/css",
-    "js": "static/js",
-    "js_dev": "js",    
-    "img": "img"
+    "sass": "source/sass",
+    "css": "build/css",
+    "js": "build/js",
+    "js_dev": "source/js",    
+    "img": "build/img"
   }  
 }

@@ -1,9 +1,11 @@
 /* ====================================
  * Helpers
  * ==================================== */
+
 /* ====================================
  * Global classes
  * ==================================== */
+
 .disable-hover {
   pointer-events: none;
 }
@@ -26,11 +28,25 @@
 /* ====================================
  * Normalize reset.
  * ==================================== */
-article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
   display: block;
 }
 
-audio, canvas, video {
+audio,
+canvas,
+video {
   display: inline-block;
 }
 
@@ -56,7 +72,9 @@ body {
 a:focus {
   outline: thin dotted;
 }
-a:active, a:hover {
+
+a:active,
+a:hover {
   outline: 0;
 }
 
@@ -69,7 +87,8 @@ abbr[title] {
   border-bottom: 1px dotted;
 }
 
-b, strong {
+b,
+strong {
   font-weight: bold;
 }
 
@@ -79,11 +98,15 @@ dfn {
 
 hr {
   -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
   box-sizing: content-box;
   height: 0;
 }
 
-code, kbd, pre, samp {
+code,
+kbd,
+pre,
+samp {
   font-family: monospace, serif;
   font-size: 1em;
 }
@@ -142,43 +165,57 @@ legend {
   padding: 0;
 }
 
-button, input, select, textarea {
+button,
+input,
+select,
+textarea {
   font-family: inherit;
   font-size: 100%;
   margin: 0;
 }
 
-button, input {
+button,
+input {
   line-height: normal;
 }
 
-button, select {
+button,
+select {
   text-transform: none;
 }
 
-button, html input[type="button"] {
+button,
+html input[type="button"] {
   -webkit-appearance: button;
   cursor: pointer;
 }
 
-input[type="reset"], input[type="submit"] {
+input[type="reset"],
+input[type="submit"] {
   -webkit-appearance: button;
   cursor: pointer;
 }
 
-button[disabled], html input[disabled] {
+button[disabled],
+html input[disabled] {
   cursor: default;
 }
 
-input[type="checkbox"], input[type="radio"] {
+input[type="checkbox"],
+input[type="radio"] {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
   padding: 0;
 }
-input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-button::-moz-focus-inner, input::-moz-focus-inner {
+button::-moz-focus-inner,
+input::-moz-focus-inner {
   border: 0;
   padding: 0;
 }
@@ -196,33 +233,46 @@ table {
 /* ====================================
  * Dependencies
  * ==================================== */
+
 /* ====================================
  * Variables
  * ==================================== */
+
 /* Spacing and widths
  * ==================================== */
+
 /* ====================================
  * Site colors
  * ==================================== */
+
 /* Brand colors
  * ==================================== */
+
 /* Base colors
  * ==================================== */
+
 /* Text colors
  * ==================================== */
+
 /* Button colors
  * ==================================== */
+
 /* Third party brand colors
  * ==================================== */
+
 /* ====================================
  * Mixins and functions
  * ==================================== */
+
 /* Media queries
  * ==================================== */
+
 /* Mixins and functions
  * ==================================== */
+
 /* Extends
  * ==================================== */
+
 .visually-hidden {
   position: absolute !important;
   overflow: hidden;
@@ -236,12 +286,15 @@ table {
 /* ====================================
  * The Grid.
  * ==================================== */
+
 /* ====================================
  * Foundation
  * ==================================== */
+
 /* ====================================
  * General site styling
  * ==================================== */
+
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -262,6 +315,7 @@ body {
  * Site typography.
  * For OOCSS reasons, added .alpha, .beta, .gamma classes
  * ==================================== */
+
 a {
   text-decoration: none;
 }
@@ -273,9 +327,24 @@ a[href^=tel] {
 /* ====================================
  * Components
  * ==================================== */
+
 /* ====================================
  * Button styling   
  * ==================================== */
+
+.button {
+  display: inline-block;
+}
+
+.button-primary {
+  background: #f22b11;
+  color: #ffe37a;
+}
+
+.button-primary:hover {
+  background: #dd240c;
+}
+
 .button-container {
   display: block;
   text-align: center;
@@ -284,9 +353,11 @@ a[href^=tel] {
 /* ====================================
  * List styling (ul, ol, li, dl, dd)
  * ==================================== */
+
 /* ====================================
  * Media elements
  * ==================================== */
+
 iframe {
   width: 100%;
   height: 100%;
@@ -305,15 +376,19 @@ img {
 /* ====================================
  * Form styling
  * ==================================== */
+
 /* ====================================
  * Regions
  * ==================================== */
+
 /* ====================================
  * Header styling
  * ==================================== */
+
 /* ====================================
  * Navigation styling
  * ==================================== */
+
 /* ====================================
  * Footer styling   
  * ==================================== */
