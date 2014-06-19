@@ -6,7 +6,7 @@ module.exports = function(grunt) {
     watch: {
       sass: {
         files: ['<%= pkg.directories.sass %>/**/*.sass'],
-        tasks: ['sass:dev', 'autoprefixer:dev'],
+        tasks: ['sass:dev', 'autoprefixer:dist'],
         options: {
           livereload: true,
         }        
@@ -55,14 +55,14 @@ module.exports = function(grunt) {
       }
     },    
     autoprefixer: {
-      dev: {
+      dist: {
         options: {
           browsers: ['last 3 versions', '> 1%', 'ie 8', 'ie 7']
         },
         src: '<%= pkg.directories.css %>/style__<%= pkg.version %>.css',
         dest: '<%= pkg.directories.css %>/style__<%= pkg.version %>.css'
       }
-    }
+    }  
   });
 
   grunt.loadNpmTasks ('grunt-contrib-uglify');
@@ -72,7 +72,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks ('grunt-contrib-watch');
 
   // Default task(s).
-  grunt.registerTask('default', ['autoprefixer:dev','sass:dev', 'concat', 'watch']);
-  grunt.registerTask('dist', ['autoprefixer:dev','sass:dist','concat', 'uglify']);
+  grunt.registerTask('default', ['autoprefixer:dist','sass:dev', 'concat', 'watch']);
+  grunt.registerTask('dist', ['autoprefixer:dist','sass:dist','concat', 'uglify']);
 
 };
