@@ -7,35 +7,21 @@
    ==================================== */
    
 =bp_huge
-  @media only screen and (max-width: 62em)
+  @media only screen and (max-width: 65em)
     @content
 =bp_large
-  @media only screen and (max-width: 57em)
+  @media only screen and (max-width: 55em)
     @content
 =bp_medium
-  @media only screen and (max-width: 45.5em) //old 45.5
+  @media only screen and (max-width: 50em)
     @content       
 =bp_small
-  @media only screen and (max-width: 43em)
+  @media only screen and (max-width: 45em)
     @content
 
 /* 
    Mixins and functions
    ==================================== */
-
-=transit($args)
-  -webkit-transition: $args
-  -moz-transition: $args
-  -ms-transition: $args
-  -o-transition: $args
-  transition: $args
-
-=transform($args)
-  -webkit-transform: $args
-  -moz-transform: $args
-  -ms-transform: $args
-  -o-transform: $args
-  transform: $args
 
 =placeholderText($color)
   input:-moz-placeholder
@@ -46,25 +32,6 @@
     color: $color
   input::-webkit-input-placeholder
     color: $color
-
-=verticalCenter($height)
-  position: absolute
-  top: 50%
-  margin-top: -($height/2)
-
-=absoluteCenter($height, $width)
-  position: absolute
-  top: 50%
-  margin-top: -($height/2)
-  left: 50%
-  margin-left: -($width/2)
-
-=absolutCenter($height, $width)
-  position: absolute
-  left: 50%
-  top: 50%
-  margin-top: -($height/2)
-  margin-left: -($width/2)
 
 @function calculateRem($size)
   $remSize: $size / 16px
@@ -81,9 +48,6 @@
 %hide-text
   text-indent: -99999px
   direction: ltr
-
-%justified
-  text-align: justify
 
 %visually-hidden
   position: absolute !important
@@ -103,3 +67,8 @@
     content: " "
     display: table
     clear: both  
+
+%vertical-align
+  position: relative
+  top: 50%
+  transform: translateY(-50%)
