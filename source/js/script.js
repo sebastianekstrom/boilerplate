@@ -8,5 +8,5 @@ $(document).ready(function($) {
     trigger: $('#foo'),
     element: $('#bar')
   });
-
+console.log('1231');
 });
