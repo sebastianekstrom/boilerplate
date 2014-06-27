@@ -26,8 +26,19 @@
 }
 
 /* ====================================
- * Normalize reset.
+ * normalize.css v3.0.1 | MIT License | git.io/normalize
+ * customized by sebastian ekstrom (zerosixthree.se)
  * ==================================== */
+
+html {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+}
 
 article,
 aside,
@@ -46,8 +57,10 @@ summary {
 
 audio,
 canvas,
+progress,
 video {
   display: inline-block;
+  vertical-align: baseline;
 }
 
 audio:not([controls]) {
@@ -55,32 +68,18 @@ audio:not([controls]) {
   height: 0;
 }
 
-[hidden] {
+[hidden],
+template {
   display: none;
 }
 
-html {
-  font-family: sans-serif;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-}
-
-body {
-  margin: 0;
-}
-
-a:focus {
-  outline: thin dotted;
+a {
+  background: transparent;
 }
 
 a:active,
 a:hover {
   outline: 0;
-}
-
-h1 {
-  font-size: 2em;
-  margin: 0.67em 0;
 }
 
 abbr[title] {
@@ -96,27 +95,9 @@ dfn {
   font-style: italic;
 }
 
-hr {
-  -moz-box-sizing: content-box;
-  -webkit-box-sizing: content-box;
-  box-sizing: content-box;
-  height: 0;
-}
-
-code,
-kbd,
-pre,
-samp {
-  font-family: monospace, serif;
-  font-size: 1em;
-}
-
-pre {
-  white-space: pre-wrap;
-}
-
-q {
-  quotes: "\201C" "\201D" "\2018" "\2019";
+mark {
+  background: yellow;
+  color: black;
 }
 
 small {
@@ -151,35 +132,43 @@ svg:not(:root) {
 }
 
 figure {
-  margin: 0;
+  margin: 1em 40px;
 }
 
-fieldset {
-  border: 1px solid silver;
-  margin: 0 2px;
-  padding: 0.35em 0.625em 0.75em;
+hr {
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
 }
 
-legend {
-  border: 0;
-  padding: 0;
+pre {
+  overflow: auto;
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
 }
 
 button,
 input,
+optgroup,
 select,
 textarea {
-  font-family: inherit;
-  font-size: 100%;
+  color: inherit;
+  font: inherit;
   margin: 0;
 }
 
-button,
-input {
-  line-height: normal;
+button {
+  overflow: visible;
+  text-transform: none;
 }
 
-button,
 select {
   text-transform: none;
 }
@@ -201,6 +190,20 @@ html input[disabled] {
   cursor: default;
 }
 
+button::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+input {
+  line-height: normal;
+}
+
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
 input[type="checkbox"],
 input[type="radio"] {
   -webkit-box-sizing: border-box;
@@ -209,25 +212,50 @@ input[type="radio"] {
   padding: 0;
 }
 
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+input[type="search"] {
+  -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
-button::-moz-focus-inner,
-input::-moz-focus-inner {
+fieldset {
+  border: 1px solid silver;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em;
+}
+
+legend {
   border: 0;
   padding: 0;
 }
 
 textarea {
   overflow: auto;
-  vertical-align: top;
+}
+
+optgroup {
+  font-weight: bold;
 }
 
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
 }
 
 /* ====================================
