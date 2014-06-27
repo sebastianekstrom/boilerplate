@@ -1,7 +1,15 @@
 /* ====================================
    Mixins and functions
    ==================================== */
-   
+
+/* 
+   Variables
+   ==================================== */
+
+$site-width: 1040px
+$base-spacing: 1em
+$block-padding: 3em
+
 /* 
    Media queries
    ==================================== */
@@ -22,16 +30,6 @@
 /* 
    Mixins and functions
    ==================================== */
-
-=placeholderText($color)
-  input:-moz-placeholder
-    color: $color
-  input::-moz-placeholder
-    color: $color
-  input:-ms-input-placeholder
-    color: $color
-  input::-webkit-input-placeholder
-    color: $color
 
 @function calculateRem($size)
   $remSize: $size / 16px
