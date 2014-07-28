@@ -1,6 +1,6 @@
-Boilerplate
+Z63 Boilerplate
 ===========
-Startup boilerplate with [Grunt](http://gruntjs.com/), [SASS](http://sass-lang.com/) and [kittens](https://www.google.se/search?q=kittens&source=lnms&tbm=isch&sa=X&ei=_zswUsX1Dqir4ASstoHgCQ&ved=0CAkQ_AUoAQ&biw=1280&bih=1293).
+Startup boilerplate for your proejcts with [Grunt](http://gruntjs.com/) and [SASS](http://sass-lang.com/).
 
 Requirements
 -------------
