@@ -1,6 +1,6 @@
 Z63 Boilerplate
 ===========
-Startup boilerplate for your proejcts with [Grunt](http://gruntjs.com/) and [SASS](http://sass-lang.com/).
+Startup boilerplate for your projects with [Grunt](http://gruntjs.com/) and [SASS](http://sass-lang.com/), made by [zerosixthree](http://zerosixthree.se/).
 
 Requirements
 -------------
