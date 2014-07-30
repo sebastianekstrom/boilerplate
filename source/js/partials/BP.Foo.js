@@ -8,20 +8,20 @@ BP.Foo = function($) {
         element;
 
     self.init = function(opts) {
-      trigger = opts.trigger;
-      element = opts.element;
+        trigger = opts.trigger;
+        element = opts.element;
 
-      trigger.click(function(){
-        self.FooBar();
-      });
+        trigger.click(function(){
+            self.FooBar();
+        });
     }
 
     self.FooBar = function() {
-      console.log('Foo!');
+        console.log('Foo!');
     }
 
     return {
-      init: self.init
+        init: self.init
     }
 
 }(jQuery);
