@@ -16,7 +16,5 @@
     "css": "dist/css",
     "js": "dist/js",
     "js_dev": "source/js",
-    "img": "dist/img",
-    "img_dev": "source/img"
   }
 }
