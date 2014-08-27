@@ -15,6 +15,6 @@
     "sass": "source/sass",
     "css": "dist/css",
     "js": "dist/js",
-    "js_dev": "source/js",
+    "js_dev": "source/js"
   }
 }
