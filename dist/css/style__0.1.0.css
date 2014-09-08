@@ -75,8 +75,8 @@ dfn {
 }
 
 mark {
-  background: yellow;
-  color: black;
+  background: #ff0;
+  color: #000;
 }
 
 small {
@@ -115,8 +115,7 @@ figure {
 }
 
 hr {
-  -webkit-box-sizing: content-box;
-          box-sizing: content-box;
+  box-sizing: content-box;
   height: 0;
 }
 
@@ -171,8 +170,7 @@ input::-moz-focus-inner {
   padding: 0;
 }
 input[type="checkbox"], input[type="radio"] {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   padding: 0;
 }
 input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
@@ -180,7 +178,6 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
 }
 input[type="search"] {
   -webkit-appearance: textfield;
-  -webkit-box-sizing: content-box;
   box-sizing: content-box;
 }
 input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
@@ -188,7 +185,7 @@ input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webki
 }
 
 fieldset {
-  border: 1px solid silver;
+  border: 1px solid #c0c0c0;
   margin: 0 2px;
   padding: 0.35em 0.625em 0.75em;
 }
@@ -252,6 +249,22 @@ td, th {
   clip: rect(1px, 1px, 1px, 1px);
 }
 
+.media-block,
+.media-block--body {
+  *zoom: 1;
+}
+.media-block:before,
+.media-block--body:before {
+  content: " ";
+  display: table;
+}
+.media-block:after,
+.media-block--body:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+
 /* ====================================
  * Grid system from Jeet.gs, version 5.3.0
  *
@@ -279,13 +292,11 @@ td, th {
  * General site styling
  * ==================================== */
 html {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 *, *:before, *:after {
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 body {
@@ -301,16 +312,14 @@ body {
 @media print {
   * {
     background: transparent !important;
-    color: black !important;
-    -webkit-box-shadow: none !important;
-            box-shadow: none !important;
+    color: #000 !important;
+    box-shadow: none !important;
     text-shadow: none !important;
   }
   *:before, *:after {
     background: transparent !important;
-    color: black !important;
-    -webkit-box-shadow: none !important;
-            box-shadow: none !important;
+    color: #000 !important;
+    box-shadow: none !important;
     text-shadow: none !important;
   }
 
@@ -333,7 +342,7 @@ body {
   }
 
   pre, blockquote {
-    border: 1px solid #999999;
+    border: 1px solid #999;
     page-break-inside: avoid;
   }
 
@@ -399,6 +408,34 @@ body {
 img {
   max-width: 100%;
   height: auto;
+}
+
+/* ====================================
+ * The media block
+ * Courtesy of Nicole Sullivan
+ * http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/
+ *
+ * Usage:
+ * <div class="media-block">
+ *   <a href="http://some-url-com" class="media-block--image-container">
+ *     <img src="http://placehold.it/50x50" alt="">
+ *   </a>
+ *   <div class="media-block--body">
+ *     <h2>I'm a heading inside a media block</h2>
+ *     <p>And some text inside it as well</p>
+ *   </div>
+ * </div>
+ * ==================================== */
+.media-block {
+  margin: 1em;
+}
+
+.media-block--image-container {
+  float: left;
+  margin-right: 1em;
+}
+.media-block--image-container img {
+  display: block;
 }
 
 /* ====================================

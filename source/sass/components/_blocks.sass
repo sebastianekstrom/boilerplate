@@ -1,0 +1,30 @@
+/* ====================================
+  The media block
+  Courtesy of Nicole Sullivan
+  http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/
+
+  Usage:
+  <div class="media-block">
+    <a href="http://some-url-com" class="media-block--image-container">
+      <img src="http://placehold.it/50x50" alt="">
+    </a>
+    <div class="media-block--body">
+      <h2>I'm a heading inside a media block</h2>
+      <p>And some text inside it as well</p>
+    </div>
+  </div>
+  ==================================== */
+   
+.media-block
+  margin: $base-spacing
+
+.media-block,
+.media-block--body 
+  @extend %clearfix
+
+.media-block--image-container
+  float: left
+  margin-right: $base-spacing
+  
+  img
+    display: block
