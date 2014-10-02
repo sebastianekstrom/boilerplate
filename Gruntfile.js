@@ -1,12 +1,15 @@
 module.exports = function(grunt) {
 
-  // Project configuration.
+  /* ====================================
+   Project configuration
+   ==================================== */
+
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
     watch: {
       sass: {
         files: ['<%= pkg.directories.sass %>/**/*.sass'],
-        tasks: ['sass:dev', 'autoprefixer:dist'],
+        tasks: ['sass:dev', 'autoprefixer'],
         options: {
           livereload: true,
         }        
@@ -39,7 +42,7 @@ module.exports = function(grunt) {
       }
     },
     concat: {
-      dev: {
+      dist: {
         src: ['<%= pkg.directories.js_dev %>/vendor/jquery-1.9.1.js','<%= pkg.directories.js_dev %>/vendor/modernizr.js','<%= pkg.directories.js_dev %>/**/*.js'],
         dest: '<%= pkg.directories.js %>/script__<%= pkg.version %>.js'
       }
@@ -71,6 +74,10 @@ module.exports = function(grunt) {
     }  
   });
 
+  /* ====================================
+   Enable plugins
+   ==================================== */
+
   grunt.loadNpmTasks ('grunt-contrib-uglify');
   grunt.loadNpmTasks ('grunt-contrib-concat');
   grunt.loadNpmTasks ('grunt-autoprefixer');
@@ -78,8 +85,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks ('grunt-contrib-watch');
   grunt.loadNpmTasks ('grunt-contrib-jshint');
 
-  // Default tasks
-  grunt.registerTask('default', ['autoprefixer:dist','sass:dev', 'concat', 'jshint','watch']);
-  grunt.registerTask('dist', ['autoprefixer:dist','sass:dist','concat', 'uglify']);
+  /* ====================================
+   Default tasks
+   ==================================== */
+
+  grunt.registerTask('default', ['autoprefixer','sass:dev', 'concat', 'jshint','watch']);
+  grunt.registerTask('dist', ['autoprefixer','sass:dist','concat', 'uglify']);
 
 };
