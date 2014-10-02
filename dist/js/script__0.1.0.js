@@ -847,32 +847,36 @@ BP.Foo = function($) {
         trigger.click(function(){
             self.FooBar();
         });
-    }
+    };
 
     self.FooBar = function() {
         console.log('Foo!');
-    }
+    };
 
     return {
         init: self.init
-    }
+    };
 
 }(jQuery);
-/* ====================================
-   Onload functions
+$(document).ready(function($) {
+
+    /* ====================================
+    Initiations
    ==================================== */
 
-    $(document).ready(function($) {
-
-        BP.Foo.init({
-            trigger: $('#foo'),
-            element: $('#bar')
-        });
-
-        if(!Modernizr.svg) {
-            $('img[src$=".svg"]').each(function() {
-                $(this).attr('src', $(this).attr('src').replace('.svg', '.png'));
-            });
-        }
-
+    BP.Foo.init({
+        trigger: $('#foo'),
+        element: $('#bar')
     });
+
+    /* ====================================
+    On load functions
+   ==================================== */
+
+    if(!Modernizr.svg) {
+        $('img[src$=".svg"]').each(function() {
+            $(this).attr('src', $(this).attr('src').replace('.svg', '.png'));
+        });
+    }
+
+});

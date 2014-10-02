@@ -14,14 +14,14 @@ BP.Foo = function($) {
         trigger.click(function(){
             self.FooBar();
         });
-    }
+    };
 
     self.FooBar = function() {
         console.log('Foo!');
-    }
+    };
 
     return {
         init: self.init
-    }
+    };
 
 }(jQuery);

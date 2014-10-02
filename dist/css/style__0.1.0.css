@@ -115,6 +115,7 @@ figure {
 }
 
 hr {
+  -moz-box-sizing: content-box;
   box-sizing: content-box;
   height: 0;
 }
@@ -178,6 +179,8 @@ input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-o
 }
 input[type="search"] {
   -webkit-appearance: textfield;
+  -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
   box-sizing: content-box;
 }
 input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
@@ -394,8 +397,7 @@ body {
 .button-primary {
   background: #f22b11;
   color: #ffe37a;
-  -webkit-transition: background 0.2s;
-          transition: background 0.2s;
+  transition: background 0.2s;
 }
 .button-primary:hover {
   background: #dd240c;
@@ -465,3 +467,5 @@ textarea {
 /* ====================================
  * Footer styling   
  * ==================================== */
+
+/*# sourceMappingURL=style__0.1.0.css.map */
