@@ -74,7 +74,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks ('grunt-contrib-sass');
   grunt.loadNpmTasks ('grunt-contrib-watch');
 
-  // Default task(s).
+  // Default tasks
   grunt.registerTask('default', ['autoprefixer:dist','sass:dev', 'concat', 'watch']);
   grunt.registerTask('dist', ['autoprefixer:dist','sass:dist','concat', 'uglify']);
 
