@@ -1,8 +1,8 @@
 $(document).ready(function($) {
 
     /* ====================================
-    Initiations
-   ==================================== */
+        Initiations
+    ==================================== */
 
     BP.Foo.init({
         trigger: $('#foo'),
@@ -10,8 +10,8 @@ $(document).ready(function($) {
     });
 
     /* ====================================
-    On load functions
-   ==================================== */
+        On load functions
+    ==================================== */
 
     if(!Modernizr.svg) {
         $('img[src$=".svg"]').each(function() {
