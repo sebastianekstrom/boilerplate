@@ -480,7 +480,7 @@ img {
 .flag--top .flag__image {
   vertical-align: top;
 }
-.flag-bottom .flag__image {
+.flag--bottom .flag__image {
   vertical-align: bottom;
 }
 
