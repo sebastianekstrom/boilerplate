@@ -330,10 +330,19 @@ td, th {
 /* Third party brand colors
  * ==================================== */
 /* ===========================================
+ * Variables
+ * =========================================== */
+/* Font familys
+ * ==================================== */
+/* Font sizes
+ * ==================================== */
+/* Spacings and widths
+ * ==================================== */
+/* Transitions
+ * ==================================== */
+/* ===========================================
  * Variables, mixins, functions and extends
  * =========================================== */
-/* Variables
- * ==================================== */
 /* Media queries
  * ==================================== */
 /* Mixins and functions
@@ -505,8 +514,8 @@ body {
 .button-primary {
   background: #f22b11;
   color: #ffe37a;
-  -webkit-transition: background 0.2s;
-          transition: background 0.2s;
+  -webkit-transition: background 0.25s;
+          transition: background 0.25s;
 }
 .button-primary:hover {
   background: #dd240c;
