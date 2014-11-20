@@ -517,7 +517,7 @@ body {
   -webkit-transition: background 0.25s;
           transition: background 0.25s;
 }
-.button-primary:hover {
+.button-primary:hover, .button-primary:focus {
   background: #dd240c;
 }
 
