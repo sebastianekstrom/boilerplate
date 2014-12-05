@@ -114,16 +114,16 @@ module.exports = function(grunt) {
     ==================================== */
 
     grunt.registerTask('default', [
-        'autoprefixer',
         'sass:dev',
+        'autoprefixer',        
         'concat',
         'jshint',
         'watch'
     ]);
 
     grunt.registerTask('dist',[
-        'autoprefixer',
         'sass:dist',
+        'autoprefixer',        
         'concat',
         'uglify'
     ]);
