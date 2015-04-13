@@ -1,27 +1,35 @@
-var BP = BP || {};
+'use strict';
+var BP = (function (parent, $) {
 
-BP.Foo = function($) {
-    'use strict';
-
-    var self = {},
-        trigger,
-        element;
-
-    self.init = function(opts) {
-        trigger = opts.trigger;
-        element = opts.element;
-
-        trigger.click(function(){
-            self.FooBar();
-        });
+    var Foo = function(options) {
+        this._init();
     };
 
-    self.FooBar = function() {
-        console.log('Foo!');
+    Foo.prototype = {
+
+        _init: function (options) {
+            var self = this;
+            self._bindEvents();
+        },
+
+        _bindEvents: function () {
+            var self = this;
+            $(document).on('click', options.trigger, function (e) {
+                e.preventDefault();
+                self._bar();
+            });
+        },
+
+        _bar: function() {
+            console.log('Foobar!');
+        }
     };
 
-    return {
-        init: self.init
+    var options = {
+        trigger: '.triggerElement'
     };
 
-}(jQuery);
+    parent.foo = parent.foo || new Foo(options);
+
+    return parent;
+}(BP || {}, jQuery));

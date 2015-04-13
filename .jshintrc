@@ -1,0 +1,27 @@
+{
+    "trailing": true,
+    "undef": true,
+    "unused": "vars",
+    "evil": true,
+    "globalstrict": true,
+    "browser": true,
+    "curly": true,
+    "eqeqeq": true,
+    "es3": true,
+    "freeze": true,
+    "bitwise": true,
+    "forin": true,
+    "immed": true,
+    "latedef": true,
+    "newcap": false,
+    "noempty": true,
+    "nonbsp": true,
+    "nonew": true,
+    "node": true,
+    "globals": {
+        "Modernizr": true,
+        "angular": false,
+        "$": false,
+        "jQuery": false
+    }
+}

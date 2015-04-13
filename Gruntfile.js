@@ -79,7 +79,16 @@ module.exports = function(grunt) {
             JSHint
         ==================================== */
         jshint: {
-            files: ['<%= pkg.directories.js_partials %>/*.js', '<%= pkg.directories.js_dev %>/script.js']
+            all: {
+                src: '<%= pkg.directories.js_partials %>/*.js'
+            },
+
+            options: {
+                jshintrc: '.jshintrc',
+                reporter: require('jshint-stylish'),
+                ignores: [
+                ]
+            }
         },
 
         /*
