@@ -95,19 +95,34 @@ module.exports = function(grunt) {
                 src: '<%= pkg.directories.css %>/style__<%= pkg.version %>.css',
                 dest: '<%= pkg.directories.css %>/style__<%= pkg.version %>.css'
             }
-        }
+        },
+
+        /*
+            Server
+        ==================================== */
+        connect: {
+            server: {
+                options: {
+                    hostname: 'localhost',
+                    port: 8080,
+                    base: './',
+                    open: 'http://localhost:8080/'
+                }
+            }
+        }        
     });
 
     /* ====================================
-        Enable plugins
+        Load dependencies
     ==================================== */
 
     grunt.loadNpmTasks ('grunt-contrib-uglify');
     grunt.loadNpmTasks ('grunt-contrib-concat');
     grunt.loadNpmTasks ('grunt-autoprefixer');
-    grunt.loadNpmTasks ('grunt-contrib-sass');
+    grunt.loadNpmTasks ('grunt-sass');
     grunt.loadNpmTasks ('grunt-contrib-watch');
     grunt.loadNpmTasks ('grunt-contrib-jshint');
+    grunt.loadNpmTasks('grunt-contrib-connect');
 
     /* ====================================
         Tasks
@@ -118,6 +133,7 @@ module.exports = function(grunt) {
         'autoprefixer',        
         'concat',
         'jshint',
+        'connect',
         'watch'
     ]);
 
