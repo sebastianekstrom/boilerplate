@@ -11,19 +11,31 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON('package.json'),
 
         /*
+            Concurrent
+        ==================================== */
+        concurrent: {
+            build: {
+                tasks: ['build:js', 'build:css'],
+                options: {
+                    logConcurrentOutput: false
+                }
+            }
+        },
+
+        /*
             Watch
         ==================================== */
         watch: {
             sass: {
                 files: ['<%= pkg.directories.sass %>/**/*.sass'],
-                tasks: ['sass:dev', 'autoprefixer'],
+                tasks: ['build:css'],
                 options: {
                     livereload: true,
                 }
             },
             concat: {
                 files: ['<%= pkg.directories.js_dev %>/**/*.js'],
-                tasks: ['jshint', 'concat'],
+                tasks: ['build:js'],
                 options: {
                     livereload: true,
                 }
@@ -120,12 +132,23 @@ module.exports = function(grunt) {
     ==================================== */
 
     grunt.registerTask('default', [
-        'sass:dev',
-        'autoprefixer',        
-        'concat',
-        'jshint',
+        'build',
         'connect',
         'watch'
+    ]);
+
+    grunt.registerTask('build', [
+        'concurrent:build'
+    ]);
+
+    grunt.registerTask('build:js', [
+        'concat',
+        'jshint'
+    ]);
+
+    grunt.registerTask('build:css', [
+        'sass:dev',
+        'autoprefixer'
     ]);
 
     grunt.registerTask('dist',[
