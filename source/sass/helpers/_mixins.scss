@@ -1,0 +1,80 @@
+/* ===========================================
+ * Variables, mixins, functions and extends
+ * =========================================== */
+
+/* Media queries
+ * ==================================== */
+
+@mixin bp-huge {
+  @media only screen and (max-width: 65em) {
+    @content;
+  }
+}
+
+@mixin bp-large {
+  @media only screen and (max-width: 55em) {
+    @content;
+  }
+}
+
+@mixin bp-medium {
+  @media only screen and (max-width: 50em) {
+    @content;
+  }
+}
+
+@mixin bp-small {
+  @media only screen and (max-width: 45em) {
+    @content;
+  }
+}
+
+/* Mixins and functions
+ * ==================================== */
+
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return #{$remSize}rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+
+/* Extends
+ * ==================================== */
+
+%hide-text {
+  text-indent: -99999px;
+  direction: ltr;
+}
+
+%visually-hidden {
+  position: absolute !important;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+
+%clearfix {
+  *zoom: 1;
+  &:before {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    content: " ";
+    display: table;
+    clear: both;
+  }
+}
+
+%vertical-align {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}

@@ -1,0 +1,82 @@
+/* ===========================================
+ * Different type of blocks for easy re-useable components.
+ * See demo for each section to see how they look
+ *  =========================================== */
+
+/* The media block
+ * Courtesy of Nicole Sullivan. Demo: http://goo.gl/sCZKxk
+ *
+ * Usage:
+ * <div class="media-block">
+ *   <a href="http://some-url-com" class="media-block__image-container">
+ *     <img src="http://placehold.it/50x50" alt="">
+ *   </a>
+ *   <div class="media-block__body">
+ *     <h2>I'm a heading inside a media block</h2>
+ *     <p>And some text inside it as well</p>
+ *   </div>
+ * </div>
+ * ==================================== */
+
+.media-block {
+  margin: $spacing-medium;
+}
+
+.media-block,
+.media-block__body {
+  @extend %clearfix;
+}
+
+.media-block__image-container {
+  float: left;
+  margin-right: $spacing-medium;
+  img {
+    display: block;
+  }
+}
+
+/* The flag block
+ * Courtesy of Harry Roberts. Demo: http://goo.gl/YR3ffA, http://goo.gl/4B3uFm
+ *
+ * Usage:
+ * <div class="flag-block">
+ *   <div class="flag__image">
+ *     <img src="" alt="">
+ *   </div>
+ *   <div class="flag__body">
+ *     <p></p>
+ *   </div>
+ * </div>  
+ * ==================================== */
+
+.flag-block {
+  display: table;
+  width: 100%;
+}
+
+.flag__image {
+  display: table-cell;
+  vertical-align: middle;
+  .flag--top & {
+    vertical-align: top;
+  }
+  .flag--bottom & {
+    vertical-align: bottom;
+  }
+}
+
+.flag__image {
+  padding-right: $spacing-medium;
+  > img {
+    display: block;
+    max-width: none;
+    .flag--rev & {
+      padding-right: 0;
+      padding-left: $spacing-medium;
+    }
+  }
+}
+
+.flag__body {
+  width: 100%;
+}

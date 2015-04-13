@@ -1,14 +1,16 @@
 /* ===========================================
-   Form styling
-   =========================================== */
+ * Form styling
+ * =========================================== */
 
 input[type=text],
 input[type=search],
 input[type=url],
 input[type=email],
 input[type=number],
-textarea
-  width: 100%
-  
-textarea
-  resize: vertical
+textarea {
+  width: 100%;
+}
+
+textarea {
+  resize: vertical;
+}

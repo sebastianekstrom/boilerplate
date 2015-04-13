@@ -1,0 +1,26 @@
+/* ===========================================
+ * General site styling
+ * =========================================== */
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  @include font-size(16px);
+  -webkit-font-smoothing: antialiased;
+}
+
+::-moz-selection {
+  background: $color-brand-main;
+  color: $color-white;
+}
+
+::selection {
+  background: $color-brand-main;
+  color: $color-white;
+}

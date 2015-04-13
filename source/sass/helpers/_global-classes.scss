@@ -1,0 +1,26 @@
+/* ===========================================
+ * Global classes
+ * =========================================== */
+
+.disable-hover {
+  pointer-events: none;
+}
+
+.visually-hidden {
+  @extend %visually-hidden;
+}
+
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+.hidden {
+  display: none !important;
+  visibility: hidden;
+}

@@ -27,7 +27,7 @@ module.exports = function(grunt) {
         ==================================== */
         watch: {
             sass: {
-                files: ['<%= pkg.directories.sass %>/**/*.sass'],
+                files: ['<%= pkg.directories.sass %>/**/*.scss'],
                 tasks: ['build:css'],
                 options: {
                     livereload: true,
@@ -52,7 +52,7 @@ module.exports = function(grunt) {
                     trace: true
                 },
                 files: {
-                    '<%= pkg.directories.css %>/style__<%= pkg.version %>.css': '<%= pkg.directories.sass %>/style.sass'
+                    '<%= pkg.directories.css %>/style__<%= pkg.version %>.css': '<%= pkg.directories.sass %>/style.scss'
                 }
             },
             dist: {
@@ -60,7 +60,7 @@ module.exports = function(grunt) {
                     style: 'compressed'
                 },
                 files: {
-                    '<%= pkg.directories.css %>/style__<%= pkg.version %>.css': '<%= pkg.directories.sass %>/style.sass'
+                    '<%= pkg.directories.css %>/style__<%= pkg.version %>.css': '<%= pkg.directories.sass %>/style.scss'
                 }
             }
         },
