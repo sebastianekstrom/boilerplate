@@ -450,11 +450,11 @@ body {
   text-align: center;
   cursor: pointer; }
 
-.button-primary {
+.button--primary {
   background: #f22b11;
   color: #ffe37a;
   transition: background 0.5s; }
-  .button-primary:hover, .button-primary:focus {
+  .button--primary:hover, .button--primary:focus {
     background: #dd240c; }
 
 /* ===========================================
