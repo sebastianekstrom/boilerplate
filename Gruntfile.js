@@ -1,5 +1,8 @@
 module.exports = function(grunt) {
+
     require('time-grunt')(grunt);
+    require('jit-grunt')(grunt);
+
     /* ====================================
         Project configuration
     ==================================== */
@@ -111,18 +114,6 @@ module.exports = function(grunt) {
             }
         }        
     });
-
-    /* ====================================
-        Load dependencies
-    ==================================== */
-
-    grunt.loadNpmTasks ('grunt-contrib-uglify');
-    grunt.loadNpmTasks ('grunt-contrib-concat');
-    grunt.loadNpmTasks ('grunt-autoprefixer');
-    grunt.loadNpmTasks ('grunt-sass');
-    grunt.loadNpmTasks ('grunt-contrib-watch');
-    grunt.loadNpmTasks ('grunt-contrib-jshint');
-    grunt.loadNpmTasks ('grunt-contrib-connect');
 
     /* ====================================
         Tasks
