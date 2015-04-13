@@ -1,175 +1,153 @@
 /* ====================================
- * Helpers
- * ==================================== */
+   Helpers
+   @mixin =================================== */
 /* ===========================================
- * normalize.css v3.0.2 | MIT License | git.io/normalize
- * customized by sebastian ekstrom
- * =========================================== */
+   normalize.css v3.0.2 | MIT License | git.io/normalize
+   customized by sebastian ekstrom
+   @mixin ========================================== */
 html {
   font-family: sans-serif;
   /* 1 */
   -ms-text-size-adjust: 100%;
   /* 2 */
-  -webkit-text-size-adjust: 100%;
-}
+  -webkit-text-size-adjust: 100%; }
 
-/*
+/**
  * Remove default margin. */
 body {
-  margin: 0;
-}
+  margin: 0; }
 
 /* HTML5 display definitions
  * ========================================================================== */
-/*
+/**
  * Correct `block` display not defined for any HTML5 element in IE 8/9.
  * Correct `block` display not defined for `details` or `summary` in IE 10/11
  * and Firefox.
  * Correct `block` display not defined for `main` in IE 11. */
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
-  display: block;
-}
+  display: block; }
 
-/*
+/**
  * 1. Correct `inline-block` display not defined in IE 8/9.
  * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera. */
 audio, canvas, progress, video {
   display: inline-block;
   /* 1 */
   vertical-align: baseline;
-  /* 2 */
-}
+  /* 2 */ }
 
-/*
+/**
  * Prevent modern browsers from displaying `audio` without controls.
  * Remove excess height in iOS 5 devices. */
 audio:not([controls]) {
   display: none;
-  height: 0;
-}
+  height: 0; }
 
-/*
+/**
  * Address `[hidden]` styling not present in IE 8/9/10.
  * Hide the `template` element in IE 8/9/11, Safari, and Firefox < 22. */
 [hidden], template {
-  display: none;
-}
+  display: none; }
 
 /* Links
  * ========================================================================== */
-/*
+/**
  * Remove the gray background color from active links in IE 10. */
 a {
-  background-color: transparent;
-}
-a:active, a:hover {
-  outline: 0;
-}
+  background-color: transparent; }
+  a:active, a:hover {
+    outline: 0; }
 
-/*
+/**
  * Improve readability when focused and also mouse hovered in all browsers. */
 /* Text-level semantics
  * ========================================================================== */
-/*
+/**
  * Address styling not present in IE 8/9/10/11, Safari, and Chrome. */
 abbr[title] {
-  border-bottom: 1px dotted;
-}
+  border-bottom: 1px dotted; }
 
-/*
+/**
  * Address style set to `bolder` in Firefox 4+, Safari, and Chrome. */
 b, strong {
-  font-weight: bold;
-}
+  font-weight: bold; }
 
-/*
+/**
  * Address styling not present in Safari and Chrome. */
 dfn {
-  font-style: italic;
-}
+  font-style: italic; }
 
-/*
+/**
  * Address styling not present in IE 8/9. */
 mark {
   background: #ff0;
-  color: #000;
-}
+  color: #000; }
 
-/*
+/**
  * Address inconsistent and variable font size in all browsers. */
 small {
-  font-size: 80%;
-}
+  font-size: 80%; }
 
-/*
+/**
  * Prevent `sub` and `sup` affecting `line-height` in all browsers. */
 sub {
   font-size: 75%;
   line-height: 0;
   position: relative;
-  vertical-align: baseline;
-}
+  vertical-align: baseline; }
 
 sup {
   font-size: 75%;
   line-height: 0;
   position: relative;
   vertical-align: baseline;
-  top: -0.5em;
-}
+  top: -0.5em; }
 
 sub {
-  bottom: -0.25em;
-}
+  bottom: -0.25em; }
 
 /* Embedded content
  * ========================================================================== */
-/*
+/**
  * Remove border when inside `a` element in IE 8/9/10. */
 img {
-  border: 0;
-}
+  border: 0; }
 
-/*
+/**
  * Correct overflow not hidden in IE 9/10/11. */
 svg:not(:root) {
-  overflow: hidden;
-}
+  overflow: hidden; }
 
 /* Grouping content
  * ========================================================================== */
-/*
+/**
  * Address margin not present in IE 8/9 and Safari. */
 figure {
-  margin: 1em 40px;
-}
+  margin: 1em 40px; }
 
-/*
+/**
  * Address differences between Firefox and other browsers. */
 hr {
   box-sizing: content-box;
-  height: 0;
-}
+  height: 0; }
 
-/*
+/**
  * Contain overflow in all browsers. */
 pre {
-  overflow: auto;
-}
+  overflow: auto; }
 
-/*
+/**
  * Address odd `em`-unit font size rendering in all browsers. */
 code, kbd, pre, samp {
   font-family: monospace, monospace;
-  font-size: 1em;
-}
+  font-size: 1em; }
 
 /* Forms
  * ========================================================================== */
-/*
+/**
  * Known limitation: by default, Chrome and Safari on OS X allow very limited
  * styling of `select`, unless a `border` property is set. */
-/*
+/**
  * 1. Correct color not being inherited.
  *    Known issue: affects color of disabled elements.
  * 2. Correct font properties not being inherited.
@@ -180,26 +158,23 @@ button, input, optgroup, select, textarea {
   font: inherit;
   /* 2 */
   margin: 0;
-  /* 3 */
-}
+  /* 3 */ }
 
-/*
+/**
  * Address `overflow` set to `hidden` in IE 8/9/10/11. */
 button {
   overflow: visible;
-  text-transform: none;
-}
+  text-transform: none; }
 
-/*
+/**
  * Address inconsistent `text-transform` inheritance for `button` and `select`.
  * All other form control elements do not inherit `text-transform` values.
  * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
  * Correct `select` style inheritance in Firefox. */
 select {
-  text-transform: none;
-}
+  text-transform: none; }
 
-/*
+/**
  * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
  *    and `video` controls.
  * 2. Correct inability to style clickable `input` types in iOS.
@@ -209,146 +184,139 @@ button, html input[type="button"] {
   -webkit-appearance: button;
   /* 2 */
   cursor: pointer;
-  /* 3 */
-}
+  /* 3 */ }
 
 input[type="reset"], input[type="submit"] {
   -webkit-appearance: button;
   /* 2 */
   cursor: pointer;
-  /* 3 */
-}
+  /* 3 */ }
 
-/*
+/**
  * Re-set default cursor for disabled elements. */
 button[disabled], html input[disabled] {
-  cursor: default;
-}
+  cursor: default; }
 
-/*
+/**
  * Remove inner padding and border in Firefox 4+. */
 button::-moz-focus-inner {
   border: 0;
-  padding: 0;
-}
+  padding: 0; }
 
 input {
-  line-height: normal;
-}
-input::-moz-focus-inner {
-  border: 0;
-  padding: 0;
-}
-input[type="checkbox"], input[type="radio"] {
-  box-sizing: border-box;
-  /* 1 */
-  padding: 0;
-  /* 2 */
-}
-input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
-  height: auto;
-}
-input[type="search"] {
-  -webkit-appearance: textfield;
-  /* 1 */
-  /* 2 */
-  box-sizing: content-box;
-}
-input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
-  -webkit-appearance: none;
-}
+  line-height: normal; }
+  input::-moz-focus-inner {
+    border: 0;
+    padding: 0; }
+  input[type="checkbox"], input[type="radio"] {
+    box-sizing: border-box;
+    /* 1 */
+    padding: 0;
+    /* 2 */ }
+  input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
+    height: auto; }
+  input[type="search"] {
+    -webkit-appearance: textfield;
+    /* 1 */
+    /* 2 */
+    box-sizing: content-box; }
+    input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
+      -webkit-appearance: none; }
 
-/*
+/**
  * 1. Correct `color` not being inherited in IE 8/9/10/11.
  * 2. Remove padding so people aren't caught out if they zero out fieldsets. */
 legend {
   border: 0;
   /* 1 */
   padding: 0;
-  /* 2 */
-}
+  /* 2 */ }
 
-/*
+/**
  * Remove default vertical scrollbar in IE 8/9/10/11. */
 textarea {
-  overflow: auto;
-}
+  overflow: auto; }
 
-/*
+/**
  * Don't inherit the `font-weight` (applied by a rule above).
  * NOTE: the default cannot safely be changed in Chrome and Safari on OS X. */
 optgroup {
-  font-weight: bold;
-}
+  font-weight: bold; }
 
 /* Tables
  * ========================================================================== */
-/*
+/**
  * Remove most spacing between table cells. */
 table {
   border-collapse: collapse;
-  border-spacing: 0;
-}
+  border-spacing: 0; }
 
 td, th {
-  padding: 0;
-}
+  padding: 0; }
 
 /* ===========================================
- * Global classes
- * =========================================== */
+   Global classes
+   @mixin ========================================== */
 .disable-hover {
-  pointer-events: none;
-}
+  pointer-events: none; }
 
-.visuallyhidden.focusable:active,
-.visuallyhidden.focusable:focus {
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus {
   clip: auto;
   height: auto;
   margin: 0;
   overflow: visible;
   position: static;
-  width: auto;
-}
+  width: auto; }
 
 .hidden {
   display: none !important;
-  visibility: hidden;
-}
+  visibility: hidden; }
 
 /* ===========================================
- * Site colors
- * =========================================== */
-/* Brand colors
- * ==================================== */
-/* Base colors
- * ==================================== */
-/* Text colors
- * ==================================== */
-/* Button colors
- * ==================================== */
-/* Third party brand colors
- * ==================================== */
+   Site colors
+   @mixin ========================================== */
+/*
+   Brand colors
+   @mixin =================================== */
+/*
+   Base colors
+   @mixin =================================== */
+/*
+   Text colors
+   @mixin =================================== */
+/*
+   Button colors
+   @mixin =================================== */
+/*
+   Third party brand colors
+   @mixin =================================== */
 /* ===========================================
- * Variables
- * =========================================== */
-/* Font familys
- * ==================================== */
-/* Font sizes
- * ==================================== */
-/* Spacings and widths
- * ==================================== */
-/* Transitions
- * ==================================== */
+   Variables
+   @mixin ========================================== */
+/*
+   Font familys
+   @mixin =================================== */
+/*
+   Font sizes
+   @mixin =================================== */
+/*
+   Spacings and widths
+   @mixin =================================== */
+/*
+   Transitions
+   @mixin =================================== */
 /* ===========================================
- * Variables, mixins, functions and extends
- * =========================================== */
-/* Media queries
- * ==================================== */
-/* Mixins and functions
- * ==================================== */
-/* Extends
- * ==================================== */
+   Variables, mixins, functions and extends
+   @mixin ========================================== */
+/*
+   Media queries
+   @mixin =================================== */
+/*
+   Mixins and functions
+   @mixin =================================== */
+/*
+   Extends
+   @mixin =================================== */
 .visually-hidden {
   position: absolute !important;
   overflow: hidden;
@@ -356,283 +324,234 @@ td, th {
   height: 1px;
   padding: 0;
   border: 0;
-  clip: rect(1px, 1px, 1px, 1px);
-}
+  clip: rect(1px, 1px, 1px, 1px); }
 
-.media-block,
-.media-block__body {
-  *zoom: 1;
-}
-.media-block:before,
-.media-block__body:before {
-  content: " ";
-  display: table;
-}
-.media-block:after,
-.media-block__body:after {
-  content: " ";
-  display: table;
-  clear: both;
-}
+.media-block, .media-block__body {
+  *zoom: 1; }
+  .media-block:before, .media-block__body:before {
+    content: " ";
+    display: table; }
+  .media-block:after, .media-block__body:after {
+    content: " ";
+    display: table;
+    clear: both; }
 
 /* ===========================================
- * Grid system from Jeet.gs, version 5.3.0
- *
- * Usage:
- *
- *  section
- *    +center
- *  aside
- *    +col(1 / 3)
- *  article
- *    +col(2 / 3)
- *
- *  More info on http://jeet.gs/   
- * =========================================== */
-/* Settings
- * ==================================== */
-/* Functions
- * ==================================== */
-/* Grid system
- * ==================================== */
+   Grid system from Jeet.gs, version 5.3.0
+
+   Usage:
+
+    section
+      @include center
+    aside
+      @include col(1 / 3)
+    article
+      @include col(2 / 3)
+
+    More info on http://jeet.gs/
+   @mixin ========================================== */
+/*
+   Settings
+   @mixin =================================== */
+/*
+   Functions
+   @mixin =================================== */
+/*
+   Grid system
+   @mixin =================================== */
 /* ====================================
- * Foundation
- * ==================================== */
+   Foundation
+   @mixin =================================== */
 /* ===========================================
- * General site styling
- * =========================================== */
+   General site styling
+   @mixin ========================================== */
 *, *:before, *:after {
-  box-sizing: inherit;
-}
+  box-sizing: inherit; }
 
 html {
-  box-sizing: border-box;
-}
+  box-sizing: border-box; }
 
 body {
   font-size: 16px;
   font-size: 1rem;
-  -webkit-font-smoothing: antialiased;
-}
+  -webkit-font-smoothing: antialiased; }
 
 ::-moz-selection {
   background: #e3e3e3;
-  color: #ffffff;
-}
+  color: #ffffff; }
 
 ::selection {
   background: #e3e3e3;
-  color: #ffffff;
-}
+  color: #ffffff; }
 
 /* ===========================================
- * Base print styling
- * Taken from HTML5BP (http://html5boilerplate.com/)
- * =========================================== */
+   Base print styling
+   Taken from HTML5BP (http://html5boilerplate.com/)
+   @mixin ========================================== */
 @media print {
   * {
     background: transparent !important;
     color: #000 !important;
     box-shadow: none !important;
-    text-shadow: none !important;
-  }
-  *:before, *:after {
-    background: transparent !important;
-    color: #000 !important;
-    box-shadow: none !important;
-    text-shadow: none !important;
-  }
-
+    text-shadow: none !important; }
+    *:before, *:after {
+      background: transparent !important;
+      color: #000 !important;
+      box-shadow: none !important;
+      text-shadow: none !important; }
   a {
-    text-decoration: underline;
-  }
-  a:visited {
-    text-decoration: underline;
-  }
-  a[href]:after {
-    content: " (" attr(href) ")";
-  }
-
+    text-decoration: underline; }
+    a:visited {
+      text-decoration: underline; }
+    a[href]:after {
+      content: " (" attr(href) ")"; }
   abbr[title]:after {
-    content: " (" attr(title) ")";
-  }
-
+    content: " (" attr(title) ")"; }
   a[href^="#"]:after, a[href^="javascript:"]:after {
-    content: "";
-  }
-
+    content: ""; }
   pre, blockquote {
     border: 1px solid #999;
-    page-break-inside: avoid;
-  }
-
+    page-break-inside: avoid; }
   thead {
-    display: table-header-group;
-  }
-
+    display: table-header-group; }
   tr {
-    page-break-inside: avoid;
-  }
-
+    page-break-inside: avoid; }
   img {
     page-break-inside: avoid;
-    max-width: 100% !important;
-  }
-
+    max-width: 100% !important; }
   p, h2, h3 {
     orphans: 3;
-    widows: 3;
-  }
-
+    widows: 3; }
   h2, h3 {
-    page-break-after: avoid;
-  }
-}
+    page-break-after: avoid; } }
+
 /* ===========================================
- * Site typography
- * =========================================== */
-/* Headings
- * For OOCSS reasons, added .alpha, .beta, .gamma etc. classes
- * ==================================== */
-/* Paragraphs, links and combined
- * ==================================== */
-/* Separate elements
- * ==================================== */
+   Site typography
+   @mixin ========================================== */
+/*
+   Headings
+   For OOCSS reasons, added .alpha, .beta, .gamma etc. classes
+   @mixin =================================== */
+/*
+   Paragraphs, links and combined
+   @mixin =================================== */
+/*
+   Separate elements
+   @mixin =================================== */
 /* ====================================
- * Components
- * ==================================== */
+   Components
+   @mixin =================================== */
 /* ===========================================
- * Button styling
- * =========================================== */
+   Button styling
+   @mixin ========================================== */
 .button {
   display: inline-block;
   vertical-align: middle;
   text-align: center;
-  cursor: pointer;
-}
+  cursor: pointer; }
 
 .button-primary {
   background: #f22b11;
   color: #ffe37a;
-  -webkit-transition: background 0.25s;
-          transition: background 0.25s;
-}
-.button-primary:hover, .button-primary:focus {
-  background: #dd240c;
-}
+  transition: background 0.5s; }
+  .button-primary:hover, .button-primary:focus {
+    background: #dd240c; }
 
 /* ===========================================
- * List styling (ul, ol, dl)
- * =========================================== */
+   List styling (ul, ol, dl)
+   @mixin ========================================== */
 /* ===========================================
- * Media elements
- * =========================================== */
+   Media elements
+   @mixin ========================================== */
 img {
   max-width: 100%;
   width: 100%;
-  height: auto;
-}
+  height: auto; }
 
 /* ===========================================
- * Different type of blocks for easy re-useable components.
- * See demo for each section to see how they look
- *  =========================================== */
-/* The media block
- * Courtesy of Nicole Sullivan. Demo: http://goo.gl/sCZKxk
- *
- * Usage:
- * <div class="media-block">
- *   <a href="http://some-url-com" class="media-block__image-container">
- *     <img src="http://placehold.it/50x50" alt="">
- *   </a>
- *   <div class="media-block__body">
- *     <h2>I'm a heading inside a media block</h2>
- *     <p>And some text inside it as well</p>
- *   </div>
- * </div>
- * ==================================== */
+  Different type of blocks for easy re-useable components.
+  See demo for each section to see how they look
+   @mixin ========================================== */
+/*
+  The media block
+  Courtesy of Nicole Sullivan. Demo: http://goo.gl/sCZKxk
+
+  Usage:
+  <div class="media-block">
+    <a href="http://some-url-com" class="media-block__image-container">
+      <img src="http://placehold.it/50x50" alt="">
+    </a>
+    <div class="media-block__body">
+      <h2>I'm a heading inside a media block</h2>
+      <p>And some text inside it as well</p>
+    </div>
+  </div>
+  @mixin =================================== */
 .media-block {
-  margin: 1em;
-}
+  margin: 1em; }
 
 .media-block__image-container {
   float: left;
-  margin-right: 1em;
-}
-.media-block__image-container img {
-  display: block;
-}
+  margin-right: 1em; }
+  .media-block__image-container img {
+    display: block; }
 
-/* The flag block
- * Courtesy of Harry Roberts. Demo: http://goo.gl/YR3ffA, http://goo.gl/4B3uFm
- *
- * Usage:
- * <div class="flag-block">
- *   <div class="flag__image">
- *     <img src="" alt="">
- *   </div>
- *   <div class="flag__body">
- *     <p></p>
- *   </div>
- * </div>  
- * ==================================== */
+/*
+  The flag block
+  Courtesy of Harry Roberts. Demo: http://goo.gl/YR3ffA, http://goo.gl/4B3uFm
+
+  Usage:
+  <div class="flag-block">
+    <div class="flag__image">
+      <img src="" alt="">
+    </div>
+    <div class="flag__body">
+      <p></p>
+    </div>
+  </div>
+  @mixin =================================== */
 .flag-block {
   display: table;
-  width: 100%;
-}
+  width: 100%; }
 
 .flag__image {
   display: table-cell;
-  vertical-align: middle;
-}
-.flag--top .flag__image {
-  vertical-align: top;
-}
-.flag--bottom .flag__image {
-  vertical-align: bottom;
-}
+  vertical-align: middle; }
+  .flag--top .flag__image {
+    vertical-align: top; }
+  .flag--bottom .flag__image {
+    vertical-align: bottom; }
 
 .flag__image {
-  padding-right: 1em;
-}
-.flag__image > img {
-  display: block;
-  max-width: none;
-}
-.flag--rev .flag__image > img {
-  padding-right: 0;
-  padding-left: 1em;
-}
+  padding-right: 1em; }
+  .flag__image > img {
+    display: block;
+    max-width: none; }
+    .flag--rev .flag__image > img {
+      padding-right: 0;
+      padding-left: 1em; }
 
 .flag__body {
-  width: 100%;
-}
+  width: 100%; }
 
 /* ===========================================
- * Form styling
- * =========================================== */
-input[type=text],
-input[type=search],
-input[type=url],
-input[type=email],
-input[type=number],
-textarea {
-  width: 100%;
-}
+   Form styling
+   @mixin ========================================== */
+input[type=text], input[type=search], input[type=url], input[type=email], input[type=number], textarea {
+  width: 100%; }
 
 textarea {
-  resize: vertical;
-}
+  resize: vertical; }
 
 /* ====================================
- * Layout
- * ==================================== */
+   Layout
+   @mixin =================================== */
 /* ===========================================
- * Header styling
- * =========================================== */
+   Header styling
+   @mixin ========================================== */
 /* ===========================================
- * Navigation styling
- * =========================================== */
+   Navigation styling
+   @mixin ========================================== */
 /* ===========================================
- * Footer styling
- * =========================================== */
+   Footer styling
+   @mixin ========================================== */
