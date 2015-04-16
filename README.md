@@ -11,7 +11,7 @@ Boilerplate for your projects made with [Grunt](http://gruntjs.com/), [Sass](htt
 * CSS helper classes
 * A performance optimized print CSS
 * Commonly used CSS components such as the [Media Object](http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/) and the [Flag Object](http://goo.gl/YR3ffA)
-* A Gruntfile with super fast Javascript and Sass compilation
+* A Gruntfile with super fast Javascript and Sass compilation/concatenation
 * Grid system from [Jeet.gs](http://jeet.gs/)
 * Component based file and folder structure, to help create re-usable and maintainable CSS
 * A Sass library of commonly used mixins and placeholder selectors
@@ -22,9 +22,9 @@ Boilerplate for your projects made with [Grunt](http://gruntjs.com/), [Sass](htt
 
 ## Installing
 
-Step 1. Install [NodeJS](http://nodejs.org/download/)
+1. Install [NodeJS](http://nodejs.org/download/)
 
-Step 2. Install [Grunt CLI](http://gruntjs.com/getting-started)
+2. Install [Grunt CLI](http://gruntjs.com/getting-started) with the following command
 ```shell
 npm install -g grunt-cli
 ```
