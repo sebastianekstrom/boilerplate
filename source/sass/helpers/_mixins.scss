@@ -6,25 +6,25 @@
  * ==================================== */
 
 @mixin bp-huge {
-  @media only screen and (max-width: 65em) {
+  @media only screen and (min-width: 65em) {
     @content;
   }
 }
 
 @mixin bp-large {
-  @media only screen and (max-width: 55em) {
+  @media only screen and (min-width: 55em) {
     @content;
   }
 }
 
 @mixin bp-medium {
-  @media only screen and (max-width: 50em) {
+  @media only screen and (min-width: 50em) {
     @content;
   }
 }
 
 @mixin bp-small {
-  @media only screen and (max-width: 45em) {
+  @media only screen and (min-width: 45em) {
     @content;
   }
 }
