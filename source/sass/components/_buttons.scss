@@ -8,12 +8,3 @@
   text-align: center;
   cursor: pointer;
 }
-
-.button--primary {
-  background: $color-button-primary;
-  color: $color-button-primary-text;
-  transition: background $transition-time--base;
-  &:hover, &:focus {
-    background: $color-button-primary-hover;
-  }
-}

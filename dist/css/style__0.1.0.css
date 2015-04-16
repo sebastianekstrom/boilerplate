@@ -363,11 +363,11 @@ body {
 
 ::-moz-selection {
   background: #e3e3e3;
-  color: white; }
+  color: #ffffff; }
 
 ::selection {
   background: #e3e3e3;
-  color: white; }
+  color: #ffffff; }
 
 /* ===========================================
  * Base print styling
@@ -431,13 +431,6 @@ body {
   vertical-align: middle;
   text-align: center;
   cursor: pointer; }
-
-.button--primary {
-  background: #f22b11;
-  color: #ffe37a;
-  transition: background 0.5s; }
-  .button--primary:hover, .button--primary:focus {
-    background: #dd240c; }
 
 /* ===========================================
  * List styling (ul, ol, dl)
