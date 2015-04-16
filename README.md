@@ -24,18 +24,18 @@ Boilerplate for your projects made with [Grunt](http://gruntjs.com/), [Sass](htt
 
 1. Install [NodeJS](http://nodejs.org/download/)
 
-2. Install [Grunt CLI](http://gruntjs.com/getting-started) with the following command
+2. Install [Grunt CLI](http://gruntjs.com/getting-started) with the following command:
 ```shell
 npm install -g grunt-cli
 ```
 
-Step 3. Install all the npm dependencies you need for Grunt.
+3. Install all the npm dependencies you need for Grunt.
 ```shell
 cd path/to/project
 npm install
 ```
 
-Step 4. All done!
+4. All done!
 
 ## Grunt tasks
 
