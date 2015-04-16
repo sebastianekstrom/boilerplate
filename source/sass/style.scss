@@ -1,5 +1,8 @@
-/* ====================================
- * Helpers
+/* ===========================================
+ * Import of all Sass files
+ * =========================================== */
+
+/* Helpers
  * ==================================== */
 
 @import "helpers/reset";
@@ -7,18 +10,20 @@
 @import "helpers/colors";
 @import "helpers/variables";
 @import "helpers/mixins";
-@import "helpers/grid";
 
-/* ====================================
- * Foundation
+/* Libs
+ * ==================================== */
+
+@import "libs/jeet.gs";
+
+/* Foundation
  * ==================================== */
 
 @import "foundation/base";
 @import "foundation/print";
 @import "foundation/typography";
 
-/* ====================================
- * Components
+/* Components
  * ==================================== */
 
 @import "components/buttons";
@@ -27,8 +32,7 @@
 @import "components/blocks";
 @import "components/forms";
 
-/* ====================================
- * Layout
+/* Layout
  * ==================================== */
 
 @import "layout/header";
