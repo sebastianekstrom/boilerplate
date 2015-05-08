@@ -1,5 +1,5 @@
 /* ===========================================
- * Grid system from Jeet.gs, version 5.3.0
+ * Grid system from Jeet.gs, version 6.1.2
  *
  * Usage:
  *
@@ -13,93 +13,154 @@
  *  More info on http://jeet.gs/   
  * =========================================== */
 
-/* Settings
- * ==================================== */
+/**
+ * Grid settings.
+ * All values are defaults and can therefore be easily overidden.
+ */
 
-$jeet-gutter: 3 !default;
-$jeet-parent-first: false !default;
-$jeet-layout-direction: "LTR" !default;
-$jeet-max-width: 1410px !default;
+$jeet-gutter:           3      !default;
+$jeet-parent-first:     false  !default;
+$jeet-layout-direction: "LTR"  !default;
+$jeet-max-width:        1410px !default;
 
-/* Functions
- * ==================================== */
+/**
+ * List functions courtesy of the wonderful folks at Team Sass.
+ * Check out their awesome grid: Singularity.
+ */
 
+/**
+ * Get  percentage from a given ratio.
+ * @param {number} [$ratio=1] - The column ratio of the element.
+ * @returns {number} - The percentage value.
+ */
 @function jeet-get-span($ratio: 1) {
   @return $ratio * 100;
 }
 
+/**
+ * Work out the column widths based on the ratio and gutter sizes.
+ * @param {number} [$ratios=1] - The column ratio of the element.
+ * @param {number} [$gutter=$jeet-gutter] - The gutter for the column.
+ * @returns {list} $width $gutter - A list containing the with and gutter for the element.
+ */
 @function jeet-get-column($ratios: 1, $gutter: $jeet-gutter) {
   $ratios: if(not $jeet-parent-first, jeet-reverse($ratios), $ratios);
   $width: 100;
+
   @each $ratio in $ratios {
     $gutter: $gutter / $width * 100;
     $width: 100 * $ratio - $gutter + $ratio * $gutter;
   }
+
   @return $width $gutter;
 }
 
+/**
+ * Get the set layout direction for the project.
+ * @returns {string} $direction - The layout direction.
+ */
 @function jeet-get-layout-direction() {
   $direction: if($jeet-layout-direction == "RTL", right, left);
+
   @return $direction;
 }
 
+/**
+ * Replace a specified list value with a new value (uses built in set-nth() if available)
+ * @param {list} $list - The list of values you want to alter.
+ * @param {number} $index - The index of the list item you want to replace.
+ * @param {*} $value - The value you want to replace $index with.
+ * @returns {list} $list - The list with the value replaced or removed.
+ * @warn if an invalid index is supplied.
+ */
 @function jeet-replace-nth($list, $index, $value) {
+  // Fallback for Sass 3.2
   @if function-exists("set-nth") != true {
     $result: ();
     $index: if($index < 0, length($list) + $index + 1, $index);
+
     @for $i from 1 through length($list) {
       $result: append($result, if($i == $index, $value, nth($list, $i)));
     }
+
     @return $result;
   }
+
+  // Sass 3.3
   $result: set-nth($list, $index, $value);
+
   @return $result;
 }
 
+/**
+ * Reverse a list (progressively enhanced for Sass 3.3)
+ * @param {list} $list - The list of values you want to reverse.
+ * @returns {list} $result - The reversed list.
+ */
 @function jeet-reverse($list) {
+  // Sass 3.2
   @if function-exists("set-nth") != true {
     $result: ();
+
     @for $i from length($list) * -1 through -1 {
-      $result: append($result, nth($list, abs($i)));
+      $item: nth($list, abs($i));
+
+      @if length($item) > 1 and $recursive {
+        $result: append($result, jeet-reverse($item, $recursive));
+      }
+      @else {
+        $result: append($result, $item);
+      }
     }
+
     @return $result;
   }
-  @for $i from 1 through floor(length($list) / 2) + 1 {
+
+  // Sass 3.3+
+  @for $i from 1 through ceil(length($list)/2) {
     $tmp: nth($list, $i);
+    $tmp: if(length($tmp) > 1 and $recursive, reverse($tmp, $recursive), $tmp);
+
     $list: set-nth($list, $i, nth($list, -$i));
     $list: set-nth($list, -$i, $tmp);
   }
+
   @return $list;
 }
 
+/**
+ * Get the opposite direction to a given value.
+ * @param {string} $dir - The direction you want the opposite of.
+ * @returns {string} - The opposite direction to $dir.
+ * @warn if an incorrect string is provided.
+ */
 @function jeet-opposite-direction($direction) {
   @if $direction == "left" {
     @return right;
-  }
-  @else if $direction == "right" {
+  } @else if $direction == "right" {
     @return left;
-  }
-  @else if $direction == "top" {
+  } @else if $direction == "top" {
     @return bottom;
-  }
-  @else if $direction == "bottom" {
+  } @else if $direction == "bottom" {
     @return top;
-  }
-  @else if index("ltr" "LTR", $direction) {
+  } @else if index("ltr" "LTR", $direction) {
     @return rtl;
-  }
-  @else if index("rtl" "RTL", $direction) {
+  } @else if index("rtl" "RTL", $direction) {
     @return ltr;
-  }
-  @else {
+  } @else {
     @warn "`#{$direction}` is not a direction; please make sure your direction is all lowercase.";
     @return false;
   }
 }
 
-/* Grid system
- * ==================================== */
-
+/**
+ * Style an element as a column with a gutter.
+ * @param {number} [$ratios=1] - A width relative to its container as a fraction.
+ * @param {number} [$offset=0] - A offset specified as a fraction (see $ratios).
+ * @param {number} [$cycle=0] - Easily create an nth column grid where $cycle equals the number of columns.
+ * @param {number} [$uncycle=0] - Undo a previous cycle value to allow for a new one.
+ * @param {number} [$gutter=$jeet-gutter] - Specify the gutter width as a percentage of the containers width.
+ */
 @mixin column($ratios: 1, $offset: 0, $cycle: 0, $uncycle: 0, $gutter: $jeet-gutter) {
   $side: jeet-get-layout-direction();
   $opposite-side: jeet-opposite-direction($side);
@@ -107,32 +168,29 @@ $jeet-max-width: 1410px !default;
   $margin-last: 0;
   $margin-l: $margin-last;
   $margin-r: nth($column-widths, 2);
+
   @if $offset != 0 {
     @if $offset < 0 {
       $offset: $offset * -1;
       $offset: nth(jeet-get-column($offset, nth($column-widths, 2)), 1);
       $margin-last: $offset + nth($column-widths, 2) * 2;
       $margin-r: $margin-last;
-    }
-    @else {
+    } @else {
       $offset: nth(jeet-get-column($offset, nth($column-widths, 2)), 1);
       $margin-l: $offset + nth($column-widths, 2);
     }
   }
+
   @include cf;
-  display: inline;
+  float: $side;
   clear: none;
   text-align: inherit;
-  float: $side;
   width: nth($column-widths, 1) * 1%;
-  padding: {
-    left: 0;
-    right: 0;
-  };
   margin: {
     #{$side}: $margin-l * 1%;
     #{$opposite-side}: $margin-r * 1%;
   };
+
   @if $uncycle != 0 {
     &:nth-child(#{$uncycle}n) {
       margin-#{jeet-opposite-direction($side)}: $margin-r * 1%;
@@ -142,6 +200,7 @@ $jeet-max-width: 1410px !default;
       clear: none;
     }
   }
+
   @if $cycle != 0 {
     &:nth-child(#{$cycle}n) {
       margin-#{jeet-opposite-direction($side)}: $margin-last * 1%;
@@ -150,19 +209,63 @@ $jeet-max-width: 1410px !default;
     &:nth-child(#{$cycle}n + 1) {
       clear: both;
     }
-  }
-  @else {
+  } @else {
     &:last-child {
       margin-#{jeet-opposite-direction($side)}: $margin-last * 1%;
     }
   }
 }
 
+/**
+ * An alias for the column mixin.
+ * @param [$args...] - All arguments get passed through to column().
+ */
 @mixin col($args...) {
   @include column($args...);
 }
 
-@mixin span($ratio: 1, $offset: 0) {
+/**
+ * Get the width of a column and nothing else.
+ * @param {number} [$ratios=1] - A width relative to its container as a fraction.
+ * @param {number} [$gutter=$jeet-gutter] - Specify the gutter width as a percentage of the containers width.
+ */
+@function column-width($ratios: 1, $gutter: $jeet-gutter) {
+  @return unquote(nth(jeet-get-column($ratios, $gutter), 1) + '%');
+}
+
+/**
+ * Get the gutter size of a column and nothing else.
+ * @param {number} [ratios=1] - A width relative to its container as a fraction.
+ * @param {number} [gutter=jeet.gutter] - Specify the gutter width as a percentage of the containers width.
+ */
+@function column-gutter($ratios: 1, $gutter: $jeet-gutter) {
+  @return unquote(nth(jeet-get-column($ratios, $gutter), 2) + '%');
+}
+
+/**
+ * An alias for the column-width function.
+ * @param [$args...] - All arguments get passed through to column().
+ */
+@function cw($args...) {
+  @return column-width($args...);
+}
+
+/**
+ * An alias for the column-gutter function.
+ * @param [$args...] - All arguments get passed through to column().
+ */
+@function cg($args...) {
+  @return column-gutter($args...);
+}
+
+/**
+ * Style an element as a column without any gutters for a seamless row.
+ * @param {number} [$ratios=1] - A width relative to its container as a fraction.
+ * @param {number} [$offset=0] - A offset specified as a fraction (see $ratios).
+ * @param {number} [cycle=0] - Easily create an nth column grid where cycle equals the number of columns.
+ * @param {number} [uncycle=0] - Undo a previous cycle value to allow for a new one.
+ */
+@mixin span($ratio: 1, $offset: 0, $cycle: 0, $uncycle: 0) {
   $side: jeet-get-layout-direction();
   $opposite-side: jeet-opposite-direction($side);
   $span-width: jeet-get-span($ratio);
@@ -172,59 +275,103 @@ $jeet-max-width: 1410px !default;
     @if $offset < 0 {
       $offset: $offset * -1;
       $margin-r: jeet-get-span($offset);
-    }
-    @else {
+    } @else {
       $margin-l: jeet-get-span($offset);
     }
   }
+
   @include cf;
   float: $side;
   clear: none;
   text-align: inherit;
   width: $span-width * 1%;
-  padding: {
-    left: 0;
-    right: 0;
-  };
   margin: {
     #{$side}: $margin-l * 1%;
     #{$opposite-side}: $margin-r * 1%;
   };
+
+  @if $cycle != 0 {
+    &:nth-child(#{$cycle}n) {
+      float: $opposite-side;
+    }
+    &:nth-child(#{$cycle}n + 1) {
+      clear: both;
+    }
+  }
+
+  @if $uncycle != 0 {
+    &:nth-child(#{$uncycle}n) {
+      float: $side;
+    }
+    &:nth-child(#{$uncycle}n + 1) {
+      clear: none;
+    }
+  }
+
 }
 
+/**
+ * Reorder columns without altering the HTML.
+ * @param {number} [$ratios=0] - Specify how far along you want the element to move.
+ * @param {string} [$col-or-span=column] - Specify whether the element has a gutter or not.
+ * @param {number} [$gutter=$jeet-gutter] - Specify the gutter width as a percentage of the containers width.
+ */
 @mixin shift($ratios: 0, $col-or-span: column, $gutter: $jeet-gutter) {
-  $translate: "";
+  $translate: '';
   $side: jeet-get-layout-direction();
+
   @if $side == right {
     $ratios: jeet-replace-nth($ratios, 0, nth($ratios, 1) * -1);
   }
+
   @if index("column" "col" "c", $col-or-span) {
     $column-widths: jeet-get-column($ratios, $gutter);
     $translate: nth($column-widths, 1) + nth($column-widths, 2);
-  }
-  @else {
+  } @else {
     $translate: jeet-get-span($ratios);
   }
+
   position: relative;
   left: $translate * 1%;
 }
 
-@mixin unshift {
+/**
+ * Reset an element that has had shift() applied to it.
+ */
+@mixin unshift() {
   position: static;
   left: 0;
 }
 
-@mixin edit {
-  * {
-    background: rgba(0, 0, 0, 0.05);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#10000000, endColorstr=#10000000);
+/**
+ * View the grid and its layers for easy debugging.
+ * @param {string} [$color=black] - The background tint applied.
+ * @param {boolean} [$important=false] - Whether to apply the style as !important.
+ */
+@mixin edit($color: black, $important: false) {
+  @if $important {
+    * {
+      background: rgba($color, .05) !important;
+    }
+  } @else {
+    * {
+      background: rgba($color, .05);
+    }
   }
 }
 
-@mixin debug {
+/**
+ *  Alias for edit().
+ */
+@mixin debug() {
   @include edit;
 }
 
+/**
+ * Horizontally center an element.
+ * @param {number} [$max-width=1410px] - The max width the element can be.
+ * @param {number} [$pad=0] - Specify the element's left and right padding.
+ */
 @mixin center($max-width: $jeet-max-width, $pad: 0) {
   @include cf;
   width: auto;
@@ -232,16 +379,19 @@ $jeet-max-width: 1410px !default;
   float: none;
   display: block;
   margin: {
-    left: auto;
     right: auto;
+    left:  auto;
   };
   padding: {
-    left: $pad;
+    left:  $pad;
     right: $pad;
   };
 }
 
-@mixin uncenter {
+/**
+ * Uncenter an element.
+ */
+@mixin uncenter() {
   max-width: none;
   margin-right: 0;
   margin-left: 0;
@@ -249,91 +399,108 @@ $jeet-max-width: 1410px !default;
   padding-right: 0;
 }
 
+/**
+ * Stack an element so that nothing is either side of it.
+ * @param {number} [$pad=0] - Specify the element's left and right padding.
+ * @param {boolean/string} [$align=false] - Specify the text align for the element.
+ */
 @mixin stack($pad: 0, $align: false) {
   $side: jeet-get-layout-direction();
   $opposite-side: jeet-opposite-direction($side);
+
   display: block;
   clear: both;
   float: none;
   width: 100%;
   margin: {
-    left: auto;
+    left:  auto;
     right: auto;
   };
+
   &:first-child {
     margin-#{$side}: auto;
   }
+
   &:last-child {
     margin-#{$opposite-side}: auto;
   }
+
   @if $pad != 0 {
     padding: {
-      left: $pad;
+      left:  $pad;
       right: $pad;
-    };
+    }
   }
-  @if $align is not false {
+
+  @if ($align is not false) {
     @if index("center" "c", $align) {
       text-align: center;
-    }
-    @else if index("left" "l", $align) {
+    } @else if index("left" "l", $align) {
       text-align: left;
-    }
-    @else if index("right" "r", $align) {
+    } @else if index("right" "r", $align) {
       text-align: right;
     }
   }
 }
 
-@mixin unstack {
+/**
+ * Unstack an element.
+ */
+@mixin unstack() {
   $side: jeet-get-layout-direction();
   $opposite-side: jeet-opposite-direction($side);
+
   text-align: $side;
   display: inline;
   clear: none;
   width: auto;
   margin: {
-    left: 0;
+    left:  0;
     right: 0;
   };
+
   &:first-child {
     margin-#{$side}: 0;
   }
+
   &:last-child {
     margin-#{jeet-opposite-direction($side)}: 0;
   }
-  @if $jeet-layout-direction == RTL {
-    text-align: right;
-  }
-  @else {
-    text-align: left;
-  }
 }
 
+/**
+ * Center an element on either or both axes.
+ * @requires A parent container with relative positioning.
+ * @param {string} [$direction=both] - Specify which axes to center the element on.
+ */
 @mixin align($direction: both) {
   position: absolute;
   transform-style: preserve-3d;
+
   @if index("horizontal" "h", $direction) {
+    left: 50%;
     transform: translateX(-50%);
-    left: 50%;
-  }
-  @else if index("vertical" "v", $direction) {
+  } @else if index("vertical" "v", $direction) {
+    top: 50%;
     transform: translateY(-50%);
-    top: 50%;
-  }
-  @else {
-    transform: translate(-50%, -50%);
+  } @else {
     top: 50%;
     left: 50%;
+    transform: translate(-50%, -50%);
   }
 }
 
-@mixin cf {
+/**
+ * Apply a clearfix to an element.
+ */
+@mixin cf() {
   *zoom: 1;
+
   &:before, &:after {
-    content: "";
+    content: '';
     display: table;
   }
+
   &:after {
     clear: both;
   }
