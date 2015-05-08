@@ -48,7 +48,7 @@ module.exports = function(grunt) {
         sass: {
             dev: {
                 options: {
-                    style: 'expanded',
+                    outputStyle: 'expanded',
                     trace: true
                 },
                 files: {
@@ -57,7 +57,7 @@ module.exports = function(grunt) {
             },
             dist: {
                 options: {
-                    style: 'compressed'
+                    outputStyle: 'compressed'
                 },
                 files: {
                     '<%= pkg.directories.css %>/style__<%= pkg.version %>.css': '<%= pkg.directories.sass %>/style.scss'
