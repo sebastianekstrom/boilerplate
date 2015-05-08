@@ -361,8 +361,7 @@ html {
 
 body {
   font-size: 16px;
-  font-size: 1rem;
-  -webkit-font-smoothing: antialiased; }
+  font-size: 1rem; }
 
 ::-moz-selection {
   background: #e3e3e3;
@@ -421,7 +420,7 @@ body {
  * ==================================== */
 /* Paragraphs, links and combined
  * ==================================== */
-/* Separate elements
+/* Misc elements
  * ==================================== */
 /* Components
  * ==================================== */

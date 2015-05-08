@@ -11,8 +11,7 @@ html {
 }
 
 body {
-  @include font-size(16px);
-  -webkit-font-smoothing: antialiased;
+  @include font-size($font-size-base);
 }
 
 ::-moz-selection {
