@@ -9,7 +9,7 @@ Boilerplate for your projects made with [Grunt](http://gruntjs.com/), [Sass](htt
 * Includes [Normalize.css](http://necolas.github.com/normalize.css/) to make browser rendering more consistent
 * Includes [jQuery](https://jquery.com/) and [Modernizr](http://modernizr.com/)
 * CSS helper classes
-* A performance optimized print CSS
+* A performance optimized print CSS from [HTML5BP](https://github.com/h5bp/html5-boilerplate)
 * Commonly used CSS components such as the [Media Object](http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/) and the [Flag Object](http://goo.gl/YR3ffA)
 * A Gruntfile with super fast Javascript and Sass compilation/concatenation
 * Grid system from [Jeet.gs](http://jeet.gs/)
