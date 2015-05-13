@@ -851,6 +851,7 @@ var BP = (function (parent, $) {
         _bar: function() {
             console.log('Foobar!');
         }
+
     };
 
     var options = {

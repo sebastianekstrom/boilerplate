@@ -1,22 +1,57 @@
 /* ===========================================
- * Variables
+ * Site colors
+ * =========================================== */
+
+/* Brand colors
+ * ====================== */
+
+$color-brand-main: #e3e3e3;
+
+/* Base colors
+ * ====================== */
+
+$color-white: #ffffff;
+$color-black: #222222;
+
+/* Text colors
+ * ====================== */
+
+$color-text: #f22b11;
+$color-link: #ffffff;
+
+/* Button colors
+ * ====================== */
+
+$color-button-primary: #f22b11;
+$color-button-primary-hover: darken($color-button-primary, 5%);
+
+/* Third party brand colors
+ * ====================== */
+
+$color-facebook: #03539e;
+$color-twitter: #35ccff;
+$color-linkedin: #217bc1;
+
+
+/* ===========================================
+ * Font sizes and spacing/widths
  * =========================================== */
 
 /* Font familys
- * ==================================== */
+ * ====================== */
 
 $font-family-primary: "Helvetica Neue", "Helvetica", "Comic Sans", sans-serif;
 $font-family-secondary: Georgia, serif;
 
 /* Font sizes
- * ==================================== */
+ * ====================== */
 
 $font-size-small: 	14px;
 $font-size-base: 	16px;
 $font-size-large: 	24px;
 
 /* Spacings and widths
- * ==================================== */
+ * ====================== */
 
 $width-site: 1040px;
 $spacing-small: 0.5em;
@@ -24,6 +59,6 @@ $spacing-medium: 1em;
 $spacing-large: 1.5em;
 
 /* Transitions
- * ==================================== */
+ * ====================== */
 
 $transition-time--base: 0.5s;
