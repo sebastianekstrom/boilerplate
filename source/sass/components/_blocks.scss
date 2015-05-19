@@ -1,22 +1,20 @@
-/* ===========================================
- * Different type of blocks for easy re-useable components.
- * See demo for each section to see how they look
- *  =========================================== */
-
-/* The media block
+/**
+ * The Media Block
+ * -----------------------------------------------------------------------------
  * Courtesy of Nicole Sullivan. Demo: http://goo.gl/sCZKxk
- *
+ * 
  * Usage:
- * <div class="media-block">
- *   <a href="http://some-url-com" class="media-block__image-container">
- *     <img src="http://placehold.it/50x50" alt="">
- *   </a>
- *   <div class="media-block__body">
- *     <h2>I'm a heading inside a media block</h2>
- *     <p>And some text inside it as well</p>
- *   </div>
- * </div>
- * ====================== */
+ *
+ *      <div class="media-block">
+ *          <a href="http://some-url-com" class="media-block__image-container">
+ *              <img src="http://placehold.it/50x50" alt="">
+ *          </a>
+ *          <div class="media-block__body">
+ *              <h2>I'm a heading inside a media block</h2>
+ *              <p>And some text inside it as well</p>
+ *          </div>
+ *      </div>
+ */
 
 .media-block {
   margin: $spacing-medium;
@@ -35,19 +33,23 @@
   }
 }
 
-/* The flag block
+/**
+ * The Flag Block
+ * -----------------------------------------------------------------------------
  * Courtesy of Harry Roberts. Demo: http://goo.gl/YR3ffA, http://goo.gl/4B3uFm
- *
+ * 
  * Usage:
- * <div class="flag-block">
- *   <div class="flag__image">
- *     <img src="" alt="">
- *   </div>
- *   <div class="flag__body">
- *     <p></p>
- *   </div>
- * </div>  
- * ====================== */
+ *
+ *      <div class="flag-block">
+ *          <div class="flag__image">
+ *              <img src="image.jpg" alt="">
+ *          </div>
+ *          <div class="flag__body">
+ *              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+ *          </div>
+ *      </div>  
+ *
+ */
 
 .flag-block {
   display: table;

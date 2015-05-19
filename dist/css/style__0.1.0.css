@@ -3,10 +3,11 @@
  * =========================================== */
 /* Helpers
  * ==================================== */
-/* ===========================================
+/**
  * normalize.css v3.0.2 | MIT License | git.io/normalize
+ * -----------------------------------------------------------------------------
  * customized by sebastian ekstrom
- * =========================================== */
+ */
 html {
   font-family: sans-serif;
   /* 1 */
@@ -256,57 +257,100 @@ table {
 td, th {
   padding: 0; }
 
-/* ===========================================
- * Global classes
- * =========================================== */
-.disable-hover {
-  pointer-events: none; }
-
-.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus {
-  clip: auto;
-  height: auto;
-  margin: 0;
-  overflow: visible;
-  position: static;
-  width: auto; }
-
-.hidden {
-  display: none !important;
-  visibility: hidden; }
-
-/* ===========================================
- * Site colors
- * =========================================== */
+/**
+ * Colors
+ * -----------------------------------------------------------------------------
+ */
 /* Brand colors
- * ====================== */
+ * -------------------- */
 /* Base colors
- * ====================== */
+ * -------------------- */
 /* Text colors
- * ====================== */
+ * -------------------- */
 /* Button colors
- * ====================== */
+ * -------------------- */
 /* Third party brand colors
- * ====================== */
-/* ===========================================
+ * -------------------- */
+/**
  * Font sizes and spacing/widths
- * =========================================== */
+ * -----------------------------------------------------------------------------
+ */
 /* Font familys
- * ====================== */
+ * -------------------- */
 /* Font sizes
- * ====================== */
+ * -------------------- */
 /* Spacings and widths
- * ====================== */
+ * -------------------- */
 /* Transitions
- * ====================== */
-/* ===========================================
- * Variables, mixins, functions and extends
- * =========================================== */
-/* Media queries
- * ====================== */
-/* Mixins and functions
- * ====================== */
-/* Extends
- * ====================== */
+ * -------------------- */
+/**
+ * Media Queries
+ * -----------------------------------------------------------------------------
+ * A simple mixin for using media queries. Change the values to
+ * fit your sites needs.
+ * 
+ * Usage:
+ *
+ *      header {
+ *          @include bp-small() {
+ *              display: none;
+ *          }
+ *          @include bp-huge() {
+ *              display: block;
+ *          }
+ *      }
+ */
+/**
+ * Font size
+ * -----------------------------------------------------------------------------
+ * This mixin will take a pixel value and convert it into a rem value
+ * with a pixel fallback.
+ * 
+ * Usage:
+ *
+ *      p {
+ *          @include font-size(16px)
+ *      }
+ *
+ * Output:
+ *
+ *      p {
+ *          font-size: 16px;
+ *          font-size: 1rem;
+ *      }
+ */
+/**
+ * Vertical align
+ * -----------------------------------------------------------------------------
+ * Vertical align any element by using top: 50% with the combination of
+ * translateY(-50%). This will push the element 50% down from its parent,
+ * as well as pushing itself down 50% of its own height. This will cause
+ * the element to vertically align.
+ * 
+ * Usage:
+ *
+ *      .logotype {
+ *          @include vertical-align();
+ *      }
+ *      
+ *      .logotype--absolute {
+ *          @include vertical-align(absolute);
+ *      }
+ *
+ */
+/**
+ * Visually hide an element
+ * -----------------------------------------------------------------------------
+ * This placeholder selector will visually hide an element while
+ * still make it accessible for screenreaders.
+ * 
+ * Usage:
+ *
+ *      p {
+ *          @extend %visually-hidden;
+ *      }
+ *
+ */
 .visually-hidden {
   position: absolute !important;
   overflow: hidden;
@@ -316,32 +360,48 @@ td, th {
   border: 0;
   clip: rect(1px, 1px, 1px, 1px); }
 
-.media-block, .media-block__body {
+/**
+ * Clearfix
+ * -----------------------------------------------------------------------------
+ * A solid clearfix by Nicolas Gallagher.
+ * Source: (http://nicolasgallagher.com/micro-clearfix-hack/)
+ * 
+ * Usage:
+ *
+ *      p {
+ *          @extend %clearfix;
+ *      }
+ *
+ */
+.media-block, .media-block__body, .clearfix {
   *zoom: 1; }
-  .media-block:before, .media-block__body:before {
+  .media-block:before, .media-block__body:before, .clearfix:before {
     content: " ";
     display: table; }
-  .media-block:after, .media-block__body:after {
+  .media-block:after, .media-block__body:after, .clearfix:after {
     content: " ";
     display: table;
     clear: both; }
 
 /* Libs
  * ==================================== */
-/* ===========================================
- * Grid system from Jeet.gs, version 6.1.2
- *
+/**
+ * Grid from Jeet.gs, version 6.1.2
+ * -----------------------------------------------------------------------------
+ * More info on http://jeet.gs/ 
+ * 
  * Usage:
+ *      section {
+ *            @include center();
+ *       }
+ *      aside {
+ *           @include col(1 / 3);
+ *       }
+ *       article {
+ *           @include col(2 / 3);
+ *       }
  *
- *  section
- *    +center
- *  aside
- *    +col(1 / 3)
- *  article
- *    +col(2 / 3)
- *
- *  More info on http://jeet.gs/   
- * =========================================== */
+ */
 /**
  * Grid settings.
  * All values are defaults and can therefore be easily overidden.
@@ -464,9 +524,10 @@ td, th {
  */
 /* Foundation
  * ==================================== */
-/* ===========================================
- * General site styling
- * =========================================== */
+/**
+ * Base site styling
+ * -----------------------------------------------------------------------------
+ */
 *, *:before, *:after {
   box-sizing: inherit; }
 
@@ -485,10 +546,11 @@ body {
   background: #e3e3e3;
   color: #ffffff; }
 
-/* ===========================================
+/**
  * Base print styling
- * Taken from HTML5BP (http://html5boilerplate.com/)
- * =========================================== */
+ * -----------------------------------------------------------------------------
+ * Source: http://html5boilerplate.com/
+ */
 @media print {
   * {
     background: transparent !important;
@@ -526,56 +588,59 @@ body {
   h2, h3 {
     page-break-after: avoid; } }
 
-/* ===========================================
+/**
  * Site typography
- * =========================================== */
+ * -----------------------------------------------------------------------------
+ * A collection of all the typography styling for the site
+ */
 /* Headings
- * For OOCSS reasons, added .alpha, .beta, .gamma etc. classes
- * ====================== */
-/* Paragraphs, links and combined
- * ====================== */
-/* Misc elements
- * ====================== */
+ * -------------------- */
+/* Paragraphs and links
+ * -------------------- */
+/* MiSC elements
+ * -------------------- */
 /* Components
  * ==================================== */
-/* ===========================================
- * Button styling
- * =========================================== */
+/**
+ * Buttons
+ * -----------------------------------------------------------------------------
+ */
 .button {
   display: inline-block;
   vertical-align: middle;
   text-align: center;
   cursor: pointer; }
 
-/* ===========================================
- * List styling (ul, ol, dl)
- * =========================================== */
-/* ===========================================
- * Media elements
- * =========================================== */
+/**
+ * Lists
+ * -----------------------------------------------------------------------------
+ */
+/**
+ * Media elements (images, iframes, videos etc.)
+ * -----------------------------------------------------------------------------
+ */
 img {
   max-width: 100%;
   width: 100%;
   height: auto; }
 
-/* ===========================================
- * Different type of blocks for easy re-useable components.
- * See demo for each section to see how they look
- *  =========================================== */
-/* The media block
+/**
+ * The Media Block
+ * -----------------------------------------------------------------------------
  * Courtesy of Nicole Sullivan. Demo: http://goo.gl/sCZKxk
- *
+ * 
  * Usage:
- * <div class="media-block">
- *   <a href="http://some-url-com" class="media-block__image-container">
- *     <img src="http://placehold.it/50x50" alt="">
- *   </a>
- *   <div class="media-block__body">
- *     <h2>I'm a heading inside a media block</h2>
- *     <p>And some text inside it as well</p>
- *   </div>
- * </div>
- * ====================== */
+ *
+ *      <div class="media-block">
+ *          <a href="http://some-url-com" class="media-block__image-container">
+ *              <img src="http://placehold.it/50x50" alt="">
+ *          </a>
+ *          <div class="media-block__body">
+ *              <h2>I'm a heading inside a media block</h2>
+ *              <p>And some text inside it as well</p>
+ *          </div>
+ *      </div>
+ */
 .media-block {
   margin: 1em; }
 
@@ -585,19 +650,23 @@ img {
   .media-block__image-container img {
     display: block; }
 
-/* The flag block
+/**
+ * The Flag Block
+ * -----------------------------------------------------------------------------
  * Courtesy of Harry Roberts. Demo: http://goo.gl/YR3ffA, http://goo.gl/4B3uFm
- *
+ * 
  * Usage:
- * <div class="flag-block">
- *   <div class="flag__image">
- *     <img src="" alt="">
- *   </div>
- *   <div class="flag__body">
- *     <p></p>
- *   </div>
- * </div>  
- * ====================== */
+ *
+ *      <div class="flag-block">
+ *          <div class="flag__image">
+ *              <img src="image.jpg" alt="">
+ *          </div>
+ *          <div class="flag__body">
+ *              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+ *          </div>
+ *      </div>  
+ *
+ */
 .flag-block {
   display: table;
   width: 100%; }
@@ -622,9 +691,10 @@ img {
 .flag__body {
   width: 100%; }
 
-/* ===========================================
- * Form styling
- * =========================================== */
+/**
+ * Forms
+ * -----------------------------------------------------------------------------
+ */
 input[type=text], input[type=search], input[type=url], input[type=email], input[type=number], textarea {
   width: 100%; }
 
@@ -633,12 +703,15 @@ textarea {
 
 /* Layout
  * ==================================== */
-/* ===========================================
-   Header styling
-   =========================================== */
-/* ===========================================
-   Navigation styling
-   =========================================== */
-/* ===========================================
-   Footer styling
-   =========================================== */
+/**
+ * Header
+ * -----------------------------------------------------------------------------
+ */
+/**
+ * Navigation
+ * -----------------------------------------------------------------------------
+ */
+/**
+ * Footer
+ * -----------------------------------------------------------------------------
+ */

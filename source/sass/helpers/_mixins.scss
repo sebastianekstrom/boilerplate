@@ -1,9 +1,20 @@
-/* ===========================================
- * Variables, mixins, functions and extends
- * =========================================== */
-
-/* Media queries
- * ====================== */
+/**
+ * Media Queries
+ * -----------------------------------------------------------------------------
+ * A simple mixin for using media queries. Change the values to
+ * fit your sites needs.
+ * 
+ * Usage:
+ *
+ *      header {
+ *          @include bp-small() {
+ *              display: none;
+ *          }
+ *          @include bp-huge() {
+ *              display: block;
+ *          }
+ *      }
+ */
 
 @mixin bp-huge {
   @media only screen and (min-width: 65em) {
@@ -29,8 +40,25 @@
   }
 }
 
-/* Mixins and functions
- * ====================== */
+/**
+ * Font size
+ * -----------------------------------------------------------------------------
+ * This mixin will take a pixel value and convert it into a rem value
+ * with a pixel fallback.
+ * 
+ * Usage:
+ *
+ *      p {
+ *          @include font-size(16px)
+ *      }
+ *
+ * Output:
+ *
+ *      p {
+ *          font-size: 16px;
+ *          font-size: 1rem;
+ *      }
+ */
 
 @function calculateRem($size) {
   $remSize: $size / 16px;
@@ -42,15 +70,47 @@
   font-size: calculateRem($size);
 }
 
-/* Extends
- * ====================== */
+/**
+ * Vertical align
+ * -----------------------------------------------------------------------------
+ * Vertical align any element by using top: 50% with the combination of
+ * translateY(-50%). This will push the element 50% down from its parent,
+ * as well as pushing itself down 50% of its own height. This will cause
+ * the element to vertically align.
+ * 
+ * Usage:
+ *
+ *      .logotype {
+ *          @include vertical-align();
+ *      }
+ *      
+ *      .logotype--absolute {
+ *          @include vertical-align(absolute);
+ *      }
+ *
+ */
 
-%hide-text {
-  text-indent: -99999px;
-  direction: ltr;
+@mixin vertical-align($position: relative) {
+  position: $position;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
-%visually-hidden {
+/**
+ * Visually hide an element
+ * -----------------------------------------------------------------------------
+ * This placeholder selector will visually hide an element while
+ * still make it accessible for screenreaders.
+ * 
+ * Usage:
+ *
+ *      p {
+ *          @extend %visually-hidden;
+ *      }
+ *
+ */
+
+%visually-hidden, .visually-hidden {
   position: absolute !important;
   overflow: hidden;
   width: 1px;
@@ -60,7 +120,21 @@
   clip: rect(1px, 1px, 1px, 1px);
 }
 
-%clearfix {
+/**
+ * Clearfix
+ * -----------------------------------------------------------------------------
+ * A solid clearfix by Nicolas Gallagher.
+ * Source: (http://nicolasgallagher.com/micro-clearfix-hack/)
+ * 
+ * Usage:
+ *
+ *      p {
+ *          @extend %clearfix;
+ *      }
+ *
+ */
+
+%clearfix, .clearfix {
   *zoom: 1;
   &:before {
     content: " ";
@@ -71,10 +145,4 @@
     display: table;
     clear: both;
   }
-}
-
-%vertical-align {
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
 }
