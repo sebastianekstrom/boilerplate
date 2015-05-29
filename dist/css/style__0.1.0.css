@@ -383,6 +383,32 @@ td, th {
     display: table;
     clear: both; }
 
+/**
+ * Output media queries in the <body> element for JS-hooks
+ * -----------------------------------------------------------------------------
+ * More info here: http://zerosixthree.se/detecting-media-queries-with-javascript/
+ */
+/* Mixin that will print out the breakpoint names
+ * -------------------- */
+/* Print our breakpoint names as a pseudo element on the body element
+ * -------------------- */
+@media only screen and (min-width: 20em) {
+  body:after {
+    content: "bp-small";
+    display: none; } }
+@media only screen and (min-width: 40em) {
+  body:after {
+    content: "bp-medium";
+    display: none; } }
+@media only screen and (min-width: 60em) {
+  body:after {
+    content: "bp-large";
+    display: none; } }
+@media only screen and (min-width: 80em) {
+  body:after {
+    content: "bp-huge";
+    display: none; } }
+
 /* Libs
  * ==================================== */
 /**
