@@ -70,7 +70,7 @@ module.exports = function(grunt) {
         ==================================== */
         concat: {
             dist: {
-                src: ['<%= pkg.directories.js_dev %>/vendor/jquery-1.9.1.js','<%= pkg.directories.js_dev %>/vendor/modernizr.js','<%= pkg.directories.js_dev %>/**/*.js'],
+                src: ['<%= pkg.directories.js_dev %>/vendor/jquery-2.1.4.js','<%= pkg.directories.js_dev %>/vendor/modernizr.js','<%= pkg.directories.js_dev %>/**/*.js'],
                 dest: '<%= pkg.directories.js %>/script__<%= pkg.version %>.js'
             }
         },
@@ -151,8 +151,8 @@ module.exports = function(grunt) {
     ]);
 
     grunt.registerTask('build:js', [
-        'concat',
-        'jshint'
+        'jshint',
+        'concat'
     ]);
 
     grunt.registerTask('build:css', [
