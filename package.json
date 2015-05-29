@@ -22,6 +22,6 @@
     "css": "dist/css",
     "js": "dist/js",
     "js_dev": "source/js",
-    "js_partials": "source/js/partials"
+    "js_partials": "source/js/components"
   }
 }
