@@ -1,7 +1,7 @@
 {
   "name": "Z63Boilerplate",
   "preferGlobal": "false",
-  "version": "1.1.0",
+  "version": "1.0.0",
   "description": "Boilerplate of Z63",
   "devDependencies": {
     "browserify": "^10.2.3",
