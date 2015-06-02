@@ -5,15 +5,15 @@
 'use strict';
 
 var $ = require('jQuery'),
-    FooBar;
+    Example;
 
-FooBar = function(options) {
+Example = function(options) {
     this.$element = $(options.element);
 
     this.init();
 };
 
-FooBar.prototype.init = function() {
+Example.prototype.init = function() {
     if (this.$element.length === 0) {
         return;
     }
@@ -21,8 +21,8 @@ FooBar.prototype.init = function() {
     this.foo();
 };
 
-FooBar.prototype.foo = function() {
+Example.prototype.foo = function() {
     console.log('bar');
 };
 
-module.exports = FooBar;
+module.exports = Example;

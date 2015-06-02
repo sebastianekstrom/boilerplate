@@ -7,13 +7,13 @@ var $           = require('jQuery'),
 window.jQuery = window.$ = $;
 
 $(document).ready(function() {
-    var FooBar              = require('./components/foobar'),
+    var Example              = require('./components/example'),
         MediaQueryListener  = require('./components/mediaquerylistener'),
-        foobar,
+        example,
         mediaquerylistener;
 
     $('.element').each(function(i, elem) {
-        foobar = new FooBar({element: elem});
+        example = new Example({element: elem});
     });
 
     mediaquerylistener = new MediaQueryListener();

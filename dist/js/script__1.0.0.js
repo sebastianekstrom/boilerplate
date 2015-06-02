@@ -10359,15 +10359,15 @@ return jQuery;
 'use strict';
 
 var $ = require('jQuery'),
-    FooBar;
+    Example;
 
-FooBar = function(options) {
+Example = function(options) {
     this.$element = $(options.element);
 
     this.init();
 };
 
-FooBar.prototype.init = function() {
+Example.prototype.init = function() {
     if (this.$element.length === 0) {
         return;
     }
@@ -10375,11 +10375,11 @@ FooBar.prototype.init = function() {
     this.foo();
 };
 
-FooBar.prototype.foo = function() {
+Example.prototype.foo = function() {
     console.log('bar');
 };
 
-module.exports = FooBar;
+module.exports = Example;
 },{"jQuery":1}],3:[function(require,module,exports){
 // /**
 //  * Detect media queries and add a custom event listener for when the breakpoint changes
@@ -10448,19 +10448,19 @@ var $           = require('jQuery'),
 window.jQuery = window.$ = $;
 
 $(document).ready(function() {
-    var FooBar              = require('./components/foobar'),
+    var Example              = require('./components/example'),
         MediaQueryListener  = require('./components/mediaquerylistener'),
-        foobar,
+        example,
         mediaquerylistener;
 
     $('.element').each(function(i, elem) {
-        foobar = new FooBar({element: elem});
+        example = new Example({element: elem});
     });
 
     mediaquerylistener = new MediaQueryListener();
 });
 
-},{"./components/foobar":2,"./components/mediaquerylistener":3,"jQuery":1,"modernizr":5}],5:[function(require,module,exports){
+},{"./components/example":2,"./components/mediaquerylistener":3,"jQuery":1,"modernizr":5}],5:[function(require,module,exports){
 (function (global){
 ; var __browserify_shim_require__=require;(function browserifyShim(module, exports, require, define, browserify_shim__define__module__export__) {
 /* Modernizr 2.8.3 (Custom Build) | MIT & BSD
