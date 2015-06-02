@@ -1,22 +1,22 @@
 {
   "name": "Z63Boilerplate",
   "preferGlobal": "false",
-  "version": "0.1.0",
+  "version": "1.1.0",
   "description": "Boilerplate of Z63",
   "devDependencies": {
     "browserify": "^10.2.3",
     "browserify-shim": "^3.8.7",
-    "grunt": "~0.4.1",
+    "grunt": "^0.4.5",
     "grunt-autoprefixer": "^3.0.0",
     "grunt-browserify": "^3.7.0",
     "grunt-concurrent": "^1.0.0",
-    "grunt-contrib-connect": "^0.9.0",
+    "grunt-contrib-connect": "^0.10.1",
     "grunt-contrib-jshint": "^0.11.0",
-    "grunt-contrib-uglify": "^0.5.1",
+    "grunt-contrib-uglify": "^0.9.1",
     "grunt-contrib-watch": "^0.6.1",
-    "grunt-sass": "^0.18.0",
+    "grunt-sass": "^1.0.0",
     "jit-grunt": "^0.9.1",
-    "jshint-stylish": "^1.0.0",
+    "jshint-stylish": "^2.0.0",
     "time-grunt": "^1.0.0"
   },
   "dependencies": {
@@ -29,6 +29,8 @@
     "modernizr": "Modernizr"
   },
   "browserify": {
-    "transform": [ "browserify-shim" ]
+    "transform": [
+      "browserify-shim"
+    ]
   }
 }
