@@ -6,6 +6,7 @@ Boilerplate for your projects made with [Grunt](http://gruntjs.com/), [Sass](htt
 
 * No styling at all, this is a completely bare boilerplate containing only the essential things you need
 * A solid Sass and Javascript foundation
+* Includes [Browserify](http://browserify.org/) to handle Javascript dependencies
 * Includes [Normalize.css](http://necolas.github.com/normalize.css/) to make browser rendering more consistent
 * Includes [jQuery](https://jquery.com/) and [Modernizr](http://modernizr.com/)
 * CSS helper classes

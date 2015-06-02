@@ -11,6 +11,17 @@ module.exports = function(grunt) {
         pkg: grunt.file.readJSON('package.json'),
 
         /*
+            Project paths
+        ==================================== */
+        project: {
+            sass: "source/sass",
+            css: "dist/css",
+            js: "dist/js",
+            js_dev: "source/js",
+            js_partials: "source/js/components"
+        },
+
+        /*
             Concurrent
         ==================================== */
         concurrent: {
@@ -27,19 +38,23 @@ module.exports = function(grunt) {
         ==================================== */
         watch: {
             sass: {
-                files: ['<%= pkg.directories.sass %>/**/*.scss'],
+                files: ['<%= project.sass %>/**/*.scss'],
                 tasks: ['build:css'],
                 options: {
                     livereload: true,
                 }
             },
             concat: {
-                files: ['<%= pkg.directories.js_dev %>/**/*.js'],
+                files: ['<%= project.js_dev %>/**/*.js'],
                 tasks: ['build:js'],
                 options: {
                     livereload: true,
                 }
-            }
+            },
+            browserify: {
+                files: '<%= project.js_dev %>/**/*.js',
+                tasks: 'browserify'
+            },            
         },
 
         /*
@@ -52,7 +67,7 @@ module.exports = function(grunt) {
                     trace: true
                 },
                 files: {
-                    '<%= pkg.directories.css %>/style__<%= pkg.version %>.css': '<%= pkg.directories.sass %>/style.scss'
+                    '<%= project.css %>/style__<%= pkg.version %>.css': '<%= project.sass %>/style.scss'
                 }
             },
             dist: {
@@ -60,18 +75,18 @@ module.exports = function(grunt) {
                     outputStyle: 'compressed'
                 },
                 files: {
-                    '<%= pkg.directories.css %>/style__<%= pkg.version %>.css': '<%= pkg.directories.sass %>/style.scss'
+                    '<%= project.css %>/style__<%= pkg.version %>.css': '<%= project.sass %>/style.scss'
                 }
             }
         },
 
         /*
-            Javascript concatination
+            Browserify
         ==================================== */
-        concat: {
+        browserify: {
             dist: {
-                src: ['<%= pkg.directories.js_dev %>/vendor/jquery-2.1.4.js','<%= pkg.directories.js_dev %>/vendor/modernizr.js','<%= pkg.directories.js_dev %>/**/*.js'],
-                dest: '<%= pkg.directories.js %>/script__<%= pkg.version %>.js'
+                src: '<%= project.js_dev %>/main.js',
+                dest: '<%= project.js %>/script__<%= pkg.version %>.js'
             }
         },
 
@@ -80,7 +95,7 @@ module.exports = function(grunt) {
         ==================================== */
         jshint: {
             all: {
-                src: '<%= pkg.directories.js_partials %>/*.js'
+                src: '<%= project.js_partials %>/*.js'
             },
 
             options: {
@@ -103,7 +118,7 @@ module.exports = function(grunt) {
             },
             my_target: {
                 files: {
-                    '<%= pkg.directories.js %>/script__<%= pkg.version %>.js': ['<%= pkg.directories.js %>/script__<%= pkg.version %>.js']
+                    '<%= project.js %>/script__<%= pkg.version %>.js': ['<%= project.js %>/script__<%= pkg.version %>.js']
                 }
             }
         },
@@ -116,8 +131,8 @@ module.exports = function(grunt) {
                 options: {
                     browsers: ['last 3 versions', '> 1%', 'ie 8', 'ie 7']
                 },
-                src: '<%= pkg.directories.css %>/style__<%= pkg.version %>.css',
-                dest: '<%= pkg.directories.css %>/style__<%= pkg.version %>.css'
+                src: '<%= project.css %>/style__<%= pkg.version %>.css',
+                dest: '<%= project.css %>/style__<%= pkg.version %>.css'
             }
         },
 
@@ -152,7 +167,7 @@ module.exports = function(grunt) {
 
     grunt.registerTask('build:js', [
         'jshint',
-        'concat'
+        'browserify'
     ]);
 
     grunt.registerTask('build:css', [
@@ -163,7 +178,7 @@ module.exports = function(grunt) {
     grunt.registerTask('dist',[
         'sass:dist',
         'autoprefixer',        
-        'concat',
+        'browserify',
         'uglify'
     ]);
 
