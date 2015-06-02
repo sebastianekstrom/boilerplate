@@ -10,8 +10,7 @@ $(document).ready(function() {
     var FooBar              = require('./components/foobar'),
         MediaQueryListener  = require('./components/mediaquerylistener'),
         foobar,
-        mediaquerylistener,
-        replaceAllSvgsWithFallbackPngs;
+        mediaquerylistener;
 
     $('.element').each(function(i, elem) {
         foobar = new FooBar({element: elem});
