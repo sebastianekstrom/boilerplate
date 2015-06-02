@@ -18,14 +18,4 @@ $(document).ready(function() {
     });
 
     mediaquerylistener = new MediaQueryListener();
-
-    replaceAllSvgsWithFallbackPngs = function() {
-        $('img[src$=".svg"][data-fallback]').each(function() {
-            $(this).attr('src', $(this).data('fallback'));
-        });
-    };
-
-    if(!Modernizr.svg) {
-        replaceAllSvgsWithFallbackPngs();
-    }
 });

@@ -10459,16 +10459,6 @@ $(document).ready(function() {
     });
 
     mediaquerylistener = new MediaQueryListener();
-
-    replaceAllSvgsWithFallbackPngs = function() {
-        $('img[src$=".svg"][data-fallback]').each(function() {
-            $(this).attr('src', $(this).data('fallback'));
-        });
-    };
-
-    if(!Modernizr.svg) {
-        replaceAllSvgsWithFallbackPngs();
-    }
 });
 
 },{"./components/foobar":2,"./components/mediaquerylistener":3,"jQuery":1,"modernizr":5}],5:[function(require,module,exports){
