@@ -177,7 +177,8 @@ module.exports = function(grunt) {
 
     grunt.registerTask('dist',[
         'sass:dist',
-        'autoprefixer',        
+        'autoprefixer',
+        'jshint',
         'browserify',
         'uglify'
     ]);
