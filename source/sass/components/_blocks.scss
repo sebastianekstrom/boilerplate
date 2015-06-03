@@ -17,20 +17,20 @@
  */
 
 .media-block {
-  margin: $spacing-medium;
+    margin: $spacing-medium;
 }
 
 .media-block,
 .media-block__body {
-  @extend %clearfix;
+    @extend %clearfix;
 }
 
 .media-block__image-container {
-  float: left;
-  margin-right: $spacing-medium;
-  img {
-    display: block;
-  }
+    float: left;
+    margin-right: $spacing-medium;
+    img {
+        display: block;
+    }
 }
 
 /**
@@ -52,33 +52,33 @@
  */
 
 .flag-block {
-  display: table;
-  width: 100%;
+    display: table;
+    width: 100%;
 }
 
 .flag__image {
-  display: table-cell;
-  vertical-align: middle;
-  .flag--top & {
-    vertical-align: top;
-  }
-  .flag--bottom & {
-    vertical-align: bottom;
-  }
-}
-
-.flag__image {
-  padding-right: $spacing-medium;
-  > img {
-    display: block;
-    max-width: none;
-    .flag--rev & {
-      padding-right: 0;
-      padding-left: $spacing-medium;
+    display: table-cell;
+    vertical-align: middle;
+    .flag--top & {
+        vertical-align: top;
     }
-  }
+    .flag--bottom & {
+        vertical-align: bottom;
+    }
+}
+
+.flag__image {
+    padding-right: $spacing-medium;
+    > img {
+        display: block;
+        max-width: none;
+        .flag--rev & {
+            padding-right: 0;
+            padding-left: $spacing-medium;
+        }
+    }
 }
 
 .flag__body {
-  width: 100%;
+    width: 100%;
 }

@@ -8,10 +8,10 @@
  * -------------------- */
 
  @mixin define-breakpoint($name) {
-	&:after {
-		content: $name;
-		display: none;
-	}
+    &:after {
+        content: $name;
+        display: none;
+    }
 }
 
 /* Print our breakpoint names as a pseudo element on the body element

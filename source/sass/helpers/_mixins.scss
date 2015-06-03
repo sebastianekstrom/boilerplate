@@ -17,27 +17,27 @@
  */
 
 @mixin bp-small {
-  @media only screen and (min-width: 20em) {
-    @content;
-  }
+    @media only screen and (min-width: 20em) {
+        @content;
+    }
 }
 
 @mixin bp-medium {
-  @media only screen and (min-width: 40em) {
-    @content;
-  }
+    @media only screen and (min-width: 40em) {
+        @content;
+    }
 }
 
 @mixin bp-large {
-  @media only screen and (min-width: 60em) {
-    @content;
-  }
+    @media only screen and (min-width: 60em) {
+        @content;
+    }
 }
 
 @mixin bp-huge {
-  @media only screen and (min-width: 80em) {
-    @content;
-  }
+    @media only screen and (min-width: 80em) {
+        @content;
+    }
 }
 
 /**
@@ -61,13 +61,13 @@
  */
 
 @function calculateRem($size) {
-  $remSize: $size / 16px;
-  @return #{$remSize}rem;
+    $remSize: $size / 16px;
+    @return #{$remSize}rem;
 }
 
 @mixin font-size($size) {
-  font-size: $size;
-  font-size: calculateRem($size);
+    font-size: $size;
+    font-size: calculateRem($size);
 }
 
 /**
@@ -91,9 +91,9 @@
  */
 
 @mixin vertical-align($position: relative) {
-  position: $position;
-  top: 50%;
-  transform: translateY(-50%);
+    position: $position;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 /**
@@ -111,13 +111,13 @@
  */
 
 %visually-hidden, .visually-hidden {
-  position: absolute !important;
-  overflow: hidden;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  border: 0;
-  clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+    overflow: hidden;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
 }
 
 /**
@@ -135,14 +135,14 @@
  */
 
 %clearfix, .clearfix {
-  *zoom: 1;
-  &:before {
-    content: " ";
-    display: table;
-  }
-  &:after {
-    content: " ";
-    display: table;
-    clear: both;
-  }
+    *zoom: 1;
+    &:before {
+        content: " ";
+        display: table;
+    }
+    &:after {
+        content: " ";
+        display: table;
+        clear: both;
+    }
 }
