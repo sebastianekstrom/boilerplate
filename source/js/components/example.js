@@ -5,24 +5,24 @@
 'use strict';
 
 var $ = require('jQuery'),
-	Example;
+    Example;
 
 Example = function(options) {
-	this.$element = $(options.element);
+    this.$element = $(options.element);
 
-	this.init();
+    this.init();
 };
 
 Example.prototype.init = function() {
-	if (this.$element.length === 0) {
-		return;
-	}
+    if (this.$element.length === 0) {
+        return;
+    }
 
-	this.foo();
+    this.foo();
 };
 
 Example.prototype.foo = function() {
-	console.log('bar');
+    console.log('bar');
 };
 
 module.exports = Example;
