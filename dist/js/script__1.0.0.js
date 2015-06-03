@@ -10359,24 +10359,24 @@ return jQuery;
 'use strict';
 
 var $ = require('jQuery'),
-    Example;
+	Example;
 
 Example = function(options) {
-    this.$element = $(options.element);
+	this.$element = $(options.element);
 
-    this.init();
+	this.init();
 };
 
 Example.prototype.init = function() {
-    if (this.$element.length === 0) {
-        return;
-    }
+	if (this.$element.length === 0) {
+		return;
+	}
 
-    this.foo();
+	this.foo();
 };
 
 Example.prototype.foo = function() {
-    console.log('bar');
+	console.log('bar');
 };
 
 module.exports = Example;
@@ -10410,30 +10410,30 @@ MediaQueryListener = function() {
 	this.afterElement = window.getComputedStyle ? window.getComputedStyle(document.body, ':after') : false;
 	this.currentBreakpoint = '';
 	this.lastBreakpoint = '';
-    this.init();
+	this.init();
 };
 
 MediaQueryListener.prototype.init = function() {
-    var self = this;
-    
-    if(!self.afterElement) {
-        return;
-    }
+	var self = this;
 
-    self.resizeListener();
+	if(!self.afterElement) {
+		return;
+	}
+
+	self.resizeListener();
 };
 
 MediaQueryListener.prototype.resizeListener = function() {
 	var self = this;
 
 	$(window).on('resize orientationchange load', function() {
-	    // Regexp for removing quotes added by various browsers
-	    self.currentBreakpoint = self.afterElement.getPropertyValue('content').replace(/^["']|["']$/g, '');
-	    
-	    if (self.currentBreakpoint !== self.lastBreakpoint) {
-	        $(window).trigger('breakpoint-change', self.currentBreakpoint);
-	        self.lastBreakpoint = self.currentBreakpoint;
-	    }
+		// Regexp for removing quotes added by various browsers
+		self.currentBreakpoint = self.afterElement.getPropertyValue('content').replace(/^["']|["']$/g, '');
+
+		if (self.currentBreakpoint !== self.lastBreakpoint) {
+			$(window).trigger('breakpoint-change', self.currentBreakpoint);
+			self.lastBreakpoint = self.currentBreakpoint;
+		}
 	});
 };
 
@@ -10442,22 +10442,22 @@ module.exports = MediaQueryListener;
 /*global Modernizr */
 'use strict';
 
-var $           = require('jQuery'),
-    Modernizr   = require('modernizr');
+var $						= require('jQuery'),
+	Modernizr 				= require('modernizr');
 
 window.jQuery = window.$ = $;
 
 $(document).ready(function() {
-    var Example              = require('./components/example'),
-        MediaQueryListener  = require('./components/mediaquerylistener'),
-        example,
-        mediaquerylistener;
+	var Example 			= require('./components/example'),
+		MediaQueryListener 	= require('./components/mediaquerylistener'),
+		example,
+		mediaquerylistener;
 
-    $('.element').each(function(i, elem) {
-        example = new Example({element: elem});
-    });
+	$('.element').each(function(i, elem) {
+		example = new Example({element: elem});
+	});
 
-    mediaquerylistener = new MediaQueryListener();
+	mediaquerylistener = new MediaQueryListener();
 });
 
 },{"./components/example":2,"./components/mediaquerylistener":3,"jQuery":1,"modernizr":5}],5:[function(require,module,exports){

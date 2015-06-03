@@ -27,30 +27,30 @@ MediaQueryListener = function() {
 	this.afterElement = window.getComputedStyle ? window.getComputedStyle(document.body, ':after') : false;
 	this.currentBreakpoint = '';
 	this.lastBreakpoint = '';
-    this.init();
+	this.init();
 };
 
 MediaQueryListener.prototype.init = function() {
-    var self = this;
-    
-    if(!self.afterElement) {
-        return;
-    }
+	var self = this;
 
-    self.resizeListener();
+	if(!self.afterElement) {
+		return;
+	}
+
+	self.resizeListener();
 };
 
 MediaQueryListener.prototype.resizeListener = function() {
 	var self = this;
 
 	$(window).on('resize orientationchange load', function() {
-	    // Regexp for removing quotes added by various browsers
-	    self.currentBreakpoint = self.afterElement.getPropertyValue('content').replace(/^["']|["']$/g, '');
-	    
-	    if (self.currentBreakpoint !== self.lastBreakpoint) {
-	        $(window).trigger('breakpoint-change', self.currentBreakpoint);
-	        self.lastBreakpoint = self.currentBreakpoint;
-	    }
+		// Regexp for removing quotes added by various browsers
+		self.currentBreakpoint = self.afterElement.getPropertyValue('content').replace(/^["']|["']$/g, '');
+
+		if (self.currentBreakpoint !== self.lastBreakpoint) {
+			$(window).trigger('breakpoint-change', self.currentBreakpoint);
+			self.lastBreakpoint = self.currentBreakpoint;
+		}
 	});
 };
 
