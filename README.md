@@ -1,6 +1,9 @@
 # [Z63 Boilerplate](http://zerosixthree.se)
 
 [![Build Status](https://api.travis-ci.org/sebastianekstrom/boilerplate.svg)](https://travis-ci.org/sebastianekstrom/boilerplate)
+
+[![Dependency Status](https://david-dm.org/sebastianekstrom/boilerplate.svg)](https://travis-ci.org/sebastianekstrom/boilerplate)
+
 [![devDependency Status](https://david-dm.org/sebastianekstrom/boilerplate/dev-status.svg)](https://david-dm.org/sebastianekstrom/boilerplate#info=devDependencies)
 
 Boilerplate for your projects made with [Grunt](http://gruntjs.com/), [Sass](http://sass-lang.com/), [Jeet.gs](http://jeet.gs/) and [Browserify](http://browserify.org/).
