@@ -1,0 +1,26 @@
+{
+  "name": "Z63-Boilerplate",
+  "version": "1.7.0",
+  "homepage": "https://github.com/sebastianekstrom/boilerplate",
+  "authors": [
+    "Sebastian Ekström"
+  ],
+  "description": "A solid boilerplate to help you get up and running in a new project",
+  "main": "index.html",
+  "keywords": [
+    "boilerplate",
+    "browserify",
+    "HTML5",
+    "CSS",
+    "Jeet",
+    "Grunt"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
