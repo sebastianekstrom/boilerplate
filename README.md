@@ -41,7 +41,10 @@ cd path/to/project
 npm install
 ```
 
-Step 4. All done!
+Step 4. Run Grunt
+```shell
+grunt
+```
 
 ## Grunt tasks
 
