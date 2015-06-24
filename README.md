@@ -20,7 +20,7 @@ Boilerplate for your projects made with [Grunt](http://gruntjs.com/), [Sass](htt
 * Component based file and folder structure, to help create re-usable and maintainable CSS
 * A Sass library of commonly used mixins and placeholder selectors
 
-## Downloads
+## Download
 
 - [Download the latest release](https://github.com/sebastianekstrom/boilerplate/archive/v1.7.zip)
 - Clone the repo: `git clone https://github.com/sebastianekstrom/boilerplate.git`
