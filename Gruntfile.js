@@ -61,11 +61,11 @@ module.exports = function(grunt) {
             Sass
         ==================================== */
         sass: {
+            options: {
+                sourceMap: true,
+                trace: true
+            },
             dev: {
-                options: {
-                    outputStyle: 'expanded',
-                    trace: true
-                },
                 files: {
                     '<%= project.css %>/style__<%= pkg.version %>.css': '<%= project.sass %>/style.scss'
                 }
@@ -129,7 +129,8 @@ module.exports = function(grunt) {
         autoprefixer: {
             dist: {
                 options: {
-                    browsers: ['last 3 versions', '> 1%', 'ie 8', 'ie 7']
+                    browsers: ['last 3 versions', '> 1%', 'ie 8', 'ie 7'],
+                    map: true
                 },
                 src: '<%= project.css %>/style__<%= pkg.version %>.css',
                 dest: '<%= project.css %>/style__<%= pkg.version %>.css'
