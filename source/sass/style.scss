@@ -5,35 +5,35 @@
 /* Helpers
  * ==================================== */
 
-@import "helpers/reset";
-@import "helpers/variables";
-@import "helpers/mixins";
-@import "helpers/media-query-output";
+@import 'helpers/reset';
+@import 'helpers/variables';
+@import 'helpers/mixins';
+@import 'helpers/media-query-output';
 
 /* Libs
  * ==================================== */
 
-@import "libs/jeet.gs";
+@import 'libs/jeet.gs';
 
 /* Foundation
  * ==================================== */
 
-@import "foundation/base";
-@import "foundation/print";
-@import "foundation/typography";
+@import 'foundation/base';
+@import 'foundation/print';
+@import 'foundation/typography';
 
 /* Components
  * ==================================== */
 
-@import "components/buttons";
-@import "components/lists";
-@import "components/media";
-@import "components/blocks";
-@import "components/forms";
+@import 'components/buttons';
+@import 'components/lists';
+@import 'components/media';
+@import 'components/blocks';
+@import 'components/forms';
 
 /* Layout
  * ==================================== */
 
-@import "layout/header";
-@import "layout/navigation";
-@import "layout/footer";
+@import 'layout/header';
+@import 'layout/navigation';
+@import 'layout/footer';

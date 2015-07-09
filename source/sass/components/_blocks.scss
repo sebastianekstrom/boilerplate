@@ -28,6 +28,7 @@
 .media-block__image-container {
     float: left;
     margin-right: $spacing-medium;
+    
     img {
         display: block;
     }
@@ -59,9 +60,11 @@
 .flag__image {
     display: table-cell;
     vertical-align: middle;
+
     .flag--top & {
         vertical-align: top;
     }
+
     .flag--bottom & {
         vertical-align: bottom;
     }
@@ -69,9 +72,11 @@
 
 .flag__image {
     padding-right: $spacing-medium;
+
     > img {
         display: block;
         max-width: none;
+
         .flag--rev & {
             padding-right: 0;
             padding-left: $spacing-medium;

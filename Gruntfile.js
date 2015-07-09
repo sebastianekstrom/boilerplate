@@ -1,8 +1,9 @@
 module.exports = function(grunt) {
 
     require('time-grunt')(grunt);
-    require('jit-grunt')(grunt);
-
+    require('jit-grunt')(grunt, {
+        scsslint: 'grunt-scss-lint'
+    });
     /* ====================================
         Project configuration
     ==================================== */
@@ -58,7 +59,7 @@ module.exports = function(grunt) {
         },
 
         /*
-            Sass
+            SCSS
         ==================================== */
         sass: {
             options: {
@@ -80,6 +81,23 @@ module.exports = function(grunt) {
             }
         },
 
+        /*
+            SCSS Lint
+        ==================================== */
+        scsslint: {
+            options: {
+                config: '.scss-lint.yml',
+                exclude: [
+                    '<%= project.sass %>/libs/*.scss',
+                    '<%= project.sass %>/foundation/_print.scss',
+                    '<%= project.sass %>/helpers/_mixins.scss',
+                    '<%= project.sass %>/helpers/_reset.scss'
+                ]
+            },
+            all: [
+                '<%= project.sass %>/**/*.scss'
+            ]
+        },
         /*
             Browserify
         ==================================== */
@@ -174,6 +192,11 @@ module.exports = function(grunt) {
     grunt.registerTask('build:css', [
         'sass:dev',
         'autoprefixer'
+    ]);
+
+    grunt.registerTask('lint', [
+        'scsslint',
+        'jshint'
     ]);
 
     grunt.registerTask('dist',[

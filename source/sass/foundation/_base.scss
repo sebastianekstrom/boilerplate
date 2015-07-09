@@ -3,7 +3,9 @@
  * -----------------------------------------------------------------------------
  */
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
     box-sizing: inherit;
 }
 
@@ -13,11 +15,6 @@ html {
 
 body {
     @include font-size($font-size-base);
-}
-
-::-moz-selection {
-    background: $color-brand-main;
-    color: $color-white;
 }
 
 ::selection {

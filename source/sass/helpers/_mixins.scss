@@ -110,7 +110,8 @@
  *
  */
 
-%visually-hidden, .visually-hidden {
+%visually-hidden,
+.visually-hidden {
     position: absolute !important;
     overflow: hidden;
     width: 1px;
@@ -134,14 +135,17 @@
  *
  */
 
-%clearfix, .clearfix {
+%clearfix,
+.clearfix {
     *zoom: 1;
+
     &:before {
-        content: " ";
+        content: ' ';
         display: table;
     }
+
     &:after {
-        content: " ";
+        content: ' ';
         display: table;
         clear: both;
     }

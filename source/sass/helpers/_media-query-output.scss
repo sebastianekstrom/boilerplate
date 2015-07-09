@@ -7,7 +7,7 @@
  /* Mixin that will print out the breakpoint names
  * -------------------- */
 
- @mixin define-breakpoint($name) {
+@mixin define-breakpoint($name) {
     &:after {
         content: $name;
         display: none;
@@ -18,19 +18,19 @@
  * -------------------- */
 
 body {
-    @include bp-small(){
-        @include define-breakpoint("bp-small");
+    @include bp-small() {
+        @include define-breakpoint('bp-small');
     }  
 
-    @include bp-medium(){
-        @include define-breakpoint("bp-medium");
+    @include bp-medium() {
+        @include define-breakpoint('bp-medium');
     }
 
-    @include bp-large(){
-        @include define-breakpoint("bp-large");
+    @include bp-large() {
+        @include define-breakpoint('bp-large');
     }
 
-    @include bp-huge(){
-        @include define-breakpoint("bp-huge");
+    @include bp-huge() {
+        @include define-breakpoint('bp-huge');
     }
 }
