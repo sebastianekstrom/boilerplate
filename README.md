@@ -50,7 +50,7 @@ grunt
 
 There are two Grunt tasks; `grunt` and `grunt dist`.
 
-`grunt` is the default task and will concatenate all Javascript files in to `dist/js/script__0.1.0.js` as well as running JSHint on them. The task will also concatenate all Sass files into `dist/css/style__0.1.0.css` and also run autoprefixer on the outputted CSS file to ensure all the correct vendor prefixes are included. `grunt` also uses the `grunt watch` task, so it automatically runs every time a JS/Sass file changes.
+`grunt` is the default task and will concatenate all Javascript files in to `dist/js/script__1.7.0.js` as well as running JSHint on them. The task will also concatenate all Sass files into `dist/css/style__1.7.0.css` and also run autoprefixer on the outputted CSS file to ensure all the correct vendor prefixes are included. `grunt` also uses the `grunt watch` task, so it automatically runs every time a JS/Sass file changes.
 
 `grunt dist` is the production task and will do everything the default task does, as well as compressing the JS and CSS files.
 
