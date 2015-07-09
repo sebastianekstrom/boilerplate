@@ -43,7 +43,7 @@
 /**
  * Font size
  * -----------------------------------------------------------------------------
- * This mixin will take a pixel value and convert it into a rem value
+ * This mixin will take a pixel value and convert it into a em value
  * with a pixel fallback.
  * 
  * Usage:
@@ -56,7 +56,7 @@
  *
  *      p {
  *          font-size: 16px;
- *          font-size: 1rem;
+ *          font-size: 1em;
  *      }
  */
 
