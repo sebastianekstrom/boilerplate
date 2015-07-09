@@ -34,7 +34,7 @@
     }
 }
 
-@mixin bp-huge {
+@mixin bp-xl {
     @media only screen and (min-width: 80em) {
         @content;
     }

@@ -30,7 +30,7 @@ body {
         @include define-breakpoint('bp-large');
     }
 
-    @include bp-huge() {
-        @include define-breakpoint('bp-huge');
+    @include bp-xl() {
+        @include define-breakpoint('bp-xl');
     }
 }
