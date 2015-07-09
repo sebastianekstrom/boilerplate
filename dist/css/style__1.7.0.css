@@ -573,7 +573,7 @@ html {
 
 body {
   font-size: 16px;
-  font-size: 1rem; }
+  font-size: 1em; }
 
 ::-moz-selection {
   background: #e3e3e3;

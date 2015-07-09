@@ -60,14 +60,13 @@
  *      }
  */
 
-@function calculateRem($size) {
-    $remSize: $size / 16px;
-    @return #{$remSize}rem;
+@function calculateEm($size, $context: 16px) {
+    @return ($size / $context) * 1em;
 }
 
 @mixin font-size($size) {
     font-size: $size;
-    font-size: calculateRem($size);
+    font-size: calculateEm($size);
 }
 
 /**
