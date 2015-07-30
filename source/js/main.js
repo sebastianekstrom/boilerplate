@@ -1,7 +1,7 @@
 /*global Modernizr */
 'use strict';
 
-var $                           = require('jQuery');
+var $ = require('jQuery');
 
 window.jQuery = window.$ = $;
 
