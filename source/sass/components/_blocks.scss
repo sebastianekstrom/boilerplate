@@ -17,7 +17,7 @@
  */
 
 .media-block {
-    margin: $spacing-medium;
+    margin: $spacing--medium;
 }
 
 .media-block,
@@ -27,7 +27,7 @@
 
 .media-block__image-container {
     float: left;
-    margin-right: $spacing-medium;
+    margin-right: $spacing--medium;
     
     img {
         display: block;
@@ -71,7 +71,7 @@
 }
 
 .flag__image {
-    padding-right: $spacing-medium;
+    padding-right: $spacing--medium;
 
     > img {
         display: block;
@@ -79,7 +79,7 @@
 
         .flag--rev & {
             padding-right: 0;
-            padding-left: $spacing-medium;
+            padding-left: $spacing--medium;
         }
     }
 }

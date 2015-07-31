@@ -14,10 +14,10 @@ html {
 }
 
 body {
-    @include font-size($font-size-base);
+    @include font-size($font-size--base);
 }
 
 ::selection {
-    background: $color-brand-main;
-    color: $color-white;
+    background: $color--main;
+    color: $color--white;
 }
