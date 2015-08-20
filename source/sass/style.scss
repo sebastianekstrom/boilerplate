@@ -1,9 +1,10 @@
-/* ===========================================
- * Import of all Sass files
- * =========================================== */
+/**
+ * Import of Sass files
+ * -----------------------------------------------------------------------------
+ */
 
 /* Helpers
- * ==================================== */
+ * -------------------- */
 
 @import 'helpers/reset';
 @import 'helpers/variables';
@@ -11,28 +12,27 @@
 @import 'helpers/media-query-output';
 
 /* Libs
- * ==================================== */
+ * -------------------- */
 
 @import 'libs/jeet.gs';
 
 /* Foundation
- * ==================================== */
+ * -------------------- */
 
 @import 'foundation/base';
 @import 'foundation/print';
 @import 'foundation/typography';
 
 /* Components
- * ==================================== */
+ * -------------------- */
 
 @import 'components/buttons';
 @import 'components/lists';
-@import 'components/media';
 @import 'components/blocks';
 @import 'components/forms';
 
 /* Layout
- * ==================================== */
+ * -------------------- */
 
 @import 'layout/header';
 @import 'layout/navigation';
