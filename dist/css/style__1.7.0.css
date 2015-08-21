@@ -674,7 +674,8 @@ html {
 
 body {
   font-size: 16px;
-  font-size: 1em; }
+  font-size: 1em;
+  font-family: "Helvetica Neue", "Helvetica", "Comic Sans", sans-serif; }
 
 ::-moz-selection {
   background: #e3e3e3;
