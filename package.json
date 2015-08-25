@@ -3,6 +3,12 @@
   "preferGlobal": "false",
   "version": "1.7.0",
   "description": "Boilerplate of Z63",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sebastianekstrom/boilerplate"
+  },
+  "license": "MIT",
+  "author": "Sebastian Ekström <seb.ekstrom@gmail.com>",
   "devDependencies": {
     "browserify": "^11.0.1",
     "browserify-shim": "^3.8.7",
