@@ -20,9 +20,10 @@ gulp.task('default',['browserify','sass'], function(){
     connect.server();
     gulp.watch('source/sass/**/*.scss', ['sass']);
     gulp.watch(['source/js/components/*.js', 'source/js/main.js'], ['lint-js','browserify']);
+    gulp.watch(['index.html'], ['html']);
 });
 
-gulp.task('dist',['minify-js','minify-css']);
+gulp.task('dist',['lint-all','minify-js','minify-css']);
 
 gulp.task('sass', function () {
     gulp.src('source/sass/**/*.scss')
@@ -30,18 +31,27 @@ gulp.task('sass', function () {
         .pipe(sass().on('error', sass.logError))
         .pipe(autoprefixer())
         .pipe(sourcemaps.write('./'))
-        .pipe(gulp.dest('./dist/css'));
+        .pipe(gulp.dest('./dist/css'))
+        .pipe(connect.reload());
 });
 
 gulp.task('browserify', function() {
     return browserify('source/js/main.js')
         .bundle()
         .pipe(source('script.js'))
-        .pipe(gulp.dest('./dist/js/'));
+        .pipe(gulp.dest('./dist/js/'))
+        .pipe(connect.reload());
+});
+
+gulp.task('html', function () {
+  gulp.src('index.html')
+    .pipe(connect.reload());
 });
 
 gulp.task('connect', function() {
-  connect.server();
+  connect.server({
+    livereload: true
+  });
 });
 
 gulp.task('minify-js', function() {
