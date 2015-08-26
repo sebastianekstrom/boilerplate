@@ -55,7 +55,7 @@ module.exports = function(grunt) {
             browserify: {
                 files: '<%= project.js_dev %>/**/*.js',
                 tasks: 'browserify'
-            },            
+            },
         },
 
         /*
@@ -102,6 +102,11 @@ module.exports = function(grunt) {
             Browserify
         ==================================== */
         browserify: {
+            options: {
+                browserifyOptions: {
+                    debug: true
+                }
+            },
             dist: {
                 src: '<%= project.js_dev %>/main.js',
                 dest: '<%= project.js %>/script__<%= pkg.version %>.js'
@@ -167,7 +172,7 @@ module.exports = function(grunt) {
                     open: 'http://localhost:8080/'
                 }
             }
-        }        
+        }
     });
 
     /* ====================================
