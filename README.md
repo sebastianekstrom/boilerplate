@@ -3,7 +3,7 @@
 [![Build Status](https://api.travis-ci.org/sebastianekstrom/boilerplate.svg)](https://travis-ci.org/sebastianekstrom/boilerplate)
 [![devDependency Status](https://david-dm.org/sebastianekstrom/boilerplate/dev-status.svg)](https://david-dm.org/sebastianekstrom/boilerplate#info=devDependencies)
 
-Boilerplate for your projects made with [Grunt](http://gruntjs.com/), [Sass](http://sass-lang.com/), [Jeet.gs](http://jeet.gs/) and [Browserify](http://browserify.org/).
+Boilerplate for your projects made with [Gulp](http://gulpjs.com//), [Sass](http://sass-lang.com/), [Jeet.gs](http://jeet.gs/) and [Browserify](http://browserify.org/).
 
 ## Features
 
@@ -30,9 +30,9 @@ Boilerplate for your projects made with [Grunt](http://gruntjs.com/), [Sass](htt
 
 Step 1. Install [NodeJS](http://nodejs.org/download/)
 
-Step 2. Install [Grunt CLI](http://gruntjs.com/getting-started)
+Step 2. Install [Gulp](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md)
 ```shell
-npm install -g grunt-cli
+npm install --global gulp
 ```
 
 Step 3. Install the npm dependencies
@@ -41,18 +41,18 @@ cd path/to/project
 npm install
 ```
 
-Step 4. Run Grunt's default task
+Step 4. Run Gulp's default task
 ```shell
-grunt
+gulp
 ```
 
 ## Grunt tasks
 
-There are two Grunt tasks; `grunt` and `grunt dist`.
+There are two Grunt tasks; `gulp` and `gulp dist`.
 
-`grunt` is the default task and will concatenate all Javascript files in to `dist/js/script__1.7.0.js` as well as running JSHint on them. The task will also concatenate all Sass files into `dist/css/style__1.7.0.css` and also run autoprefixer on the outputted CSS file to ensure all the correct vendor prefixes are included. `grunt` also uses the `grunt watch` task, so it automatically runs every time a JS/SCSS file changes.
+`gulp` is the default task and will concatenate all Javascript files in to `dist/js/script__1.7.0.js` as well as running JSHint on them. The task will also concatenate all Sass files into `dist/css/style__1.7.0.css` and also run autoprefixer on the outputted CSS file to ensure all the correct vendor prefixes are included. `gulp` also uses the `gulp watch` task, so it automatically runs every time a JS/SCSS file changes.
 
-`grunt dist` is the production task and will do everything the default task does, as well as compressing the JS and CSS files.
+`gulp dist` is the production task and will do everything the default task does, as well as compressing the JS and CSS files.
 
 ## License
 
