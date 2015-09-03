@@ -18,8 +18,6 @@ var uglify = require('gulp-uglify');
 var browserify = require('browserify');
 var source = require('vinyl-source-stream');
 var stylish = require('jshint-stylish');
-var packageJSON  = require('./package');
-var jshintConfig = packageJSON.jshintConfig;
 var minifyCss = require('gulp-minify-css');
 
 /* Sass compilation and autoprefixing
@@ -69,16 +67,15 @@ gulp.task('minify-css', function() {
 
 /* Linting
  * -------------------- */
-
 gulp.task('lint-js', function() {
     gulp.src(['source/js/components/*.js'])
-        .pipe(jshint(jshintConfig))
+        .pipe(jshint('.jshintrc'))
         .pipe(jshint.reporter(stylish))
 });
 
 gulp.task('lint-all', function() {
     gulp.src(['source/js/components/*.js'])
-        .pipe(jshint(jshintConfig))
+        .pipe(jshint('.jshintrc'))
         .pipe(jshint.reporter(stylish))
     gulp.src(['source/sass/**/*.scss', '!source/sass/libs/*.scss', '!source/sass/helpers/_reset.scss', , '!source/sass/helpers/_mixins.scss'])
         .pipe(scsslint({'config': '.scss-lint.yml'}));
@@ -91,15 +88,10 @@ gulp.task('lint-scss', function() {
 
 /* Running tasks
  * -------------------- */
-
 gulp.task('default',['browserify','sass', 'connect'], function(){
     gulp.watch('source/sass/**/*.scss', ['sass']);
     gulp.watch(['source/js/components/*.js', 'source/js/main.js'], ['lint-js','browserify']);
-    gulp.watch('index.html', function(){
-        connect.reload();
-    });
 });
 
 gulp.task('lint', ['lint-all']);
-
 gulp.task('dist',['minify-js','minify-css']);

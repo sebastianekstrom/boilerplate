@@ -39,43 +39,5 @@
     "transform": [
       "browserify-shim"
     ]
-  },
-  "jshintConfig": {
-    "passfail": false,
-    "maxerr": 100,
-    "browser": true,
-    "jquery": false,
-    "debug": false,
-    "devel": true,
-    "es3": true,
-    "strict": false,
-    "globalstrict": true,
-    "asi": false,
-    "boss": false,
-    "curly": true,
-    "eqeqeq": true,
-    "eqnull": false,
-    "evil": false,
-    "expr": false,
-    "forin": false,
-    "immed": true,
-    "latedef": true,
-    "loopfunc": true,
-    "shadow": false,
-    "supernew": false,
-    "undef": true,
-    "unused": true,
-    "nomen": true,
-    "onevar": false,
-    "plusplus": false,
-    "sub": true,
-    "trailing": true,
-    "white": false,
-    "indent": 4,
-    "quotmark": "single",
-    "globals": {
-      "require": true,
-      "module": true
-    }
   }
 }
