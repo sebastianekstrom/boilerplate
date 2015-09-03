@@ -18,7 +18,6 @@
 //  *    });
 //  *
 //  */
-'use strict';
 
 var $ = require('jQuery'),
     MediaQueryListener;

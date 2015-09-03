@@ -9239,6 +9239,7 @@ Example.prototype.foo = function() {
 };
 
 module.exports = Example;
+
 },{"jQuery":1}],3:[function(require,module,exports){
 // /**
 //  * Detect media queries and add a custom event listener for when the breakpoint changes

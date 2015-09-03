@@ -9215,7 +9215,6 @@ return jQuery;
 //  * An example file of the JS structure
 //  * -----------------------------------------------------------------------------
 //  */
-'use strict';
 
 var $ = require('jQuery'),
     Example;
@@ -9261,7 +9260,6 @@ module.exports = Example;
 //  *    });
 //  *
 //  */
-'use strict';
 
 var $ = require('jQuery'),
     MediaQueryListener;
@@ -9298,6 +9296,7 @@ MediaQueryListener.prototype.resizeListener = function() {
 };
 
 module.exports = MediaQueryListener;
+
 },{"jQuery":1}],4:[function(require,module,exports){
 /*global Modernizr */
 'use strict';

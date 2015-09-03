@@ -2,7 +2,6 @@
 //  * An example file of the JS structure
 //  * -----------------------------------------------------------------------------
 //  */
-'use strict';
 
 var $ = require('jQuery'),
     Example;

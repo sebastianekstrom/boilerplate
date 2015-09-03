@@ -14,7 +14,6 @@ var jshint = require('gulp-jshint');
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 var scsslint = require('gulp-scss-lint');
-var sourcemaps = require('gulp-sourcemaps');
 var uglify = require('gulp-uglify');
 var browserify = require('browserify');
 var source = require('vinyl-source-stream');
@@ -22,7 +21,6 @@ var stylish = require('jshint-stylish');
 var packageJSON  = require('./package');
 var jshintConfig = packageJSON.jshintConfig;
 var minifyCss = require('gulp-minify-css');
-var livereload = require('gulp-livereload');
 
 /* Sass compilation and autoprefixing
  * -------------------- */
@@ -33,7 +31,7 @@ gulp.task('sass', function () {
         .pipe(autoprefixer())
         .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest('./dist/css'))
-        .pipe(livereload());
+        .pipe(connect.reload());
 });
 
 /* Browserify
@@ -43,16 +41,19 @@ gulp.task('browserify', function() {
         .bundle()
         .pipe(source('script.js'))
         .pipe(gulp.dest('./dist/js/'))
-        .pipe(livereload());
+        .pipe(connect.reload());
 });
 
 /* Local server
  * -------------------- */
 gulp.task('connect', function() {
-  connect.server();
+    connect.server({
+        livereload: true,
+        port: 8080
+    });
 });
 
-/* JS Minification
+/* Minification
  * -------------------- */
 gulp.task('minify-js', function() {
     return gulp.src('dist/js/script.js')
@@ -66,36 +67,37 @@ gulp.task('minify-css', function() {
     .pipe(gulp.dest('./dist/css'));
 });
 
+/* Linting
+ * -------------------- */
+
 gulp.task('lint-js', function() {
-    gulp.src('source/js/components/*.js')
+    gulp.src(['source/js/components/*.js'])
         .pipe(jshint(jshintConfig))
         .pipe(jshint.reporter(stylish))
-        .pipe(jshint.reporter('fail'));
 });
 
 gulp.task('lint-all', function() {
-    gulp.src('source/js/components/*.js')
+    gulp.src(['source/js/components/*.js'])
         .pipe(jshint(jshintConfig))
         .pipe(jshint.reporter(stylish))
-        .pipe(jshint.reporter('fail'));
     gulp.src(['source/sass/**/*.scss', '!source/sass/libs/*.scss', '!source/sass/helpers/_reset.scss', , '!source/sass/helpers/_mixins.scss'])
         .pipe(scsslint({'config': '.scss-lint.yml'}));
 });
 
 gulp.task('lint-scss', function() {
     gulp.src(['source/sass/**/*.scss', '!source/sass/libs/*.scss', '!source/sass/helpers/_reset.scss', , '!source/sass/helpers/_mixins.scss'])
-        .pipe(scsslint({'config': '.scss-lint.yml'}));
+        .pipe(scsslint({'config': '.scss-lint.json'}));
 });
 
 /* Running tasks
  * -------------------- */
 
-gulp.task('default',['browserify','sass'], function(){
-    connect.server();
-    livereload.listen();
+gulp.task('default',['browserify','sass', 'connect'], function(){
     gulp.watch('source/sass/**/*.scss', ['sass']);
     gulp.watch(['source/js/components/*.js', 'source/js/main.js'], ['lint-js','browserify']);
-    gulp.watch(['index.html'], ['html']);
+    gulp.watch('index.html', function(){
+        connect.reload();
+    });
 });
 
 gulp.task('lint', ['lint-all']);
