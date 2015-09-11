@@ -15,7 +15,7 @@ Boilerplate for your projects made with [Gulp](http://gulpjs.com//), [Sass](http
 * CSS helper classes
 * A performance optimized print CSS from [HTML5BP](https://github.com/h5bp/html5-boilerplate)
 * Commonly used CSS components such as the [Media Object](http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/) and the [Flag Object](http://goo.gl/YR3ffA)
-* A Gruntfile with super fast Javascript and Sass compilation/concatenation
+* A Gulpfile with all your basic needs (Sass/Browserify, local server, minification, linting)
 * Grid system from [Jeet.gs](http://jeet.gs/)
 * Component based file and folder structure, to help create re-usable and maintainable CSS
 * A Sass library of commonly used mixins and placeholder selectors
@@ -46,9 +46,9 @@ Step 4. Run Gulp's default task
 gulp
 ```
 
-## Grunt tasks
+## Gulp tasks
 
-There are two Grunt tasks; `gulp` and `gulp dist`.
+There are two Gulp tasks; `gulp` and `gulp dist`.
 
 `gulp` is the default task and will concatenate all Javascript files in to `dist/js/script__1.7.0.js` as well as running JSHint on them. The task will also concatenate all Sass files into `dist/css/style__1.7.0.css` and also run autoprefixer on the outputted CSS file to ensure all the correct vendor prefixes are included. `gulp` also uses the `gulp watch` task, so it automatically runs every time a JS/SCSS file changes.
 

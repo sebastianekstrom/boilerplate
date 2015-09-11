@@ -491,10 +491,10 @@ th {
     clear: both; }
 
 /**
- * Output media queries in the <body> element for JS-hooks
- * -----------------------------------------------------------------------------
- * More info here: http://zerosixthree.se/detecting-media-queries-with-javascript/
- */
+* Output media queries in the <body> element for JS-hooks
+* -----------------------------------------------------------------------------
+* More info here: http://zerosixthree.se/detecting-media-queries-with-javascript/
+*/
 /* Mixin that will print out the breakpoint names
  * -------------------- */
 /* Print our breakpoint names as a pseudo element on the body element
@@ -524,8 +524,8 @@ th {
 /**
  * Grid from Jeet.gs, version 6.1.2
  * -----------------------------------------------------------------------------
- * More info on http://jeet.gs/ 
- * 
+ * More info on http://jeet.gs/
+ *
  * Usage:
  *      section {
  *            @include center();
@@ -752,7 +752,6 @@ body {
  */
 .button {
   display: inline-block;
-  vertical-align: middle;
   cursor: pointer; }
 
 /**

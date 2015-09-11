@@ -5,6 +5,8 @@
 
 'use strict';
 
+//var test = ['!source/sass/libs/*.scss','!source/sass/helpers/_reset.scss','!source/sass/helpers/_mixins.scss','!source/sass/foundation/_print.scss'];
+
 /* Plugins
  * -------------------- */
 var gulp = require('gulp');
@@ -13,32 +15,48 @@ var connect = require('gulp-connect');
 var jshint = require('gulp-jshint');
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
-var scsslint = require('gulp-scss-lint');
+var sassLint = require('gulp-sass-lint');
 var uglify = require('gulp-uglify');
 var browserify = require('browserify');
 var source = require('vinyl-source-stream');
 var stylish = require('jshint-stylish');
 var minifyCss = require('gulp-minify-css');
 
+/* Paths
+ * -------------------- */
+var project = {
+    sassAllFiles: 'source/sass/**/*.scss',
+    sassIgnoreFiles: [
+        '!source/sass/libs/*.scss',
+        '!source/sass/helpers/_reset.scss',
+        '!source/sass/helpers/_mixins.scss',
+        '!source/sass/foundation/_print.scss'
+    ],
+    jsMain: 'source/js/main.js',
+    jsComponents: 'source/js/components/*.js',
+    jsDist: './dist/js/',
+    cssDist: './dist/css'
+};
+
 /* Sass compilation and autoprefixing
  * -------------------- */
 gulp.task('sass', function () {
-    gulp.src('source/sass/**/*.scss')
+    gulp.src(project.sassAllFiles)
         .pipe(sourcemaps.init())
         .pipe(sass().on('error', sass.logError))
         .pipe(autoprefixer())
         .pipe(sourcemaps.write('./'))
-        .pipe(gulp.dest('./dist/css'))
+        .pipe(gulp.dest(project.cssDist))
         .pipe(connect.reload());
 });
 
 /* Browserify
  * -------------------- */
 gulp.task('browserify', function() {
-    return browserify('source/js/main.js')
+    return browserify(project.jsMain)
         .bundle()
         .pipe(source('script.js'))
-        .pipe(gulp.dest('./dist/js/'))
+        .pipe(gulp.dest(project.jsDist))
         .pipe(connect.reload());
 });
 
@@ -56,41 +74,46 @@ gulp.task('connect', function() {
 gulp.task('minify-js', function() {
     return gulp.src('dist/js/script.js')
         .pipe(uglify())
-        .pipe(gulp.dest('./dist/js'));
+        .pipe(gulp.dest(project.jsDist));
 });
 
 gulp.task('minify-css', function() {
   return gulp.src('dist/css/style.css')
     .pipe(minifyCss())
-    .pipe(gulp.dest('./dist/css'));
+    .pipe(gulp.dest(project.cssDist));
 });
 
 /* Linting
  * -------------------- */
 gulp.task('lint-js', function() {
-    gulp.src(['source/js/components/*.js'])
+    gulp.src([project.jsComponents])
         .pipe(jshint('.jshintrc'))
         .pipe(jshint.reporter(stylish))
-});
-
-gulp.task('lint-all', function() {
-    gulp.src(['source/js/components/*.js'])
-        .pipe(jshint('.jshintrc'))
-        .pipe(jshint.reporter(stylish))
-    gulp.src(['source/sass/**/*.scss', '!source/sass/libs/*.scss', '!source/sass/helpers/_reset.scss', , '!source/sass/helpers/_mixins.scss'])
-        .pipe(scsslint({'config': '.scss-lint.yml'}));
 });
 
 gulp.task('lint-scss', function() {
-    gulp.src(['source/sass/**/*.scss', '!source/sass/libs/*.scss', '!source/sass/helpers/_reset.scss', , '!source/sass/helpers/_mixins.scss'])
-        .pipe(scsslint({'config': '.scss-lint.json'}));
+    var sassIgnoreFileLength = project.sassIgnoreFiles.length;
+    gulp.src([project.sassAllFiles, for (var i = 0; i < sassIgnoreFileLength; i++) {project.sassIgnoreFiles[i]}])
+        .pipe(sassLint())
+        .pipe(sassLint.format()
+    );
+});
+
+gulp.task('lint-all', function() {
+    gulp.src([project.jsComponents])
+        .pipe(jshint('.jshintrc'))
+        .pipe(jshint.reporter(stylish))
+    gulp.src([project.sassAllFiles, $.each(project.sassIgnoreFiles, function(i, e){e})])
+        .pipe(sassLint())
+        .pipe(sassLint.format()
+    );
 });
 
 /* Running tasks
  * -------------------- */
 gulp.task('default',['browserify','sass', 'connect'], function(){
-    gulp.watch('source/sass/**/*.scss', ['sass']);
-    gulp.watch(['source/js/components/*.js', 'source/js/main.js'], ['lint-js','browserify']);
+    gulp.watch(project.sassAllFiles, ['sass']);
+    gulp.watch([project.jsComponents, project.jsMain], ['lint-js','browserify']);
 });
 
 gulp.task('lint', ['lint-all']);
