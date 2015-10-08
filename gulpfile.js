@@ -2,10 +2,7 @@
 //  * Gulp
 //  * -----------------------------------------------------------------------------
 //  */
-
 'use strict';
-
-//var test = ['!source/sass/libs/*.scss','!source/sass/helpers/_reset.scss','!source/sass/helpers/_mixins.scss','!source/sass/foundation/_print.scss'];
 
 /* Plugins
  * -------------------- */
@@ -20,43 +17,42 @@ var uglify = require('gulp-uglify');
 var browserify = require('browserify');
 var source = require('vinyl-source-stream');
 var stylish = require('jshint-stylish');
-var minifyCss = require('gulp-minify-css');
+var argv = require('yargs').argv;
+var gulpif = require('gulp-if');
+var buffer = require('vinyl-buffer');
 
-/* Paths
+/* Task for building the Sass files
  * -------------------- */
-var project = {
-    sassAllFiles: 'source/sass/**/*.scss',
-    sassIgnoreFiles: [
-        '!source/sass/libs/*.scss',
-        '!source/sass/helpers/_reset.scss',
-        '!source/sass/helpers/_mixins.scss',
-        '!source/sass/foundation/_print.scss'
-    ],
-    jsMain: 'source/js/main.js',
-    jsComponents: 'source/js/components/*.js',
-    jsDist: './dist/js/',
-    cssDist: './dist/css'
-};
+gulp.task('styles', function() {
+    var format = argv.production ? 'compressed' : 'expanded';
 
-/* Sass compilation and autoprefixing
- * -------------------- */
-gulp.task('sass', function () {
-    gulp.src(project.sassAllFiles)
-        .pipe(sourcemaps.init())
-        .pipe(sass().on('error', sass.logError))
-        .pipe(autoprefixer())
-        .pipe(sourcemaps.write('./'))
-        .pipe(gulp.dest(project.cssDist))
+    return gulp.src('source/sass/*.scss')
+        .pipe(gulpif(!argv.production, sourcemaps.init()))
+        .pipe(sass({
+            outputStyle: format
+        }))
+        .on('error', function(err) {
+            console.error(err.message);
+        })
+        .pipe(autoprefixer({
+            browsers: ['last 8 versions', 'ie 8', 'ie 9']
+        }))
+        .pipe(gulpif(!argv.production, sourcemaps.write('.')))
+        .pipe(gulp.dest('dist/css/'))
         .pipe(connect.reload());
 });
 
 /* Browserify
  * -------------------- */
-gulp.task('browserify', function() {
-    return browserify(project.jsMain)
+gulp.task('scripts', function() {
+    return browserify('source/js/main.js')
         .bundle()
         .pipe(source('script.js'))
-        .pipe(gulp.dest(project.jsDist))
+        .pipe(buffer())
+        .pipe(sourcemaps.init({loadMaps: true}))
+        .pipe(uglify())
+        .pipe(sourcemaps.write('./'))
+        .pipe(gulp.dest('dist/js/'))
         .pipe(connect.reload());
 });
 
@@ -69,52 +65,15 @@ gulp.task('connect', function() {
     });
 });
 
-/* Minification
+/*
+ * `gulp` will build the JS & CSS files and start watching the `src` folder for changes
+ * `gulp watch` will only start watching the `src` folder for changes
+ * `gulp build` will only build the JS & CSS files
+ * `gulp build --production` will build the CSS files for production use (minify etc.)
  * -------------------- */
-gulp.task('minify-js', function() {
-    return gulp.src('dist/js/script.js')
-        .pipe(uglify())
-        .pipe(gulp.dest(project.jsDist));
+gulp.task('default', ['build', 'watch', 'connect']);
+gulp.task('build', ['scripts', 'styles']);
+gulp.task('watch', function() {
+    gulp.watch('source/js/**/*.js', ['scripts']);
+    gulp.watch('source/sass/**/*.scss', ['styles']);
 });
-
-gulp.task('minify-css', function() {
-  return gulp.src('dist/css/style.css')
-    .pipe(minifyCss())
-    .pipe(gulp.dest(project.cssDist));
-});
-
-/* Linting
- * -------------------- */
-gulp.task('lint-js', function() {
-    gulp.src([project.jsComponents])
-        .pipe(jshint('.jshintrc'))
-        .pipe(jshint.reporter(stylish))
-});
-
-gulp.task('lint-scss', function() {
-    var sassIgnoreFileLength = project.sassIgnoreFiles.length;
-    gulp.src([project.sassAllFiles, for (var i = 0; i < sassIgnoreFileLength; i++) {project.sassIgnoreFiles[i]}])
-        .pipe(sassLint())
-        .pipe(sassLint.format()
-    );
-});
-
-gulp.task('lint-all', function() {
-    gulp.src([project.jsComponents])
-        .pipe(jshint('.jshintrc'))
-        .pipe(jshint.reporter(stylish))
-    gulp.src([project.sassAllFiles, $.each(project.sassIgnoreFiles, function(i, e){e})])
-        .pipe(sassLint())
-        .pipe(sassLint.format()
-    );
-});
-
-/* Running tasks
- * -------------------- */
-gulp.task('default',['browserify','sass', 'connect'], function(){
-    gulp.watch(project.sassAllFiles, ['sass']);
-    gulp.watch([project.jsComponents, project.jsMain], ['lint-js','browserify']);
-});
-
-gulp.task('lint', ['lint-all']);
-gulp.task('dist',['minify-js','minify-css']);
