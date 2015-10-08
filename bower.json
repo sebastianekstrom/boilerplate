@@ -1,6 +1,6 @@
 {
   "name": "Z63-Boilerplate",
-  "version": "1.7.0",
+  "version": "1.8.0",
   "homepage": "https://github.com/sebastianekstrom/boilerplate",
   "authors": [
     "Sebastian Ekström"
@@ -13,7 +13,7 @@
     "HTML5",
     "CSS",
     "Jeet",
-    "Grunt"
+    "Gulp"
   ],
   "license": "MIT",
   "ignore": [
