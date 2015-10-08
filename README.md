@@ -22,7 +22,7 @@ Boilerplate for your projects made with [Gulp](http://gulpjs.com/), [Sass](http:
 
 ## Download
 
-- [Download the latest release](https://github.com/sebastianekstrom/boilerplate/archive/v1.7.zip)
+- [Download the latest release](https://github.com/sebastianekstrom/boilerplate/archive/v1.8.zip)
 - Clone the repo: `git clone https://github.com/sebastianekstrom/boilerplate.git`
 - Install with [Bower](http://bower.io): `bower install Z63-Boilerplate`
 
