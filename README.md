@@ -21,7 +21,7 @@ Boilerplate for your projects made with [Gulp](http://gulpjs.com/), [Sass](http:
     * [Modernizr](http://modernizr.com/)
     * [Jeet.gs](http://jeet.gs/) grid system
     * [.editorconfig](http://editorconfig.org/) to help maintain consistent coding styles
-    * Print CSS from [HTML5BP](https://github.com/h5bp/html5-boilerplate)
+    * Print CSS from [HTML5 Boilerplate](https://github.com/h5bp/html5-boilerplate)
 
 ## Download
 
