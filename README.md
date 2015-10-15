@@ -8,17 +8,20 @@ Boilerplate for your projects made with [Gulp](http://gulpjs.com/), [Sass](http:
 ## Features
 
 * No styling at all, this is a completely bare boilerplate containing only the essential things you need
-* A solid Sass and Javascript foundation
-* Includes [Browserify](http://browserify.org/) to handle Javascript dependencies
-* Includes [Normalize.css](http://necolas.github.com/normalize.css/) to make browser rendering more consistent
-* Includes [jQuery](https://jquery.com/) and [Modernizr](http://modernizr.com/)
+* A solid Sass and Javascript structure and starting point
 * CSS helper classes
-* A performance optimized print CSS from [HTML5BP](https://github.com/h5bp/html5-boilerplate)
 * Commonly used CSS components such as the [Media Object](http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code/) and the [Flag Object](http://goo.gl/YR3ffA)
 * A Gulpfile with all your basic needs (Sass/Browserify, local server, minification)
-* Grid system from [Jeet.gs](http://jeet.gs/)
-* Component based file and folder structure, to help create re-usable and maintainable CSS
-* A Sass library of commonly used mixins and placeholder selectors
+* Component based file and folder structure to help create maintainable CSS
+* A Sass library of commonly used mixins
+* Included libraries:
+    * [Browserify](http://browserify.org/) to handle Javascript dependencies
+    * [Normalize.css](http://necolas.github.com/normalize.css/) to make browser rendering more consistent
+    * [jQuery](https://jquery.com/)
+    * [Modernizr](http://modernizr.com/)
+    * [Jeet.gs](http://jeet.gs/) grid system
+    * [.editorconfig](http://editorconfig.org/) to help maintain consistent coding styles
+    * Print CSS from [HTML5BP](https://github.com/h5bp/html5-boilerplate)
 
 ## Download
 
