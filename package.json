@@ -13,7 +13,7 @@
     "browserify": "^11.0.1",
     "browserify-shim": "^3.8.7",
     "gulp": "^3.9.0",
-    "gulp-autoprefixer": "^2.3.1",
+    "gulp-autoprefixer": "^3.0.2",
     "gulp-connect": "^2.2.0",
     "gulp-if": "^2.0.0",
     "gulp-jshint": "^1.11.2",
