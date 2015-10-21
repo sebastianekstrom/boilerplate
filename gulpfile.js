@@ -49,9 +49,9 @@ gulp.task('scripts', function() {
         .bundle()
         .pipe(source('script.js'))
         .pipe(buffer())
-        .pipe(sourcemaps.init({loadMaps: true}))
-        .pipe(uglify())
-        .pipe(sourcemaps.write('./'))
+        .pipe(gulpif(!argv.production, sourcemaps.init({loadMaps: true})))
+        .pipe(gulpif(argv.production, uglify()))
+        .pipe(gulpif(!argv.production, sourcemaps.write('./')))
         .pipe(gulp.dest('dist/js/'))
         .pipe(connect.reload());
 });
