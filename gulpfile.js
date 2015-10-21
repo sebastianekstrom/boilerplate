@@ -20,6 +20,8 @@ var stylish = require('jshint-stylish');
 var argv = require('yargs').argv;
 var gulpif = require('gulp-if');
 var buffer = require('vinyl-buffer');
+var lost = require('lost');
+var postcss = require('gulp-postcss');
 
 /* Task for building the Sass files
  * -------------------- */
@@ -31,6 +33,9 @@ gulp.task('styles', function() {
         .pipe(sass({
             outputStyle: format
         }))
+        .pipe(postcss([
+            lost()
+        ]))
         .on('error', function(err) {
             console.error(err.message);
         })

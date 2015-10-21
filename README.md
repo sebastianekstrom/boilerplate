@@ -3,7 +3,7 @@
 [![Build Status](https://api.travis-ci.org/sebastianekstrom/boilerplate.svg)](https://travis-ci.org/sebastianekstrom/boilerplate)
 [![devDependency Status](https://david-dm.org/sebastianekstrom/boilerplate/dev-status.svg)](https://david-dm.org/sebastianekstrom/boilerplate#info=devDependencies)
 
-Boilerplate for your projects made with [Gulp](http://gulpjs.com/), [Sass](http://sass-lang.com/), [Jeet.gs](http://jeet.gs/) and [Browserify](http://browserify.org/).
+Boilerplate for your projects made with [Gulp](http://gulpjs.com/), [Sass](http://sass-lang.com/), [Lost](https://github.com/corysimmons/lost) and [Browserify](http://browserify.org/).
 
 ## Features
 
@@ -19,7 +19,7 @@ Boilerplate for your projects made with [Gulp](http://gulpjs.com/), [Sass](http:
     * [Normalize.css](http://necolas.github.com/normalize.css/) to make browser rendering more consistent
     * [jQuery](https://jquery.com/)
     * [Modernizr](http://modernizr.com/)
-    * [Jeet.gs](http://jeet.gs/) grid system
+    * [Lost](https://github.com/corysimmons/lost) grid system
     * [.editorconfig](http://editorconfig.org/) to help maintain consistent coding styles
     * Print CSS from [HTML5 Boilerplate](https://github.com/h5bp/html5-boilerplate)
 
