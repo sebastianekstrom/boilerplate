@@ -9,14 +9,11 @@
 var gulp = require('gulp');
 var autoprefixer = require('gulp-autoprefixer');
 var connect = require('gulp-connect');
-var jshint = require('gulp-jshint');
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
-var sassLint = require('gulp-sass-lint');
 var uglify = require('gulp-uglify');
 var browserify = require('browserify');
 var source = require('vinyl-source-stream');
-var stylish = require('jshint-stylish');
 var argv = require('yargs').argv;
 var gulpif = require('gulp-if');
 var buffer = require('vinyl-buffer');
@@ -55,8 +52,8 @@ gulp.task('scripts', function() {
         .pipe(source('script.js'))
         .pipe(buffer())
         .pipe(gulpif(!argv.production, sourcemaps.init({loadMaps: true})))
-        .pipe(gulpif(argv.production, uglify()))
         .pipe(gulpif(!argv.production, sourcemaps.write('./')))
+        .pipe(gulpif(argv.production, uglify()))
         .pipe(gulp.dest('dist/js/'))
         .pipe(connect.reload());
 });
