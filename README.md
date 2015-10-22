@@ -1,4 +1,4 @@
-# [Z63 Boilerplate](http://zerosixthree.se)
+# [zerosixthree boilerplate](http://zerosixthree.se)
 
 [![Build Status](https://api.travis-ci.org/sebastianekstrom/boilerplate.svg)](https://travis-ci.org/sebastianekstrom/boilerplate)
 [![devDependency Status](https://david-dm.org/sebastianekstrom/boilerplate/dev-status.svg)](https://david-dm.org/sebastianekstrom/boilerplate#info=devDependencies)
@@ -27,7 +27,7 @@ Boilerplate for your projects made with [Gulp](http://gulpjs.com/), [Sass](http:
 
 - [Download the latest release](https://github.com/sebastianekstrom/boilerplate/archive/v1.8.zip)
 - Clone the repo: `git clone https://github.com/sebastianekstrom/boilerplate.git`
-- Install with [Bower](http://bower.io): `bower install Z63-Boilerplate`
+- Install with [Bower](http://bower.io): `bower install zerosixthree-boilerplate`
 
 ## Getting started
 

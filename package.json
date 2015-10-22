@@ -1,8 +1,8 @@
 {
-  "name": "Z63-Boilerplate",
+  "name": "zerosixthree-boilerplate",
   "preferGlobal": "false",
   "version": "1.8.0",
-  "description": "Boilerplate of Z63",
+  "description": "Boilerplate of zerosixthree",
   "repository": {
     "type": "git",
     "url": "https://github.com/sebastianekstrom/boilerplate"
