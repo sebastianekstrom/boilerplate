@@ -1,7 +1,6 @@
-// /**
-//  * An example file of the JS structure
-//  * -----------------------------------------------------------------------------
-//  */
+/**
+ * An example file of the JS structure
+ */
 
 var $ = require('jQuery'),
     Example;

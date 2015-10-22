@@ -1,23 +1,19 @@
-// /**
-//  * Detect media queries and add a custom event listener for when the breakpoint changes
-//  * -----------------------------------------------------------------------------
-//  * More info here: http://zerosixthree.se/detecting-media-queries-with-javascript/
-//  *
-//  * Example usage:
-//  *
-//  *    $(window).on('breakpoint-change', function(e, breakpoint) {
-//  *
-//  *        if(breakpoint === 'bp-small') {
-//  *            document.body.innerHTML = 'CSS Breakpoint <span>screen-small</span>';
-//  *        }
-//  *
-//  *        if(breakpoint === 'bp-large') {
-//  *            document.body.innerHTML = 'CSS Breakpoint <span>screen-large</span>';
-//  *        }
-//  *
-//  *    });
-//  *
-//  */
+/**
+ * Detect media queries and add a custom event listener for when the breakpoint changes.
+ * More info here: http://zerosixthree.se/detecting-media-queries-with-javascript/
+ *
+ * Example usage:
+ *
+ * $(window).on('breakpoint-change', function(e, breakpoint) {
+ *        if(breakpoint === 'bp-small') {
+ *            document.body.innerHTML = 'CSS Breakpoint <span>screen-small</span>';
+ *        }
+ *        if(breakpoint === 'bp-large') {
+ *            document.body.innerHTML = 'CSS Breakpoint <span>screen-large</span>';
+ *        }
+ *    });
+
+ */
 
 var $ = require('jQuery'),
     MediaQueryListener;

@@ -8,7 +8,7 @@ window.jQuery = window.$ = $;
 
 $(document).ready(function() {
     var Example             = require('./components/example'),
-        MediaQueryListener  = require('./components/mediaquerylistener'),
+        MediaQueryListener  = require('./components/mediaquery-listener'),
         example,
         mediaquerylistener;
 
