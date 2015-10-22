@@ -12,7 +12,8 @@
     "browserify",
     "HTML5",
     "CSS",
-    "Jeet",
+    "Sass",
+    "Lost",
     "Gulp"
   ],
   "license": "MIT",
