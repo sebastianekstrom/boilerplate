@@ -19,6 +19,9 @@ var gulpif = require('gulp-if');
 var buffer = require('vinyl-buffer');
 var lost = require('lost');
 var postcss = require('gulp-postcss');
+var imagemin = require('gulp-imagemin');
+var pngquant = require('imagemin-pngquant');
+var changed = require('gulp-changed');
 
 /* Task for building the Sass files
  * -------------------- */
@@ -58,6 +61,19 @@ gulp.task('scripts', function() {
         .pipe(connect.reload());
 });
 
+/* Image compression
+ * -------------------- */
+gulp.task('image-compression', function () {
+    return gulp.src('source/img/*')
+        .pipe(changed('dist/img'))
+        .pipe(imagemin({
+            progressive: true,
+            svgoPlugins: [{removeViewBox: false}],
+            use: [pngquant()]
+        }))
+        .pipe(gulp.dest('dist/img'));
+});
+
 /* Local server
  * -------------------- */
 gulp.task('connect', function() {
@@ -78,4 +94,5 @@ gulp.task('build', ['scripts', 'styles']);
 gulp.task('watch', function() {
     gulp.watch('source/js/**/*.js', ['scripts']);
     gulp.watch('source/sass/**/*.scss', ['styles']);
+    gulp.watch('source/img/*', ['image-compression']);
 });
