@@ -270,7 +270,8 @@ select {
  *    `input` and others.
  */
 button,
-html input[type="button"], input[type="reset"],
+html input[type="button"],
+input[type="reset"],
 input[type="submit"] {
   -webkit-appearance: button;
   /* 2 */
@@ -432,7 +433,7 @@ th {
  * -----------------------------------------------------------------------------
  * A simple mixin for using media queries. Change the values to
  * fit your sites needs.
- * 
+ *
  * Usage:
  *
  *      header {
@@ -449,7 +450,7 @@ th {
  * -----------------------------------------------------------------------------
  * This mixin will take a pixel value and convert it into a em value
  * with a pixel fallback.
- * 
+ *
  * Usage:
  *
  *      p {
@@ -464,19 +465,32 @@ th {
  *      }
  */
 /**
+ * Expand element outside its container
+ * -----------------------------------------------------------------------------
+ * This mixin will force an element to expand full width even if it has
+ * a container. See demo here: http://codepen.io/sebastianekstrom/pen/vNjOao/
+ *
+ * Usage:
+ *
+ *      img {
+ *          @include expand-full-width(16px)
+ *      }
+ *
+ */
+/**
  * Vertical align
  * -----------------------------------------------------------------------------
  * Vertical align any element by using top: 50% with the combination of
  * translateY(-50%). This will push the element 50% down from its parent,
  * as well as pushing itself down 50% of its own height. This will cause
  * the element to vertically align.
- * 
+ *
  * Usage:
  *
  *      .logotype {
  *          @include vertical-align();
  *      }
- *      
+ *
  *      .logotype--absolute {
  *          @include vertical-align(absolute);
  *      }
@@ -487,7 +501,7 @@ th {
  * -----------------------------------------------------------------------------
  * This placeholder selector will visually hide an element while
  * still make it accessible for screenreaders.
- * 
+ *
  * Usage:
  *
  *      p {
@@ -495,6 +509,7 @@ th {
  *      }
  *
  */
+
 .visually-hidden {
   position: absolute !important;
   overflow: hidden;
@@ -510,7 +525,7 @@ th {
  * -----------------------------------------------------------------------------
  * A solid clearfix by Nicolas Gallagher.
  * Source: (http://nicolasgallagher.com/micro-clearfix-hack/)
- * 
+ *
  * Usage:
  *
  *      p {
@@ -623,8 +638,7 @@ body {
             box-shadow: none !important;
     text-shadow: none !important;
   }
-  *:before,
-  *:after {
+  *:before, *:after {
     background: transparent !important;
     color: #000000 !important;
     -webkit-box-shadow: none !important;
@@ -643,8 +657,7 @@ body {
   abbr[title]:after {
     content: " (" attr(title) ")";
   }
-  a[href^='#']:after,
-  a[href^='javascript:']:after {
+  a[href^='#']:after, a[href^='javascript:']:after {
     content: '';
   }
   pre,

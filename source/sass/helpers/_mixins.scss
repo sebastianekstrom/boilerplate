@@ -3,7 +3,7 @@
  * -----------------------------------------------------------------------------
  * A simple mixin for using media queries. Change the values to
  * fit your sites needs.
- * 
+ *
  * Usage:
  *
  *      header {
@@ -45,7 +45,7 @@
  * -----------------------------------------------------------------------------
  * This mixin will take a pixel value and convert it into a em value
  * with a pixel fallback.
- * 
+ *
  * Usage:
  *
  *      p {
@@ -70,19 +70,38 @@
 }
 
 /**
+ * Expand element outside its container
+ * -----------------------------------------------------------------------------
+ * This mixin will force an element to expand full width even if it has
+ * a container. See demo here: http://codepen.io/sebastianekstrom/pen/vNjOao/
+ *
+ * Usage:
+ *
+ *      img {
+ *          @include expand-full-width(16px)
+ *      }
+ *
+ */
+
+@mixin expand-full-width() {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+}
+
+/**
  * Vertical align
  * -----------------------------------------------------------------------------
  * Vertical align any element by using top: 50% with the combination of
  * translateY(-50%). This will push the element 50% down from its parent,
  * as well as pushing itself down 50% of its own height. This will cause
  * the element to vertically align.
- * 
+ *
  * Usage:
  *
  *      .logotype {
  *          @include vertical-align();
  *      }
- *      
+ *
  *      .logotype--absolute {
  *          @include vertical-align(absolute);
  *      }
@@ -100,7 +119,7 @@
  * -----------------------------------------------------------------------------
  * This placeholder selector will visually hide an element while
  * still make it accessible for screenreaders.
- * 
+ *
  * Usage:
  *
  *      p {
@@ -125,7 +144,7 @@
  * -----------------------------------------------------------------------------
  * A solid clearfix by Nicolas Gallagher.
  * Source: (http://nicolasgallagher.com/micro-clearfix-hack/)
- * 
+ *
  * Usage:
  *
  *      p {
