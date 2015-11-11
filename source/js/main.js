@@ -1,4 +1,4 @@
-/*global Modernizr */
+/* global window, Modernizr, document */
 'use strict';
 
 var $ = require('jQuery'),

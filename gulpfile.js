@@ -22,6 +22,7 @@ var postcss = require('gulp-postcss');
 var imagemin = require('gulp-imagemin');
 var pngquant = require('imagemin-pngquant');
 var changed = require('gulp-changed');
+var eslint = require('gulp-eslint');
 
 /* Task for building the Sass files
  * -------------------- */
@@ -74,6 +75,16 @@ gulp.task('image-compression', function () {
         .pipe(gulp.dest('dist/img'));
 });
 
+/* JS Lint
+ * -------------------- */
+
+gulp.task('lint', function () {
+    return gulp.src(['source/js/**/*.js','!source/js/vendor/*.js'])
+        .pipe(eslint())
+        .pipe(eslint.format())
+        .pipe(eslint.failAfterError());
+});
+
 /* Local server
  * -------------------- */
 gulp.task('connect', function() {
@@ -90,9 +101,10 @@ gulp.task('connect', function() {
  * `gulp build --production` will build the CSS files for production use (minify etc.)
  * -------------------- */
 gulp.task('default', ['build', 'watch', 'connect']);
-gulp.task('build', ['scripts', 'styles']);
+gulp.task('build', ['scripts', 'styles', 'lint']);
 gulp.task('watch', function() {
     gulp.watch('source/js/**/*.js', ['scripts']);
     gulp.watch('source/sass/**/*.scss', ['styles']);
     gulp.watch('source/img/*', ['image-compression']);
+    gulp.watch('source/js/**/*.js', ['lint']);
 });

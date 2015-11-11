@@ -1,3 +1,6 @@
+/* global window, Modernizr, document */
+'use strict';
+
 /**
  * An example file of the JS structure
  */

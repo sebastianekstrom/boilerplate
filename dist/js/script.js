@@ -9211,6 +9211,9 @@ return jQuery;
 }));
 
 },{}],2:[function(require,module,exports){
+/* global window, Modernizr, document */
+'use strict';
+
 /**
  * An example file of the JS structure
  */
@@ -9239,6 +9242,9 @@ Example.prototype.foo = function() {
 module.exports = Example;
 
 },{"jQuery":1}],3:[function(require,module,exports){
+/* global window, Modernizr, document */
+'use strict';
+
 /**
  * Detect media queries and add a custom event listener for when the breakpoint changes.
  * More info here: http://zerosixthree.se/detecting-media-queries-with-javascript/
@@ -9269,7 +9275,7 @@ MediaQueryListener = function() {
 MediaQueryListener.prototype.init = function() {
     var self = this;
 
-    if(!self.afterElement) {
+    if (!self.afterElement) {
         return;
     }
 
@@ -9293,7 +9299,7 @@ MediaQueryListener.prototype.resizeListener = function() {
 module.exports = MediaQueryListener;
 
 },{"jQuery":1}],4:[function(require,module,exports){
-/*global Modernizr */
+/* global window, Modernizr, document */
 'use strict';
 
 var $ = require('jQuery'),

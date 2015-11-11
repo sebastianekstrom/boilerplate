@@ -1,3 +1,6 @@
+/* global window, Modernizr, document */
+'use strict';
+
 /**
  * Detect media queries and add a custom event listener for when the breakpoint changes.
  * More info here: http://zerosixthree.se/detecting-media-queries-with-javascript/
@@ -28,7 +31,7 @@ MediaQueryListener = function() {
 MediaQueryListener.prototype.init = function() {
     var self = this;
 
-    if(!self.afterElement) {
+    if (!self.afterElement) {
         return;
     }
 
