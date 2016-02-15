@@ -12,7 +12,6 @@ rules:
   no-undefined: 2
   radix: 2
   space-before-function-paren: [2, "never"]
-  space-after-keywords: [2, "always"]
   space-before-blocks: 2
   spaced-comment: [2, "always", { exceptions: ["-"]}]
   valid-jsdoc: [1, { requireReturn: false, prefer: { return": "returns" }}]
