@@ -1,5 +1,7 @@
 # [zerosixthree boilerplate](http://zerosixthree.se)
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/sebastianekstrom/boilerplate.svg)](https://greenkeeper.io/)
+
 [![Build Status](https://api.travis-ci.org/sebastianekstrom/boilerplate.svg)](https://travis-ci.org/sebastianekstrom/boilerplate)
 [![devDependency Status](https://david-dm.org/sebastianekstrom/boilerplate/dev-status.svg)](https://david-dm.org/sebastianekstrom/boilerplate#info=devDependencies)
 
